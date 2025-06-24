@@ -1,0 +1,21 @@
+font=Adwaita Sans Regular 9
+format=<b>%a ⏵</b> %s\n%b
+sort=-time
+layer=overlay
+anchor=top-right
+margin=-0,9,9
+padding=0,5,10
+border-size=0
+border-radius=9
+default-timeout=5000
+ignore-timeout=1
+
+# Colors
+
+background-color=#000000
+text-color=#cad3f5
+border-color=#11111b
+progress-color=over #363a4f
+
+[urgency=high]
+border-color=#89b4fa

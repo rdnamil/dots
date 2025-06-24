@@ -1,0 +1,413 @@
+// ---
+// andrel's niri config
+// ---
+// File:       config.kdl
+// Created:    Jun 3, 2025
+// Modified:   Jun 24, 2025
+// ---
+
+// autostart
+// ---
+spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+spawn-at-startup "xwayland-satellite"
+spawn-at-startup "swww-daemon"
+spawn-at-startup "qs"
+spawn-at-startup "steam" "-silent" "-system-composer" "%U"
+spawn-at-startup "vesktop --start-minimized"
+// spawn-at-startup "spotify"
+
+// environment variables
+// ---
+environment {
+   DISPLAY ":0"
+   QT_QPA_PLATFORM "wayland"
+   QT_QPA_PLATFORMTHEME "qt6ct"
+   QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
+   QT_AUTO_SCREEN_SCALE_FACTOR "1"
+	AQ_DRM_DEVICES "/dev/dri/card1:-/dev/dri/card0"
+}
+
+// input settings
+// ---
+input {
+   keyboard {
+      xkb{
+         layout "us"
+      }
+      //numlock
+}
+   touchpad {
+      tap
+      natural-scroll
+      accel-profile "flat"
+   }
+   mouse {
+      accel-profile "flat"
+   }
+   // warp mouse to focus and set focus to follow mouse
+   warp-mouse-to-focus
+   focus-follows-mouse max-scroll-amount="33%"
+   workspace-auto-back-and-forth
+}
+
+// outputs
+// ---
+output "eDP-1" {
+   mode "1920x1080@240.000"
+   scale 1
+   transform "normal"
+   position x=0 y=0
+}
+
+output "HDMI-A-1" {
+   mode "2560x1440@144.000"
+   variable-refresh-rate
+   scale 1
+   transform "normal"
+   position x=0 y=0
+}
+
+// windows layout and effects
+// ---
+layout {
+   gaps 16
+   center-focused-column "never"
+   always-center-single-column
+   //default-column-display "tabbed"
+   
+   // column widths
+   // ---
+   preset-column-widths {
+      proportion 0.33333
+      proportion 0.5
+      proportion 0.66667
+   }
+   default-column-width { proportion 0.5; }
+   
+   // window heights
+   // ---
+   preset-window-heights {
+      proportion 0.5
+      proportion 1.0
+   }
+   
+   // draw a ring around focused window
+   // ---
+   focus-ring {
+      //off
+      width 2
+      active-color "#8aadf4"
+      //inactive-color "#6e738d"
+   }
+
+   // draw a border around windows
+   // ---
+   border {
+      //off
+      width 1
+      active-color "#6e738d"
+      inactive-color "#6e738d"
+   }
+
+   // drop shadows for windows
+   // ---
+   /-shadow {
+      on
+      draw-behind-window true
+      softness 30
+      spread 5
+      offset x=0 y=0
+      color "#0007"
+   }
+
+   // add tab-indicaotor
+   // ---
+   tab-indicator {
+      // hide-when-single-tab
+		place-within-column
+      width 8
+      gap 5
+      position "left"
+      length total-proportion=0.333
+      gaps-between-tabs 8
+      corner-radius 4
+      active-color "#89b4fa"
+      inactive-color "#45475a"
+      urgent-color "#74c7ec"
+   }
+
+   // edit hint when moving windows
+   // ---
+   insert-hint {
+      //off
+      color "#8aadf46f"
+   }
+
+   // add gaps to the sides and tops
+   // ---
+   struts {
+      left 32
+      right 32
+      top -13
+      bottom -4
+   }
+
+   // make background transparent
+   // ---
+   background-color "#00000000"
+}
+
+// no workspace shadows in overview
+// ---
+overview {
+   workspace-shadow { off; }
+}
+
+// no window decorations
+// ---
+prefer-no-csd
+
+// set path for screenshots
+// ---
+screenshot-path "~/Pictures/Screenshots/Screenshot_%Y-%m-%d_%H-%M-%S.png"
+
+// animation settings
+// ---
+animations {
+   //off
+   slowdown 2.0
+   window-resize {
+      custom-shader r"
+         vec4 resize_color(vec3 coords_curr_geo, vec3 size_curr_geo) {
+            vec3 coords_tex_next = niri_geo_to_tex_next * coords_curr_geo;
+            vec4 color = texture2D(niri_tex_next, coords_tex_next.st);
+            return color;
+         }
+         "
+   }
+}
+
+// windows rules
+// ---
+   // float windows upon open
+   // ---
+window-rule {
+   match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+	match app-id="waypaper"
+	match app-id="thunar" title=".*Rename.*"
+	match app-id="thunar" title=".*Operation.*"
+	match app-id="pinentry-gtk"
+
+	match is-floating=true
+
+	open-floating true
+
+	// baba-is-float true
+	shadow {
+		on
+		draw-behind-window false
+		softness 2
+		spread 3
+		offset x=15 y=15
+		color "#18192690"
+	}
+}
+
+   // round corners on all windows
+   // ---
+/-window-rule {
+   draw-border-with-background false
+   geometry-corner-radius 9
+   clip-to-geometry true
+}
+
+	// round bottom corners on Thunar dialogs
+	// ---
+window-rule {
+	match app-id="xdg-desktop-portal-gtk"
+	match app-id="^thunar" title=".*Preferences.*"
+	match app-id="^thunar" title="Custom Actions"
+	match app-id="firefox" title="File .*"
+	match app-id="firefox" title="Save .*"
+	match app-id="firefox" title="Enter name of file to save to…"
+	draw-border-with-background true
+	geometry-corner-radius 0 0 15 15
+	clip-to-geometry true
+}
+
+   // make windows translucent
+   // ---
+window-rule {
+	exclude app-id=r#"firefox$"# title="^Picture-in-Picture$"
+   exclude app-id="Spotify"
+   exclude app-id="OBS Studio"
+	exclude app-id="org.kde.haruna"
+   opacity 0.95
+}
+
+	// have steam notifications not popup in center sccreen
+	// ---
+window-rule {
+	match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+	default-floating-position x=10 y=10 relative-to="bottom-right"
+	open-focused false
+	shadow {}
+}
+
+	// steam small mode default to %33 width
+	// ---
+window-rule {
+	match app-id="steam" title="Steam Games List"
+	default-column-width { proportion 0.33333; }
+}
+
+// layer-rules
+// ---
+   // render the background as the backdrop
+   // ---
+layer-rule {
+   match namespace="^swww-daemon$"
+   place-within-backdrop true
+}
+
+   // draw shadow under panel
+   // ---
+layer-rule {
+   match namespace="quickshell"
+   // geometry-corner-radius 9
+
+   shadow {
+      // on
+      draw-behind-window true
+      softness 3
+      spread 6
+      offset y=-9
+      color "#1119"
+   }
+
+}
+
+// laptop lid open/close events
+// ---
+switch-events {
+	lid-close { spawn "/home/andrel/.local/bin/lockscreen.sh"; }
+}
+
+// don't show overview on startup
+// ---
+hotkey-overlay { skip-at-startup; }
+
+// key bindings
+// ---
+binds {
+   // show list of hotkeys
+   // ---
+   Mod+Shift+Slash { show-hotkey-overlay; }
+
+   // launch programs
+	// ---
+   Mod+1			{ spawn "ghostty"; }
+   Mod+2			{ spawn "thunar"; }
+   Mod+3			{ spawn "firefox";}
+   Mod+4			{ spawn "waypaper"; }
+   Alt+Space	{ spawn "fuzzel"; }
+   Super+L		{ spawn "/home/andrel/.local/bin/lockscreen.sh"; }
+   
+   // volume keys mappings
+   // ---
+   XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+" "--limit" "1"; }
+   XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
+   XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+   XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+
+   // media keys mappings
+   // ---
+   XF86AudioPlay  allow-when-locked=true  { spawn "playerctl" "play-pause"; }
+   XF86AudioPrev  allow-when-locked=true  { spawn "playerctl" "previous"; }
+   XF86AudioNext  allow-when-locked=true  { spawn "playerctl" "next"; }
+
+   // brightness keys
+   // ---
+   XF86MonBrightnessDown   allow-when-locked=true { spawn "brightnessctl" "set" "5%-"; }
+   XF86MonBrightnessUp     allow-when-locked=true { spawn "brightnessctl" "set" "+5%"; }
+   
+   // navigation keybindings
+   // ---
+      
+      // open/close the overview
+      // ---
+   Mod+O repeat=false { toggle-overview; }
+         // mouse binds
+         //---
+   Mod+MouseMiddle   { toggle-overview; }
+
+      // close windows
+      // ---
+   Mod+Backspace { close-window; }
+
+      // switch focus
+      // ---
+   Mod+Alt+Left    { focus-column-left; }
+   Mod+Alt+Down    { focus-window-down; }
+   Mod+Alt+Up      { focus-window-up; }
+   Mod+Alt+Right   { focus-column-right; }
+   Mod+Alt+Home    { focus-column-first; }
+   Mod+Alt+End     { focus-column-last; }
+         // mouse binds
+   Mod+WheelScrollUp    { focus-column-left; }
+   Mod+WheelScrollDown  { focus-column-right; }
+   Mod+MouseForward     { focus-workspace-up; }
+   Mod+MouseBack        { focus-workspace-down; }
+
+      // move window
+      // ---
+   Mod+Left     { move-column-left; }
+   Mod+Down     { move-column-to-workspace-down; }
+   Mod+Up       { move-column-to-workspace-up; }
+   Mod+Right    { move-column-right; }
+   Mod+Home     { move-column-to-first; }
+   Mod+End      { move-column-to-last; }
+   Mod+Comma    { consume-or-expel-window-left; }
+   Mod+Period   { consume-or-expel-window-right; }
+
+
+         // vim keybinds
+         // ---
+   //Mod+Alt+H    { focus-column-left; }
+   //Mod+Alt+J    { focus-window-down; }
+   //Mod+Alt+K    { focus-window-up; }
+   //Mod+Alt+L    { focus-column-right; }
+   //Mod+H        { move-column-left; }
+   //Mod+J        { move-column-to-workspace-down; }
+   //Mod+K        { move-column-to-workspace-up; }
+   //Mod+L        { move-column-right; }
+
+      // change window dimensions
+      // ---
+   Mod+R       { switch-preset-column-width; }
+   Mod+Shift+R { switch-preset-window-height;}
+   Mod+Ctrl+R  { reset-window-height; }
+   Mod+F       { maximize-column; }
+   Mod+Shift+F { fullscreen-window; }
+   Mod+F11		{ toggle-windowed-fullscreen; }
+
+      // toggle float widows
+      // ---
+   Mod+V { toggle-window-floating; }
+
+      // toggle tabbed layout
+      // ---
+   Mod+W { toggle-column-tabbed-display; }
+
+      // take screenshot
+      // ---
+   Print				{ screenshot; }
+   Mod+Print 		{ screenshot-screen; }
+   Mod+Alt+Print	{ screenshot-window;}
+
+      // quit the application
+      //---
+   Mod+Shift+E       { quit; }
+   Ctrl+Alt+Delete   { quit; }
+}
+

@@ -1,0 +1,56 @@
+#!/bin/bash
+
+# killorphans.sh
+# ---
+# Created:      Jun 7, 2025
+# Modified:     Jun 12, 2025
+# Author:       rdnamil
+# Description:  Remove orphaned dependancies
+# ---
+
+main() {
+    # get orphaned dependancies
+    # ---
+    orphans=$(pacman -Qtdq) # save list of dependancies
+
+    if [ ! -z "$orphans" ]; then
+        echo -e "\n${bold}Orphans:${nrml}"
+        echo -e "\n$orphans"     # display list of dependancies
+    else
+        echo -e "Nothing to do here."; exit     # exit if there are no orphaned dependancies
+    fi
+
+    # get user confirmation to remove dependancies
+    # ---
+    ynPrompt $(echo -e "$orphans" | wc -l)
+
+    # remove dependancies
+    # ---
+    echo -e "$orphans" | sudo pacman -Rnsc --noconfirm -
+}
+
+# get confirmation from user
+# ---
+ynPrompt() {
+    prompt=$(echo -e "Commit $bold$1$nrml attrocities? [Y/n] ")
+
+    echo -e; read -p "$prompt" confrm
+
+    case "${confrm,,}" in
+        "" | "y")   # return to *main* function and continue
+            return
+            ;;
+        "n")
+            exit    # exit script
+            ;;
+        *)          # prompt user again to enter a valid option
+            echo -e "Not a valid option."
+            ynPrompt
+            ;;
+    esac
+}
+
+bold='\033[1m'
+nrml='\033[0m'
+
+main "$@"; exit

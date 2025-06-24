@@ -1,0 +1,4 @@
+theme = catppuccin-macchiato
+cursor-style = underline
+initial-command = zsh
+font-size = 11

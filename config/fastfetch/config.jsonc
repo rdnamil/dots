@@ -1,0 +1,67 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "source": "~/.config/fastfetch/ascii/enduwuOS.txt",
+        "type": "auto",
+        "padding": {
+	        "top": 3,
+	        "left": 2,
+	        "right": 0
+        }
+    },
+    "display": {
+        "separator": "  ",
+        "key": {
+            "width": 12
+        },
+        "constants": [
+            "\u001b[1m\u001b[37m│                                      │\u001b[38D",
+            "\u001b[1m\u001b[37m"
+        ]
+    },
+    "modules": [
+	"break",
+    {
+        "type": "title",
+        "format": "{$2}╭─ SYS INFO ───────────────────────────╮"
+    },
+    {
+        "type": "os",
+        "format": "{name}",
+        "key": "{$1}{#31}OS  "
+    },
+    {
+        "type": "kernel",
+        "key": "{$1}{#32}KER "
+    },
+    {
+        "type": "packages",
+        "format": "{} (pacman)",
+        "key": "{$1}{#33}PKG "
+    },
+    {
+        "type": "shell",
+        "format": "{}",
+        "key": "{$1}{#34}SH  "
+    },
+    {
+        "type": "terminal",
+        "format": "{1}",
+        "key": "{$1}{#35}TER "
+    },
+    {
+        "type": "wm",
+        "key": "{$1}{#36}WM  "
+    },
+    {
+        "type": "colors",
+        "symbol": "circle",
+        "key": "{$1}"
+    },
+    {
+        "type": "custom",
+        "format": "{$2}╰──────────────────────────────────────╯"
+    },
+        "break"
+    ]
+}
