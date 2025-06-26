@@ -34,4 +34,6 @@ ShellRoot {
 	// Border {
 	// 	// radius: 9
 	// }
+	VolumeOSD {}
+	BrightnessOSD {}
 }
