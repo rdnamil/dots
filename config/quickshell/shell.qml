@@ -16,7 +16,10 @@ ShellRoot {
 			Bluetooth {}
 		]
 		centreItems: [
-
+			NiriWorkspaces {
+				// highlight:"󰮯 "
+				// notHighlight: " "
+			}
 		]
 		rightItems: [
 			Tray {

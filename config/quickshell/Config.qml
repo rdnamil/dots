@@ -16,7 +16,8 @@ Singleton { id: root
 	}
 
 	component Font: QtObject {
-		readonly property string family: "Adwaita Sans Regular"
+		readonly property string sans: "Adwaita Sans Regular"
+		readonly property string mono: "JetBrains Mono Nerd Font"
 		readonly property int size: 11
 	}
 }

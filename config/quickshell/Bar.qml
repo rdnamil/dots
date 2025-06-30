@@ -40,25 +40,29 @@ PanelWindow { id: root
 		}
 	}
 
-	Rectangle { id: bar
+	Item { id: bar
 		anchors.top: root.top
 		width: root.width
 		height: root.height - root.radius
-		color: "red"
-		visible: false
-	}
 
-	RowLayout { id: widgets
-		anchors { fill: bar; leftMargin: root.padding; rightMargin: root.padding }
+		RowLayout {
+			anchors { fill: parent; leftMargin: root.padding; rightMargin: root.padding }
 
-		RowLayout {id: leftRow
-			spacing: root.spacing
-		}
-		RowLayout {id: centreRow
-			spacing: root.spacing
-		}
-		RowLayout {id: rightRow
-			spacing: root.spacing
+			RowLayout { id: leftRow
+				Layout.fillWidth: true
+				spacing: root.spacing
+				// Item { Layout.fillWidth: true; }
+			}
+			RowLayout { id: centreRow
+				Layout.fillWidth: true
+				spacing: root.spacing
+				anchors.horizontalCenter: parent.horizontalCenter
+			}
+			RowLayout { id: rightRow
+				Layout.fillWidth: true
+				spacing: root.spacing
+				Item { Layout.fillWidth: true; }
+			}
 		}
 	}
 
