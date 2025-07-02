@@ -17,13 +17,15 @@ ShellRoot {
 		]
 		centreItems: [
 			NiriWorkspaces {
-				// highlight:"󰮯 "
-				// notHighlight: " "
+				highlight:""
+				notHighlight: ""
 			}
 		]
 		rightItems: [
 			Tray {
 				// iconSize: 14
+				symbol: "󰁒"
+				// autoHide: false
 			},
 			Clock {
 				format: "hh:mm"
@@ -34,9 +36,6 @@ ShellRoot {
 			}
 		]
 	}
-	// Border {
-	// 	// radius: 9
-	// }
 	VolumeOSD {}
 	BrightnessOSD {}
 }
