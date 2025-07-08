@@ -4,8 +4,12 @@ import Quickshell
 import Quickshell.Widgets
 import Quickshell.Services.SystemTray
 import QtQuick
+import Qt5Compat.GraphicalEffects
+import "root:"
 
 MouseArea { id: root
+
+	property string colour: Config.colour.foreground
 
 	required property int iconSize
 	required property int menuMargin
@@ -43,5 +47,9 @@ MouseArea { id: root
 		}
 		asynchronous: true
 		anchors.fill: parent; anchors.verticalCenter: parent.verticalCenter
+		// layer.enabled: true
+		// layer.effect: ColorOverlay {
+		// 		color: root.colour
+		// 	}
 	}
 }

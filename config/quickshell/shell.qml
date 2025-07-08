@@ -1,41 +1,48 @@
+/*---------------------------------
+--- Quickshell config by andrel ---
+---------------------------------*/
+
 //@ pragma UseQApplication
+
 import QtQuick
 import Quickshell
-import "widgets"
 
 ShellRoot {
-	Bar {
-		// height: 34
-		// radius: 9
-		// padding: 10
-		// spacing: 4
-		colour: "black"
+	// editing the config starts here
+	// bars and other items can be added here
 
+	Bar {		// this is the default standard bar
+		// properties for bars and widgets can be changed from here or
+		// can be set globally from GlobalConfig.qml
+		height: 26
+		padding: 9
+		spacing: 6
+
+		// widgets are listed within one of the three columns
 		leftItems: [
 			Network {},
 			Bluetooth {}
 		]
 		centreItems: [
-			NiriWorkspaces {
-				highlight:""
-				notHighlight: ""
-			}
+			NiriWorkspaces { command: ["niri", "msg", "action", "toggle-overview"]; }
 		]
 		rightItems: [
-			Tray {
-				// iconSize: 14
-				symbol: "󰁒"
-				// autoHide: false
-			},
+			Tray {},
 			Clock {
 				format: "hh:mm"
 			},
 			Battery {
 				spacing: 1
-				fontSize: 9
+				fontSize:8
 			}
 		]
 	}
+	// rounded screen corners
+	ScreenCorners {
+		cornerRadius: 16
+		corners: ["top-left", "top-right"]
+	}
+	// volume and brightness OSDs
 	VolumeOSD {}
 	BrightnessOSD {}
 }

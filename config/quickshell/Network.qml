@@ -1,10 +1,16 @@
+/*-------------------------------
+--- Network widget by andrel ---*
+-------------------------------*/
+
 import QtQuick
 import Quickshell
 import Quickshell.Widgets
 import "root:"
-import "root:services"
+import "root:network"
 
 Item { id: root
+	property int iconSize: GlobalConfig.iconSize
+
 	implicitWidth: icon.implicitWidth
 	implicitHeight: icon.implicitHeight
 
@@ -17,6 +23,6 @@ Item { id: root
 			return netType;
 		}
 		source: "root:/icons/network/" + networkType
-		implicitSize: 16
+		implicitSize: root.iconSize
 	}
 }

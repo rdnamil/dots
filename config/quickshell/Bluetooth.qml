@@ -1,10 +1,15 @@
+/*---------------------------------
+--- Bluetooth widget by andrel ---*
+---------------------------------*/
+
 import QtQuick
 import Quickshell
 import Quickshell.Widgets
-import "root:"
-import "root:services"
+import "root:bluetooth"
 
 Item { id: root
+	property int iconSize: GlobalConfig.iconSize
+
 	implicitWidth: icon.implicitWidth
 	implicitHeight: icon.implicitHeight
 
@@ -21,6 +26,6 @@ Item { id: root
 			return bluState;
 		}
 		source: "root:/icons/bluetooth/" + bluetoothState
-		implicitSize: 16
+		implicitSize: root.iconSize
 	}
 }

@@ -2,7 +2,8 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 import Quickshell.Widgets
-import "root:services"
+import Quickshell.Wayland
+import "root:brightness"
 
 Scope { id: root
 
@@ -27,6 +28,7 @@ Scope { id: root
 		active: root.shouldShowOsd
 
 		PanelWindow {
+			WlrLayershell.layer: WlrLayer.Overlay
 			anchors.bottom: true
 			margins.bottom: screen.height / 3
 
