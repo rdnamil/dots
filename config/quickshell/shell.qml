@@ -27,9 +27,9 @@ ShellRoot {
 			NiriWorkspaces { command: ["niri", "msg", "action", "toggle-overview"]; }
 		]
 		rightItems: [
-			Tray {},
+			Tray { spacing: 1; },
 			Clock {
-				format: "hh:mm"
+				format: "dd‒hh:mm"
 			},
 			Battery {
 				spacing: 1

@@ -13,6 +13,7 @@ Item { id: root
 	readonly property Repeater items: items
 
 	property int iconSize: GlobalConfig.iconSize
+	property int spacing: GlobalConfig.spacing
 	property int menuMargin: 17
 
 	property bool autoHide: false

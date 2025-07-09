@@ -1,3 +1,7 @@
+/*----------------------------------------
+--- Niri workspaces service by andrel ---*
+----------------------------------------*/
+
 pragma Singleton
 
 import QtQuick
@@ -8,7 +12,16 @@ Singleton { id: root
 	property int numSpaces
 	property int currentSpaces
 
-	Process { id: workspaceNum
+	Process {
+		running: true
+		command: ["niri", "msg", "event-stream"]
+		stdout: SplitParser {
+			splitMarker: "Workspace"
+			onRead: getWorkspace.running = true
+		}
+	}
+
+	Process { id: getWorkspace
 		running: true
 		command: ["niri", "msg", "workspaces"]
 		stdout: StdioCollector {
@@ -17,11 +30,5 @@ Singleton { id: root
 				root.currentSpaces = parseInt((text.split('\n').find(line => line.includes('*'))).match(/\d+/)?.[0], 10);
 			}
 		}
-	}
-	Timer {
-		running: true
-		repeat: true
-		interval: 100
-		onTriggered: workspaceNum.running = true
 	}
 }
