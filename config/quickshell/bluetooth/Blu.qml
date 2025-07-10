@@ -18,10 +18,8 @@ Singleton { id: root
 		running: true
 		command: ["bluetoothctl"]
 		stdout: SplitParser {
-			onRead: {
-				blueInfo.running = true
-				blueDevices.running = true
-			}
+			onRead: blueInfo.running = true
+
 		}
 	}
 
@@ -38,13 +36,12 @@ Singleton { id: root
 	}
 
 	// get paired devices
-	Process { id: blueDevices
+	Process {
 		running: true
-		command: ["bluetoothctl", "devices", "Connected"]
+		command: ["bluetoothctl", "devices"]
 		stdout: StdioCollector {
 			onStreamFinished: {
 				const lines = text.split('\n');
-				root.devices = [];
 				for (let line of lines) {
 					const device = line.match(/^Device\s+[A-F0-9:]+\s+(.+)$/i);
 					if (device) {

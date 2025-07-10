@@ -5,6 +5,7 @@
 import QtQuick
 import Quickshell
 import Quickshell.Widgets
+import "root:"
 import "root:bluetooth"
 
 Item { id: root
@@ -17,15 +18,15 @@ Item { id: root
 		readonly property string bluetoothState: {
 			let bluState = "disabled"
 			if (Bluetooth.powered) {
-				if (!Bluetooth.devices.length) {
-					bluState = "active"
-				} else {
+				if (Bluetooth.paired) {
 					bluState = "paired"
+				} else {
+					bluState = "active"
 				}
 			}
 			return bluState;
 		}
-		source: "root:/icons/bluetooth/" + bluetoothState
+		source: "root:/bluetooth/icons/" + bluetoothState
 		implicitSize: root.iconSize
 	}
 }

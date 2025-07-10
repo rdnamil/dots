@@ -9,7 +9,6 @@ import Quickshell
 import Quickshell.Io
 
 Singleton { id: root
-	readonly property string type: netType
 	property string netType
 	property string netStrength
 
