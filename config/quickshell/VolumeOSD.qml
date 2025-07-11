@@ -93,7 +93,7 @@ Scope {
 
 						implicitHeight: 5
 						radius: 20
-						color: "#50ffffff"
+						color: "#6e738d"
 
 						Rectangle {
 							anchors {

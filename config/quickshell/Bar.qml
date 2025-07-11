@@ -1,12 +1,14 @@
 import QtQuick
 import QtQuick.Layouts
+import Qt5Compat.GraphicalEffects
 import Quickshell
 
 PanelWindow { id: root
 	property int height: 26
-	property string colour: Config.colour.background
-	property int spacing: Config.spacing
-	property int padding: Config.padding
+	property string colour: GlobalConfig.colour.background
+	property int spacing: GlobalConfig.spacing
+	property int padding: GlobalConfig.padding
+	property int cornerRadius: GlobalConfig.cornerRadius
 
 	property list<Item>  leftItems
 	property list<Item>  centreItems
@@ -46,6 +48,56 @@ PanelWindow { id: root
 				spacing: root.spacing
 				Item { Layout.fillWidth: true; }
 			}
+		}
+	}
+
+	Rectangle { id: topLeft
+		color: "black"
+
+		anchors.top: parent.top; anchors.left: parent.left;
+
+		width: cornerRadius; height: cornerRadius;
+		layer.enabled: true
+		layer.effect: OpacityMask {
+			maskSource: Rectangle {
+				width: topLeft.width
+				height: topLeft.height
+				color: "transparent"
+				visible: false
+				Rectangle {
+					anchors.verticalCenter: parent.bottom; anchors.horizontalCenter: parent.right;
+					width: cornerRadius *2
+					height: cornerRadius *2
+					radius: cornerRadius
+					color: "black"
+				}
+			}
+			invert: true
+		}
+	}
+
+	Rectangle { id: topRight
+		color: "black"
+
+		anchors.top: parent.top; anchors.right: parent.right;
+
+		width: cornerRadius; height: cornerRadius;
+		layer.enabled: true
+		layer.effect: OpacityMask {
+			maskSource: Rectangle {
+				width: topRight.width
+				height: topRight.height
+				color: "transparent"
+				visible: false
+				Rectangle {
+					anchors.verticalCenter: parent.bottom; anchors.horizontalCenter: parent.left;
+					width: cornerRadius *2
+					height: cornerRadius *2
+					radius: cornerRadius
+					color: "black"
+				}
+			}
+			invert: true
 		}
 	}
 

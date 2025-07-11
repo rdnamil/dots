@@ -21,8 +21,8 @@ PanelWindow { id: root
 	color: "transparent"
 	mask: Region {}
 
-	property int cornerRadius: 30
 	property list<string> corners: []
+	property int cornerRadius: GlobalConfig.cornerRadius
 	property string colour: GlobalConfig.colour.background
 
 	Rectangle { id: topLeft
