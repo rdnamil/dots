@@ -22,7 +22,7 @@ A minimalist bar written using quickshell, inspired by waybar. Intended to be us
 - Simple JSON-like syntax
 
 ### Screenshot
-![screenshot](resources/Screenshot_2025-07-08_15-54-58.png)
+![screenshot](resources/screenshot-1.png)
 
 Most customization and configuration can be done from just two seperate files, `shell.qml` and `GlobalConfig.qml`.  Configs are simple and easy to read to users familiar with JSON and other like languages.
 
