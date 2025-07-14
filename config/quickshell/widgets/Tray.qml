@@ -1,13 +1,13 @@
-/*----------------------------
---- Tray widget by andrel ---*
-----------------------------*/
+/*---------------------------
+--- Tray widget by andrel ---
+---------------------------*/
 
 import QtQuick
 import Quickshell
 import Quickshell.Services.SystemTray
 import Quickshell.Widgets
 import "root:"
-import "root:tray"
+import "tray"
 
 Item { id: root
 	readonly property Repeater items: items
@@ -21,7 +21,7 @@ Item { id: root
 	property int fontSize: GlobalConfig.font.size
 	property string fontFamily: GlobalConfig.font.mono
 	property string colour: GlobalConfig.colour.foreground
-	property string symbol: "<"
+	property string symbol: "<|"
 
 	implicitWidth: layout.implicitWidth
 	implicitHeight: layout.implicitHeight
@@ -63,7 +63,7 @@ Item { id: root
 			}
 
 			// tray indicator symbol
-			Text { id: indicatoy
+			Text { id: indicator
 				height: tray.height
 				verticalAlignment: Text.AlignVCenter
 				anchors.verticalCenter: parent.verticalCenter
@@ -71,13 +71,16 @@ Item { id: root
 				anchors.rightMargin: 2
 				text: root.symbol
 				color: root.colour
-				opacity: hoverArea.containsMouse ? 0 : 100
-				Behavior on opacity {
-					NumberAnimation { duration: 200; }
-				}
+				// opacity: hoverArea.containsMouse ? 0 : 100
+				// Behavior on opacity {
+				// 	NumberAnimation { duration: 200; }
+				// }
 				transform: Rotation {
 					origin.x: indicator.width /2; origin.y: indicator.height /2;
 					angle: hoverArea.containsMouse ? 180 : 0
+					Behavior on angle {
+						NumberAnimation { duration: 200; }
+					}
 				}
 				font { pointSize: root.fontSize; family: root.fontFamily; }
 			}

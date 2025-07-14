@@ -3,7 +3,7 @@
 // ---
 // File:       config.kdl
 // Created:    Jun 3, 2025
-// Modified:   Jun 24, 2025
+// Modified:   Jul 10, 2025
 // ---
 
 // autostart
@@ -11,9 +11,11 @@
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "swww-daemon"
+spawn-at-startup "ghostty" "--initial-window=false" "--quit-after-last-window-closed=false"
 spawn-at-startup "qs"
+spawn-at-startup "kanata" "-c" "/home/andrel/.config/kanata/keeb.kbd"
 spawn-at-startup "steam" "-silent" "-system-composer" "%U"
-spawn-at-startup "vesktop --start-minimized"
+//spawn-at-startup "vesktop" "--start-minimized"
 // spawn-at-startup "spotify"
 
 // environment variables
@@ -46,7 +48,7 @@ input {
    }
    // warp mouse to focus and set focus to follow mouse
    warp-mouse-to-focus
-   focus-follows-mouse max-scroll-amount="33%"
+   focus-follows-mouse max-scroll-amount="30%"
    workspace-auto-back-and-forth
 }
 
@@ -97,7 +99,7 @@ layout {
       //off
       width 2
       active-color "#8aadf4"
-      //inactive-color "#6e738d"
+      inactive-color "#6e738d"
    }
 
    // draw a border around windows
@@ -148,7 +150,7 @@ layout {
    struts {
       left 32
       right 32
-      top -13
+      top -4
       bottom -4
    }
 
@@ -198,41 +200,26 @@ window-rule {
 	match app-id="thunar" title=".*Operation.*"
 	match app-id="pinentry-gtk"
 
-	match is-floating=true
-
 	open-floating true
-
+	match is-floating=true
 	// baba-is-float true
+
 	shadow {
 		on
+		softness 30
+		spread 0
 		draw-behind-window false
-		softness 2
-		spread 3
-		offset x=15 y=15
-		color "#18192690"
+		color "#00000070"
+		offset x=0 y=0
 	}
 }
 
    // round corners on all windows
    // ---
-/-window-rule {
-   draw-border-with-background false
-   geometry-corner-radius 9
-   clip-to-geometry true
-}
-
-	// round bottom corners on Thunar dialogs
-	// ---
 window-rule {
-	match app-id="xdg-desktop-portal-gtk"
-	match app-id="^thunar" title=".*Preferences.*"
-	match app-id="^thunar" title="Custom Actions"
-	match app-id="firefox" title="File .*"
-	match app-id="firefox" title="Save .*"
-	match app-id="firefox" title="Enter name of file to save to…"
-	draw-border-with-background true
-	geometry-corner-radius 0 0 15 15
-	clip-to-geometry true
+   draw-border-with-background false
+   geometry-corner-radius 0
+   clip-to-geometry true
 }
 
    // make windows translucent
@@ -242,7 +229,7 @@ window-rule {
    exclude app-id="Spotify"
    exclude app-id="OBS Studio"
 	exclude app-id="org.kde.haruna"
-   opacity 0.95
+   opacity 0.975
 }
 
 	// have steam notifications not popup in center sccreen
@@ -251,14 +238,8 @@ window-rule {
 	match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
 	default-floating-position x=10 y=10 relative-to="bottom-right"
 	open-focused false
+	geometry-corner-radius 7
 	shadow {}
-}
-
-	// steam small mode default to %33 width
-	// ---
-window-rule {
-	match app-id="steam" title="Steam Games List"
-	default-column-width { proportion 0.33333; }
 }
 
 // layer-rules
@@ -270,27 +251,25 @@ layer-rule {
    place-within-backdrop true
 }
 
-   // draw shadow under panel
-   // ---
+	// draw shadow under launcher
+	// ---
 layer-rule {
-   match namespace="quickshell"
-   // geometry-corner-radius 9
-
-   shadow {
-      // on
-      draw-behind-window true
-      softness 3
-      spread 6
-      offset y=-9
-      color "#1119"
-   }
-
+	match namespace="launcher"
+	shadow {
+		on
+		softness 30
+		spread 0
+		draw-behind-window false
+		color "#00000070"
+		offset x=0 y=0
+	}
 }
 
 // laptop lid open/close events
 // ---
 switch-events {
-	lid-close { spawn "/home/andrel/.local/bin/lockscreen.sh"; }
+	lid-close	{ spawn "/home/andrel/.local/bin/lockscreen.sh"; }
+	lid-open		{ spawn "/home/andrel/.local/bin/lockscreen.sh"; }
 }
 
 // don't show overview on startup
@@ -343,7 +322,8 @@ binds {
 
       // close windows
       // ---
-   Mod+Backspace { close-window; }
+   Mod+Backspace	{ close-window; }
+   Mod+Q				{ close-window; }
 
       // switch focus
       // ---

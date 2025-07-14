@@ -1,4 +1,10 @@
+command = "/bin/zsh"
 theme = catppuccin-macchiato
 cursor-style = underline
-initial-command = zsh
 font-size = 11
+gtk-single-instance = true
+gtk-tabs-location = hidden
+gtk-titlebar = false
+gtk-wide-tabs = false
+gtk-adwaita = false
+confirm-close-surface = false

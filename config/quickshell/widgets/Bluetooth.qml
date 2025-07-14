@@ -1,12 +1,12 @@
-/*---------------------------------
---- Bluetooth widget by andrel ---*
----------------------------------*/
+/*--------------------------------
+--- Bluetooth widget by andrel ---
+--------------------------------*/
 
 import QtQuick
 import Quickshell
 import Quickshell.Widgets
 import "root:"
-import "root:bluetooth"
+import "bluetooth"
 
 Item { id: root
 	property int iconSize: GlobalConfig.iconSize
@@ -16,17 +16,17 @@ Item { id: root
 
 	IconImage { id: icon
 		readonly property string bluetoothState: {
-			let bluState = "disabled"
+			let bluState = "bluetooth-disabled"
 			if (Bluetooth.powered) {
 				if (Bluetooth.paired) {
-					bluState = "paired"
+					bluState = "bluetooth-paired"
 				} else {
-					bluState = "active"
+					bluState = "bluetooth-active"
 				}
 			}
 			return bluState;
 		}
-		source: "root:/bluetooth/icons/" + bluetoothState
+		source: Quickshell.iconPath(bluetoothState)
 		implicitSize: root.iconSize
 	}
 }

@@ -6,6 +6,7 @@
 
 import QtQuick
 import Quickshell
+import "widgets"
 
 ShellRoot {
 	// editing the config starts here
@@ -14,6 +15,7 @@ ShellRoot {
 	Bar {		// this is the default standard bar
 		// properties for bars and widgets can be changed from here or
 		// can be set globally from GlobalConfig.qml
+		position: "top"
 		height: 28
 		padding: 18
 		spacing: 8
@@ -25,7 +27,7 @@ ShellRoot {
 		leftItems: [
 			Network {},
 			Bluetooth {},
-			Player {}
+			PlayerMinimal {}
 		]
 
 		// center column
@@ -42,21 +44,13 @@ ShellRoot {
 		// ---
 		rightItems: [
 			Tray { spacing: 2; },
-			Clock {
-				format: "dhh:mm"
-			},
-			Battery {
-				spacing: 1
-				fontSize:8
-			}
+			Clock { dateFormat: "d"; timeFormat: "hh:mm"; },
+			Battery {}
 		]
 	}
 	// rounded screen corners
-	ScreenCorners {
-		cornerRadius: 16
-		corners: ["top-left", "top-right"]
-	}
+	ScreenCorners { corners: ["top-left", "top-right"] }
 	// volume and brightness OSDs
-	VolumeOSD {}
-	BrightnessOSD {}
+	OSDVolume {}
+	OSDBrightness {}
 }

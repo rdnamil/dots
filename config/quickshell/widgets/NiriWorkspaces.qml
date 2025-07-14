@@ -1,31 +1,28 @@
-/*---------------------------------------
---- Niri workspaces widget by andrel ---*
----------------------------------------*/
+/*--------------------------------------
+--- Niri workspaces widget by andrel ---
+--------------------------------------*/
 
 import QtQuick
 import Quickshell
 import Quickshell.Io
 import "root:"
-import "root:niriWorkspaces"
+import "niriWorkspaces"
 
 Item { id: root
 	// command to run on mouse pressed
-	property list<string> command: ["niri", "msg", "action", "focus-workspace", root.space]
+	property list<string> command: ["niri", "msg", "action", "focus-workspace", root.workspace]
 	property string colour: GlobalConfig.colour.foreground
 	property int spacing: GlobalConfig.spacing
 	property Highlight highlight: Highlight {}
-	property NotHighlight notHighlight: NotHighlight {}
-
 	component Highlight: QtObject {
 		property int width: 16
 		property int height: 8
 	}
-
+	property NotHighlight notHighlight: NotHighlight {}
 	component NotHighlight: QtObject {
 		property int width: 8
 		property int height: 8
 	}
-
 	property int workspace: 1
 
 	implicitWidth: layout.implicitWidth
@@ -57,15 +54,21 @@ Item { id: root
 
 				// pills indicator
 				Rectangle { id: pill
-					width: index === (NiriWorkspaces.currentSpaces -1) ? root.highlight.width : root.notHighlight.width
-					height: index === (NiriWorkspaces.currentSpaces -1) ? root.highlight.height : root.notHighlight.height
-					color: root.colour
+					readonly property bool isCurrentSpace: index === (NiriWorkspaces.currentSpaces -1)
+
+					width: isCurrentSpace ? root.highlight.width : root.notHighlight.width
+					height: isCurrentSpace ? root.highlight.height : root.notHighlight.height
 					radius: height/2
+					color: isCurrentSpace ? root.colour : "#6e738d"
+
 					Behavior on width {
 						NumberAnimation { duration: 150; }
 					}
 					Behavior on height {
 						NumberAnimation { duration: 150; }
+					}
+					Behavior on color {
+						ColorAnimation { duration: 150; }
 					}
 				}
 			}

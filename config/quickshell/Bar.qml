@@ -1,3 +1,7 @@
+/*------------------------------
+--- Horizontal bar by andrel ---
+------------------------------*/
+
 import QtQuick
 import QtQuick.Layouts
 import Qt5Compat.GraphicalEffects
@@ -5,6 +9,7 @@ import Quickshell
 
 PanelWindow { id: root
 	property int height: 26
+	property string position: "top"
 	property string colour: GlobalConfig.colour.background
 	property int spacing: GlobalConfig.spacing
 	property int padding: GlobalConfig.padding
@@ -14,7 +19,12 @@ PanelWindow { id: root
 	property list<Item>  centreItems
 	property list<Item>  rightItems
 
-	anchors { top: true; left: true; right: true }
+	anchors {
+		top: root.position === 'top'
+		bottom: root.position === 'bottom'
+		left: true
+		right: true
+	}
 	implicitHeight: root.height
 	color: "transparent"
 
@@ -56,7 +66,7 @@ PanelWindow { id: root
 
 		anchors.top: parent.top; anchors.left: parent.left;
 
-		width: cornerRadius; height: cornerRadius;
+		width: bar.width; height: cornerRadius;
 		layer.enabled: true
 		layer.effect: OpacityMask {
 			maskSource: Rectangle {
@@ -65,33 +75,11 @@ PanelWindow { id: root
 				color: "transparent"
 				visible: false
 				Rectangle {
-					anchors.verticalCenter: parent.bottom; anchors.horizontalCenter: parent.right;
-					width: cornerRadius *2
-					height: cornerRadius *2
-					radius: cornerRadius
-					color: "black"
-				}
-			}
-			invert: true
-		}
-	}
-
-	Rectangle { id: topRight
-		color: "black"
-
-		anchors.top: parent.top; anchors.right: parent.right;
-
-		width: cornerRadius; height: cornerRadius;
-		layer.enabled: true
-		layer.effect: OpacityMask {
-			maskSource: Rectangle {
-				width: topRight.width
-				height: topRight.height
-				color: "transparent"
-				visible: false
-				Rectangle {
-					anchors.verticalCenter: parent.bottom; anchors.horizontalCenter: parent.left;
-					width: cornerRadius *2
+					anchors {
+						verticalCenter: root.position === 'top' ? parent.bottom : parent.top
+						horizontalCenter: parent.verticalCenter
+					}
+					width: parent.width
 					height: cornerRadius *2
 					radius: cornerRadius
 					color: "black"

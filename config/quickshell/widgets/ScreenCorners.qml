@@ -1,10 +1,11 @@
-/*-------------------------------------------------
---- Rounded screen corners component by andrel ---*
--------------------------------------------------*/
+/*------------------------------------------------
+--- Rounded screen corners component by andrel ---
+------------------------------------------------*/
 
 import QtQuick
 import Qt5Compat.GraphicalEffects
 import Quickshell
+import "root:"
 
 PanelWindow { id: root
 	// a hack for Niri desktops; setting all anchors "true" has unintended effect

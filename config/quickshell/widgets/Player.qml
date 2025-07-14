@@ -1,3 +1,7 @@
+/*-----------------------------------
+--- Music player widget by andrel ---
+-----------------------------------*/
+
 import QtQuick
 import QtQuick.Layouts
 import Qt5Compat.GraphicalEffects
@@ -5,7 +9,7 @@ import Quickshell
 import Quickshell.Widgets
 import Quickshell.Services.Mpris
 import "root:"
-import "root:player"
+import "player"
 
 Item { id:root
 	readonly property list<MprisPlayer> players: Mpris.players.values
@@ -119,7 +123,7 @@ Item { id:root
 						Text { id: artist
 							text: activePlayer.trackArtist
 
-							color: colour
+							color: "#b8c0e0"
 							font { pointSize: fontSize; family: fontFamily; }
 						}
 					}
@@ -186,5 +190,3 @@ Item { id:root
 		}
 	}
 }
-
-
