@@ -48,9 +48,7 @@ ShellRoot {
 		]
 		rightItems: [
 			Tray {},
-			Clock {
-				format: "hh:mm"
-			},
+			Clock { format: "hh:mm"; },
 			Battery {}
 		]
 	}
