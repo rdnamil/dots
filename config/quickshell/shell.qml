@@ -15,37 +15,32 @@ ShellRoot {
 	Bar {		// this is the default standard bar
 		// properties for bars and widgets can be changed from here or
 		// can be set globally from GlobalConfig.qml
-		position: "top"
-		height: 28
-		padding: 18
-		spacing: 8
+		roundCorners: true
 
 		// widgets are listed within one of the three columns
 
-		// left column
-		// ---
+			// left column
+			// ---
 		leftItems: [
 			Network {},
 			Bluetooth {},
 			PlayerMinimal {}
 		]
 
-		// center column
-		// ---
+			// center column
+			// ---
 		centreItems: [
-			NiriWorkspaces {
-				command: ["niri", "msg", "action", "toggle-overview"]
-				highlight { width: 12; height: 10; }
-				notHighlight { width: 6; height: 6; }
-			}
+			NiriWorkspaces { command: ["niri", "msg", "action", "toggle-overview"]; }
 		]
 
-		// right column
-		// ---
+			// right column
+			// ---
 		rightItems: [
-			Tray { spacing: 2; },
+			// Tray { spacing: 1; },
+			Tray { menuMargins: 20; },
 			Clock { dateFormat: "d"; timeFormat: "hh:mm"; },
 			Battery {}
+			// QuickCenter {}
 		]
 	}
 	// rounded screen corners

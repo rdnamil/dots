@@ -9,21 +9,25 @@ Singleton { id: root
 
 	readonly property int padding: 10
 	readonly property int spacing: 6
+	readonly property int cornerRadius: 8
+
+	readonly property int barHeight: 28
+
 	readonly property int iconSize: 16
-	readonly property int cornerRadius: 16
 
 	component Colour: QtObject {
 		readonly property string foreground: "#cad3f5"
-		readonly property string background: "#fa1e2030"
-		// readonly property string accent:
-		// readonly property string red:
-		// readonly property string orange:
-		// readonly property string yellow:
-		// readonly property string green:
-		// readonly property string blue:
-		// readonly property string purple:
-		// readonly property string aqua:
-		// readonly property string grey:
+		readonly property string midground: "#b8c0e0"
+		readonly property string background: "#fa181926"
+		readonly property string accent: "#8aadf4"
+		readonly property string red: "#ed8796"
+		readonly property string orange: "#f5a97f"
+		readonly property string yellow: "#eed49f"
+		readonly property string green: "#a6da95"
+		readonly property string blue: "#8aadf4"
+		readonly property string purple: "#c6a0f6"
+		readonly property string aqua: "#8bd5ca"
+		readonly property string grey: "#363a4f"
 	}
 
 	component Font: QtObject {
@@ -31,6 +35,6 @@ Singleton { id: root
 		readonly property string mono: "JetBrains Mono Nerd Font"
 		readonly property int size: 10
 		readonly property int small: 8
-		readonly property int semibold: 500
+		readonly property int semibold: 600
 	}
 }

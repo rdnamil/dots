@@ -12,7 +12,6 @@ import "player"
 
 Item { id:root
 	readonly property list<MprisPlayer> players: Mpris.players.values
-	// readonly property MprisPlayer activePlayer: players.find(p => p.identity === "Spotify") ?? players[0] ?? null
 	readonly property MprisPlayer activePlayer: {
 		for (var i = 0; i < players.length; i++) {
 			if (players[i].isPlaying && players[i].identity === "Spotify")
@@ -31,6 +30,8 @@ Item { id:root
 	property int iconSize: GlobalConfig.iconSize
 	property int padding: GlobalConfig.spacing
 	property string colour: GlobalConfig.colour.foreground
+	property string colourMid: GlobalConfig.colour.midground
+	property string colourBar: GlobalConfig.colour.accent
 	property string fontFamily: GlobalConfig.font.sans
 	property int fontSize: GlobalConfig.font.small
 	property int fontWeight: GlobalConfig.font.semibold
@@ -49,6 +50,56 @@ Item { id:root
 	FrameAnimation {
 		running: activePlayer.playbackState == MprisPlaybackState.Playing
 		onTriggered: activePlayer.positionChanged()
+	}
+
+	// blurred album art
+	Rectangle { id: artHMask
+		width: layout.width
+		height: 32
+		color: "transparent"
+		radius: 4
+		layer.enabled: true
+		layer.effect: OpacityMask {
+			maskSource: Rectangle {
+				width: artHMask.width
+				height: artHMask.height
+				gradient: Gradient {
+					orientation: Gradient.Horizontal
+					GradientStop { position: 0.0; color: "#00000000" }
+					GradientStop { position: 0.5; color: "#90000000" }
+					GradientStop { position: 1.0; color: "#00000000" }
+				}
+			}
+		}
+		clip: true
+
+		Rectangle { id: artVMask
+			anchors.fill: parent
+			color: "transparent"
+			radius: 4
+			layer.enabled: true
+			layer.effect: OpacityMask {
+				maskSource: Rectangle {
+					width: artVMask.width
+					height: artVMask.height
+					gradient: Gradient {
+						orientation: Gradient.Vertical
+						GradientStop { position: 0.0; color: "#00000000" }
+						GradientStop { position: 0.5; color: "#ff000000" }
+						GradientStop { position: 1.0; color: "#00000000" }
+					}
+				}
+			}
+			clip: true
+
+			IconImage { id: trackAlbumArt
+				anchors.centerIn: parent
+				implicitSize: layout.width
+				source: activePlayer.trackArtUrl
+				layer.enabled: true
+				layer.effect: FastBlur { radius: 12; }
+			}
+		}
 	}
 
 	Row { id: layout
@@ -77,58 +128,6 @@ Item { id:root
 		Item { id: currentTrack
 			width: (root.trackLength > trackInfo.width) ? trackInfo.width : root.trackLength
 			height: artHMask.height
-
-			// blurred album art
-			Rectangle { id: artHMask
-				width: currentTrack.width
-				height: 32
-				color: "transparent"
-				radius: 4
-				layer.enabled: true
-				layer.effect: OpacityMask {
-					maskSource: Rectangle {
-						width: artHMask.width
-						height: artHMask.height
-						gradient: Gradient {
-							orientation: Gradient.Horizontal
-							GradientStop { position: 0.0; color: "#00000000" }
-							GradientStop { position: 0.5; color: "#90000000" }
-							GradientStop { position: 1.0; color: "#00000000" }
-						}
-					}
-				}
-				clip: true
-
-				Rectangle { id: artVMask
-					anchors.fill: parent
-					color: "transparent"
-					radius: 4
-					layer.enabled: true
-					layer.effect: OpacityMask {
-						maskSource: Rectangle {
-							width: artVMask.width
-							height: artVMask.height
-							gradient: Gradient {
-								orientation: Gradient.Vertical
-								GradientStop { position: 0.0; color: "#00000000" }
-								GradientStop { position: 0.5; color: "#ff000000" }
-								GradientStop { position: 1.0; color: "#00000000" }
-							}
-						}
-					}
-					clip: true
-
-					IconImage { id: trackAlbumArt
-						anchors.centerIn: parent
-						implicitSize: currentTrack.width
-						source: activePlayer.trackArtUrl
-						layer.enabled: true
-						layer.effect: FastBlur {
-							radius: 12
-						}
-					}
-				}
-			}
 
 			// clip the track name and artist to user-defined length
 			Rectangle { id: infoMask
@@ -165,7 +164,7 @@ Item { id:root
 					}
 					Text { id: artist
 						text: activePlayer.trackArtist
-						color: "#b8c0e0"
+						color: colourMid
 						font { pointSize: fontSize; family: fontFamily; }
 					}
 					Item { id: spacer; width: 6; height: track.height; }
@@ -207,7 +206,6 @@ Item { id:root
 			height: root.scrollbarHeight
 			radius: height /2
 			border { color: "#60000000"; width: 1; }
-			// color: "#6e738d"
 			gradient: Gradient {
 				orientation: Gradient.Vertical
 				GradientStop { position: 0.0; color: "#60000000" }
@@ -223,8 +221,8 @@ Item { id:root
 				// color: root.colour
 				gradient: Gradient {
 					orientation: Gradient.Vertical
-					GradientStop { position: 0.0; color: "#cad3f5" }
-					GradientStop { position: 0.5; color: "#8aadf4" }
+					GradientStop { position: 0.0; color: colour }
+					GradientStop { position: 0.5; color: colourBar }
 				}
 			}
 		}

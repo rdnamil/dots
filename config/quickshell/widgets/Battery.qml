@@ -10,7 +10,7 @@ import Quickshell.Services.UPower
 import "root:"
 
 MouseArea { id: root
-	// readonly property real percentage: 1.0
+	// readonly property real percentage: 0
 	readonly property real percentage: UPower.displayDevice.percentage
 	readonly property bool isCharging: !UPower.onBattery
 
@@ -28,9 +28,9 @@ MouseArea { id: root
 		Text { id: percentage
 			height: battery.height
 			verticalAlignment: Text.AlignVCenter
-			text: root.percentage *100 + "%"
+			text: parseInt(root.percentage *100) + "%"
 			font.family: fontFamily
-			font.pointSize: 9
+			font.pointSize: 8
 			color: colour
 		}
 
@@ -43,7 +43,8 @@ MouseArea { id: root
 			Text {
 				anchors.centerIn: battShell
 				text: "󱐋"
-				color: "#60cad3f5"
+				color: colour
+				opacity: 0.7
 				font.pointSize: 9
 				visible: root.isCharging
 			}
@@ -54,11 +55,11 @@ MouseArea { id: root
 				readonly property string batteryHealth: {
 					let health = null
 					if (root.percentage <= 0.01) {
-						health = "#ed8796"
-					} else if (root.percentage <= 0.25) {
-						health = "#f5a97f"
+						health = GlobalConfig.colour.red
+					} else if (root.percentage <= 0.33) {
+						health = GlobalConfig.colour.orange
 					} else {
-						health = "#a6da95"
+						health = GlobalConfig.colour.green
 					}
 					return health;
 				}
@@ -94,7 +95,8 @@ MouseArea { id: root
 					Text { id: test
 						anchors.centerIn: parent
 						text: "󱐋"
-						color: "#a0000000"
+						color: "black"
+						opacity: 0.6
 						font.pointSize: 9
 						visible: root.isCharging
 					}
@@ -109,7 +111,7 @@ MouseArea { id: root
 				color: "transparent"
 				gradient: Gradient {
 					orientation: Gradient.Vertical
-					GradientStop { position: 0.0; color: "#a0ffffff"; }
+					GradientStop { position: 0.0; color: "#60ffffff"; }
 					GradientStop { position: 0.5; color: "#00000000"; }
 					GradientStop { position: 1.0; color: "#30000000"; }
 				}

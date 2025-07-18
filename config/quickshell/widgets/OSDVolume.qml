@@ -12,6 +12,7 @@ Scope { id: root
 	readonly property real volume: Pipewire.defaultAudioSink?.audio.volume
 
 	property bool shouldShowOsd: false
+	property string colour: GlobalConfig.colour.accent
 
 	PwObjectTracker {
 		objects: [ Pipewire.defaultAudioSink ]
@@ -42,7 +43,7 @@ Scope { id: root
 		PanelWindow {
 			WlrLayershell.layer: WlrLayer.Overlay
 			anchors.bottom: true
-			margins.bottom: screen.height / 3
+			margins.bottom: screen.height *(5/12)
 			implicitWidth: 200
 			implicitHeight: 30
 			color: "transparent"
@@ -98,8 +99,8 @@ Scope { id: root
 							radius: height /2
 							gradient: Gradient {
 								orientation: Gradient.Vertical
-								GradientStop { position: 0.0; color: "#cad3f5" }
-								GradientStop { position: 0.5; color: "#8aadf4" }
+								GradientStop { position: 0.0; color: GlobalConfig.colour.foreground }
+								GradientStop { position: 0.5; color: colour }
 							}
 						}
 					}

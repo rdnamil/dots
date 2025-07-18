@@ -8,12 +8,13 @@ import Qt5Compat.GraphicalEffects
 import Quickshell
 
 PanelWindow { id: root
-	property int height: 26
 	property string position: "top"
-	property string colour: GlobalConfig.colour.background
+	property bool roundCorners: false
+	property int height: GlobalConfig.barHeight
 	property int spacing: GlobalConfig.spacing
 	property int padding: GlobalConfig.padding
 	property int cornerRadius: GlobalConfig.cornerRadius
+	property string colour: GlobalConfig.colour.background
 
 	property list<Item>  leftItems
 	property list<Item>  centreItems
@@ -29,13 +30,19 @@ PanelWindow { id: root
 	color: "transparent"
 
 	Item { id: bar
-		anchors { horizontalCenter: parent.horizontalCenter; bottom: parent.bottom; }
+		anchors { horizontalCenter: parent.horizontalCenter; top: top.bottom; }
 		width: root.width
 		height: root.height
 
 		Rectangle { id: background
 			anchors.fill: parent
 			color: root.colour
+			layer.enabled: true
+			layer.effect: DropShadow {
+				radius: 8.0
+				samples: 17
+				color: "#ff000000"
+			}
 		}
 
 		RowLayout {
@@ -43,25 +50,23 @@ PanelWindow { id: root
 
 			RowLayout { id: leftRow
 				anchors.verticalCenter: parent.verticalCenter
-				Layout.fillWidth: true
 				spacing: root.spacing
 			}
 			RowLayout { id: centreRow
 				anchors { horizontalCenter: parent.horizontalCenter; verticalCenter: parent.verticalCenter; }
-				Layout.fillWidth: true
 				spacing: root.spacing
 
 			}
 			RowLayout { id: rightRow
 				anchors.verticalCenter: parent.verticalCenter;
-				Layout.fillWidth: true
 				spacing: root.spacing
 				Item { Layout.fillWidth: true; }
 			}
 		}
 	}
 
-	Rectangle { id: topLeft
+	Rectangle { id: roundedCornersTop
+		visible: roundCorners
 		color: "black"
 
 		anchors.top: parent.top; anchors.left: parent.left;
@@ -70,8 +75,8 @@ PanelWindow { id: root
 		layer.enabled: true
 		layer.effect: OpacityMask {
 			maskSource: Rectangle {
-				width: topLeft.width
-				height: topLeft.height
+				width: roundedCornersTop.width
+				height: roundedCornersTop.height
 				color: "transparent"
 				visible: false
 				Rectangle {

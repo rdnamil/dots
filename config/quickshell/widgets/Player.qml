@@ -13,7 +13,6 @@ import "player"
 
 Item { id:root
 	readonly property list<MprisPlayer> players: Mpris.players.values
-	// readonly property MprisPlayer activePlayer: players.find(p => p.identity === "Spotify") ?? players[0] ?? null
 	readonly property MprisPlayer activePlayer: {
 		for (var i = 0; i < players.length; i++) {
 			if (players[i].isPlaying && players[i].identity === "Spotify")
@@ -34,6 +33,7 @@ Item { id:root
 	property int iconSize: GlobalConfig.iconSize
 	property int padding: GlobalConfig.spacing
 	property string colour: GlobalConfig.colour.foreground
+	property string barColour: GlobalConfig.colour.accent
 	property string fontFamily: GlobalConfig.font.sans
 	property int fontSize: GlobalConfig.font.small
 	property int fontWeight: GlobalConfig.font.semibold

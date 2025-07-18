@@ -48,7 +48,7 @@ Item { id: root
 				} else if (root.networkStrength === 75) {
 					symbol = Quickshell.iconPath("network-wireless-signal-good")
 				} else if (root.networkStrength === 100) {
-					symbol = Quickshell.iconPath("network-wireless-signal-excelent")
+					symbol = Quickshell.iconPath("network-wireless-signal-excellent")
 				}
 			}
 			return symbol;

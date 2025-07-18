@@ -3,6 +3,7 @@
 ------------------------------------------------*/
 
 import QtQuick
+import QtQuick.Effects
 import Qt5Compat.GraphicalEffects
 import Quickshell
 import "root:"
@@ -16,19 +17,20 @@ PanelWindow { id: root
 		// bottom: true
 	}
 
-	implicitWidth: 9999
-	implicitHeight: 9999
+	implicitWidth: screen.width
+	implicitHeight: screen.height
 
 	color: "transparent"
 	mask: Region {}
 
 	property list<string> corners: []
 	property int cornerRadius: GlobalConfig.cornerRadius
+	property int shadowMargin: GlobalConfig.padding
 	property string colour: GlobalConfig.colour.background
 
 	Rectangle { id: topLeft
 
-		visible: corners.includes("top-left")
+		visible: corners.includes("top-right")
 		color: colour
 
 		anchors.top: parent.top; anchors.left: parent.left;

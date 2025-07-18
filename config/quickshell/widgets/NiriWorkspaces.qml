@@ -11,17 +11,22 @@ import "niriWorkspaces"
 Item { id: root
 	// command to run on mouse pressed
 	property list<string> command: ["niri", "msg", "action", "focus-workspace", root.workspace]
-	property string colour: GlobalConfig.colour.foreground
 	property int spacing: GlobalConfig.spacing
-	property Highlight highlight: Highlight {}
-	component Highlight: QtObject {
-		property int width: 16
-		property int height: 8
+	property string activeColour: GlobalConfig.colour.foreground
+	property string inactiveColour: GlobalConfig.colour.grey
+	property Rectangle activePill: Rectangle {
+		width: 12
+		height: 8
+		radius: height /2
+		color: activeColour
+		border { width: 0; color: activeColour; }
 	}
-	property NotHighlight notHighlight: NotHighlight {}
-	component NotHighlight: QtObject {
-		property int width: 8
-		property int height: 8
+	property Rectangle inactivePill: Rectangle {
+		width: 8
+		height: 8
+		radius: height /2
+		color: inactiveColour
+		border { width: 0; color: inactiveColour; }
 	}
 	property int workspace: 1
 
@@ -52,24 +57,24 @@ Item { id: root
 					focusSpace.running = true
 				}
 
-				// pills indicator
+				// pill
 				Rectangle { id: pill
 					readonly property bool isCurrentSpace: index === (NiriWorkspaces.currentSpaces -1)
 
-					width: isCurrentSpace ? root.highlight.width : root.notHighlight.width
-					height: isCurrentSpace ? root.highlight.height : root.notHighlight.height
-					radius: height/2
-					color: isCurrentSpace ? root.colour : "#6e738d"
-
-					Behavior on width {
-						NumberAnimation { duration: 150; }
+					width: isCurrentSpace ? root.activePill.width : root.inactivePill.width
+					height: isCurrentSpace ? root.activePill.height : root.inactivePill.height
+					radius: isCurrentSpace ? root.activePill.radius : root.inactivePill.radius
+					color: isCurrentSpace ? root.activePill.color : root.inactivePill.color
+					border {
+						width: isCurrentSpace ? root.activePill.border.width : root.inactivePill.border.width
+						color: isCurrentSpace ? root.activePill.border.color : root.inactivePill.border.color
+						Behavior on width { NumberAnimation { duration: 150; }}
+						Behavior on color { ColorAnimation { duration: 150; }}
 					}
-					Behavior on height {
-						NumberAnimation { duration: 150; }
-					}
-					Behavior on color {
-						ColorAnimation { duration: 150; }
-					}
+					Behavior on width { NumberAnimation { duration: 150; }}
+					Behavior on height { NumberAnimation { duration: 150; }}
+					Behavior on radius { NumberAnimation { duration: 150; }}
+					Behavior on color { ColorAnimation { duration: 150; }}
 				}
 			}
 		}

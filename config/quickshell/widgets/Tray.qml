@@ -10,79 +10,46 @@ import "root:"
 import "tray"
 
 Item { id: root
-	readonly property Repeater items: items
-
+	property var openMenu: null
 	property int iconSize: GlobalConfig.iconSize
-	property int spacing: GlobalConfig.spacing
-	property int menuMargin: 17
+	property int cornerRadius: GlobalConfig.cornerRadius
+	property int menuSpacing: GlobalConfig.spacing
+	property int menuMargins: GlobalConfig.padding
+	property string colourMenu: GlobalConfig.colour.background
+	property string colourText: GlobalConfig.colour.foreground
+	property string colourAccent: GlobalConfig.colour.accent
 
-	property bool autoHide: false
-	property string background: GlobalConfig.colour.background
-	property int fontSize: GlobalConfig.font.size
-	property string fontFamily: GlobalConfig.font.mono
-	property string colour: GlobalConfig.colour.foreground
-	property string symbol: "<|"
+	implicitWidth: layout.width
+	implicitHeight: layout.height
 
-	implicitWidth: layout.implicitWidth
-	implicitHeight: layout.implicitHeight
+	Row { id: layout
+		spacing: 2
 
-	// draw tray and tray items
-	Rectangle { id: tray
-		width: parent.width
-		height: parent.height
-		color: "transparent"
+		Repeater { id: trayItems
+			model: SystemTray.items
 
-		MouseArea { id: hoverArea
-			anchors.fill: parent
-			hoverEnabled: true
-		}
+			TrayItem {
+				iconSize: root.iconSize
+				cornerRadius: root.cornerRadius
+				menuSpacing: root.menuSpacing
+				menuMargins: root.menuMargins
+				colourMenu: root.colourMenu
+				colourText: root.colourText
+				colourAccent: root.colourAccent
 
-		Row { id: layout
-			spacing: root.spacing
-
-			Repeater { id: items
-				model: SystemTray.items
-
-				TrayItem {
-					iconSize: root.iconSize
-					menuMargin: root.menuMargin
-					colour: root.colour
+				// close any other opened menus
+				onMenuOpened: (menuInstance) => {
+					if (root.openMenu && root.openMenu !== menuInstance) {
+						root.openMenu.close()
+					}
+					root.openMenu = menuInstance
 				}
-			}
-		}
 
-		// draw rectangle over tray to hide items; hover to reveal
-		Rectangle { id: hideContent
-			visible: root.autoHide
-			width: hoverArea.containsMouse ? 0 : tray.width
-			height: tray.height
-			topRightRadius: root.iconSize/2; bottomRightRadius: root.iconSize/2;
-			color: root.background
-			Behavior on width {
-				NumberAnimation { duration: 200; easing.type: Easing.InOutQuad }
-			}
-
-			// tray indicator symbol
-			Text { id: indicator
-				height: tray.height
-				verticalAlignment: Text.AlignVCenter
-				anchors.verticalCenter: parent.verticalCenter
-				anchors.right: parent.right
-				anchors.rightMargin: 2
-				text: root.symbol
-				color: root.colour
-				// opacity: hoverArea.containsMouse ? 0 : 100
-				// Behavior on opacity {
-				// 	NumberAnimation { duration: 200; }
-				// }
-				transform: Rotation {
-					origin.x: indicator.width /2; origin.y: indicator.height /2;
-					angle: hoverArea.containsMouse ? 180 : 0
-					Behavior on angle {
-						NumberAnimation { duration: 200; }
+				onMenuClosed: (menuInstance) => {
+					if (root.openMenu === menuInstance) {
+						root.openMenu = null
 					}
 				}
-				font { pointSize: root.fontSize; family: root.fontFamily; }
 			}
 		}
 	}
