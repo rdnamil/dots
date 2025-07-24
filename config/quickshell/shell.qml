@@ -36,10 +36,9 @@ ShellRoot {
 			// right column
 			// ---
 		rightItems: [
-			// Tray { spacing: 1; },
-			Tray { menuMargins: 20; },
+			Tray {},
 			Clock { dateFormat: "d"; timeFormat: "hh:mm"; },
-			Battery {}
+			Battery { showPercentage: false; }
 			// QuickCenter {}
 		]
 	}

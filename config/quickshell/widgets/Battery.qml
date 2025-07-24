@@ -14,6 +14,7 @@ MouseArea { id: root
 	readonly property real percentage: UPower.displayDevice.percentage
 	readonly property bool isCharging: !UPower.onBattery
 
+	property bool showPercentage: true
 	property string colour: GlobalConfig.colour.foreground
 	property string fontFamily: GlobalConfig.font.sans
 	property int fontSize: GlobalConfig.font.size
@@ -26,6 +27,7 @@ MouseArea { id: root
 
 		// show battery percentage
 		Text { id: percentage
+			visible: showPercentage
 			height: battery.height
 			verticalAlignment: Text.AlignVCenter
 			text: parseInt(root.percentage *100) + "%"
@@ -111,9 +113,9 @@ MouseArea { id: root
 				color: "transparent"
 				gradient: Gradient {
 					orientation: Gradient.Vertical
-					GradientStop { position: 0.0; color: "#60ffffff"; }
+					GradientStop { position: 0.0; color: "#80ffffff"; }
 					GradientStop { position: 0.5; color: "#00000000"; }
-					GradientStop { position: 1.0; color: "#30000000"; }
+					GradientStop { position: 1.0; color: "#40000000"; }
 				}
 				radius: 3
 				border { color: colour; width: 1; }

@@ -8,7 +8,6 @@ import Quickshell
 import Quickshell.Widgets
 import Quickshell.Services.Mpris
 import "root:"
-import "player"
 
 Item { id:root
 	readonly property list<MprisPlayer> players: Mpris.players.values
@@ -212,17 +211,23 @@ Item { id:root
 				GradientStop { position: 1.0; color: "#30000000" }
 			}
 
-			Rectangle {
+			Rectangle { id: scrollElapsed
 				property int elapsed: scrollBar.width *(activePlayer.position/activePlayer.length);
 
 				width: elapsed < (height) ? height : elapsed
 				height: scrollBar.height
 				radius: height /2
-				// color: root.colour
+				color: root.colourBar
+			}
+
+			Rectangle {
+				anchors.fill: scrollElapsed
+				radius: height /2
 				gradient: Gradient {
 					orientation: Gradient.Vertical
-					GradientStop { position: 0.0; color: colour }
-					GradientStop { position: 0.5; color: colourBar }
+					GradientStop { position: 0.0; color: "#80ffffff" }
+					GradientStop { position: 0.5; color: "#00000000" }
+					GradientStop { position: 1.0; color: "#40000000" }
 				}
 			}
 		}

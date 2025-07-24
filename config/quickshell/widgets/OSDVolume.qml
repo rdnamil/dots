@@ -91,16 +91,23 @@ Scope { id: root
 							GradientStop { position: 1.0; color: "#30000000" }
 						}
 
-						Rectangle {
+						Rectangle { id: scrollElapsed
 							readonly property int vol: scrollBar.width *root.volume;
 
 							width: vol < (height) ? 0 : vol
 							height: scrollBar.height
 							radius: height /2
+							color: root.colour
+						}
+
+						Rectangle {
+							anchors.fill: scrollElapsed
+							radius: height /2
 							gradient: Gradient {
 								orientation: Gradient.Vertical
-								GradientStop { position: 0.0; color: GlobalConfig.colour.foreground }
-								GradientStop { position: 0.5; color: colour }
+								GradientStop { position: 0.0; color: "#80ffffff" }
+								GradientStop { position: 0.5; color: "#00000000" }
+								GradientStop { position: 1.0; color: "#40000000" }
 							}
 						}
 					}

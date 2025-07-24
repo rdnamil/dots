@@ -30,19 +30,13 @@ PanelWindow { id: root
 	color: "transparent"
 
 	Item { id: bar
-		anchors { horizontalCenter: parent.horizontalCenter; top: top.bottom; }
+		// anchors { horizontalCenter: parent.horizontalCenter; top: top.bottom; }
 		width: root.width
 		height: root.height
 
 		Rectangle { id: background
 			anchors.fill: parent
 			color: root.colour
-			layer.enabled: true
-			layer.effect: DropShadow {
-				radius: 8.0
-				samples: 17
-				color: "#ff000000"
-			}
 		}
 
 		RowLayout {
@@ -52,11 +46,12 @@ PanelWindow { id: root
 				anchors.verticalCenter: parent.verticalCenter
 				spacing: root.spacing
 			}
+
 			RowLayout { id: centreRow
 				anchors { horizontalCenter: parent.horizontalCenter; verticalCenter: parent.verticalCenter; }
 				spacing: root.spacing
-
 			}
+
 			RowLayout { id: rightRow
 				anchors.verticalCenter: parent.verticalCenter;
 				spacing: root.spacing

@@ -33,6 +33,8 @@ Item { id: root
 	implicitWidth: layout.implicitWidth
 	implicitHeight: layout.implicitHeight
 
+	Behavior on implicitWidth { NumberAnimation { duration: 150; }}
+
 	Process { id: focusSpace
 		running: false
 		command: root.command
