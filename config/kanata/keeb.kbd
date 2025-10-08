@@ -1,0 +1,45 @@
+;; ---
+;; Author:    andrel
+;; ---
+;; File: 		keeb.kbd
+;; Created:		June 24, 2025
+;; Modified:	June 24, 2025
+;; Version:		v0.1.0
+;; ---
+
+;; define the keyboard layout
+;; ---
+(defsrc
+	`	1	2	3	4	5	6	7	8	9	0	-	=	bspc
+	tab	q	w	e	r	t	y	u	i	o	p	[	]	\
+	caps		a	s	d	f	g	h	j	k	l	;	'	ret
+	lsft		z	x	c	v	b	n	m	,	.	/	up	rsft
+	lctl	lmet	lalt	spc	ralt	rctl	left	down	right
+
+	;; template for other layers
+	;; ---
+	#|
+	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+	_		_	_	_	_	_	_	_	_	_	_	_	_
+	_		_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_		_		_	_		_	_	_
+	|#
+)
+
+;; define the base layer to be used on startup
+;; ---
+(deflayer base
+	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+	@cap	_	_	_	_	_	_	_	_	_	_	_	_
+	_		_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_		_		_	_		_	_	_
+)
+
+(defalias
+	;; have caps lock shift the next key-press on single tap and toggle
+	;; caps-lock on double-tap
+	;; ---
+	cap (tap-dance 200 ((one-shot 3000 lshft) caps))
+)

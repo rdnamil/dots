@@ -1,0 +1,16 @@
+# andrel's swayidle config
+# ---
+# File:       config
+# Created:    Sep 16, 2025
+# Modified:   Sep 18, 2025
+# ---
+
+# dim screen after 4min55s
+timeout 295 'idle-brightness 0' resume 'idle-brightness'
+
+# turn off screen and lock after 5min
+timeout 300 'niri msg action power-off-monitors && sleep 0.2 && /home/andrel/.local/bin/lockscreen.sh' resume 'niri msg action power-on-monitors'
+
+# lock screen before suspend
+before-sleep '/home/andrel/.local/bin/lockscreen.sh'
+after-resume 'qs ipc call weather update'

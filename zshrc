@@ -32,7 +32,6 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 PATH=$HOME/.local/bin:$PATH
 
 # Alias
-alias yogurt='yay -S'
 alias ls='ls --color -g'
 alias tree='tree -C -L 1'
 alias py=python
@@ -42,3 +41,5 @@ alias trash='gio trash'
 alias dumpsterdive='gio trash --list'
 alias garbageday='gio trash --empty'
 alias recycle='gio trash --restore'
+alias set-brightness='ddcutil -d 1 setvcp x10'
+alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'

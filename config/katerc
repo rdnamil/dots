@@ -1,0 +1,409 @@
+[ColorPicker]
+HexLengths=3,6,9,12
+NamedColors=false
+PreviewAfterColor=true
+
+[ColoredBrackets]
+color1=#1275ef
+color2=#f83c1f
+color3=#9dba1e
+color4=#e219e2
+color5=#37d21c
+
+[General]
+Allow Tab Scrolling=true
+Auto Hide Tabs=false
+Close After Last=false
+Close documents with window=true
+Cycle To First Tab=true
+Days Meta Infos=30
+Diagnostics Limit=12000
+Diff Show Style=0
+Elide Tab Text=false
+Enable Context ToolView=false
+Expand Tabs=false
+Icon size for left and right sidebar buttons=32
+Modified Notification=false
+Mouse back button action=0
+Mouse forward button action=0
+Open New Tab To The Right Of Current=false
+Output History Limit=100
+Output With Date=false
+Quickopen Filter Mode=0
+Quickopen List Mode=true
+Recent File List Entry Count=10
+Restore Window Configuration=true
+SDI Mode=false
+Save Meta Infos=true
+Show Full Path in Title=false
+Show Menu Bar=true
+Show Status Bar=true
+Show Symbol In Navigation Bar=true
+Show Tab Bar=false
+Show Tabs Close Button=true
+Show Url Nav Bar=true
+Show output view for message type=1
+Show text for left and right sidebar=true
+Show welcome view for new window=false
+Startup Session=manual
+Stash new unsaved files=true
+Stash unsaved file changes=false
+Sync section size with tab positions=false
+Tab Double Click New Document=true
+Tab Middle Click Close Document=true
+Tabbar Tab Limit=0
+
+[KDE]
+widgetStyle=qt6ct-style
+
+[KTextEditor Document]
+Allow End of Line Detection=true
+Auto Detect Indent=false
+Auto Reload If State Is In Version Control=true
+Auto Save=false
+Auto Save Interval=0
+Auto Save On Focus Out=false
+BOM=false
+Backup Local=false
+Backup Prefix=
+Backup Remote=false
+Backup Suffix=~
+Camel Cursor=true
+Encoding=UTF-8
+End of Line=0
+Indent On Backspace=true
+Indent On Tab=true
+Indent On Text Paste=true
+Indentation Mode=normal
+Indentation Width=3
+Keep Extra Spaces=false
+Line Length Limit=10000
+Newline at End of File=true
+On-The-Fly Spellcheck=false
+Overwrite Mode=false
+PageUp/PageDown Moves Cursor=false
+Remove Spaces=1
+ReplaceTabsDyn=false
+Show Spaces=1
+Show Tabs=true
+Smart Home=true
+Swap Directory=
+Swap File Mode=1
+Swap Sync Interval=15
+Tab Handling=2
+Tab Width=3
+Trailing Marker Size=1
+Use Editor Config=true
+Word Wrap=false
+Word Wrap Column=80
+
+[KTextEditor Renderer]
+Animate Bracket Matching=false
+Auto Color Theme Selection=false
+Color Theme=Catppuccin Macchiato - new
+Line Height Multiplier=1
+Show Indentation Lines=true
+Show Whole Bracket Expression=false
+Text Font=JetBrainsMono Nerd Font,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+Text Font Features=
+Word Wrap Marker=false
+
+[KTextEditor View]
+Allow Mark Menu=true
+Auto Brackets=true
+Auto Center Lines=0
+Auto Completion=true
+Auto Completion Preselect First Entry=true
+Backspace Remove Composed Characters=false
+Bookmark Menu Sorting=0
+Bracket Match Preview=false
+Chars To Enclose Selection=<>(){}[]'"
+Cycle Through Bookmarks=true
+Default Mark Type=2
+Dynamic Word Wrap=true
+Dynamic Word Wrap Align Indent=80
+Dynamic Word Wrap At Static Marker=false
+Dynamic Word Wrap Indicators=1
+Dynamic Wrap not at word boundaries=false
+Enable Accessibility=true
+Enable Tab completion=true
+Enter To Insert Completion=true
+Fold First Line=false
+Folding Bar=true
+Folding Preview=true
+Icon Bar=true
+Input Mode=0
+Keyword Completion=true
+Line Modification=true
+Line Numbers=true
+Max Clipboard History Entries=20
+Maximum Search History Size=100
+Mouse Paste At Cursor Position=false
+Multiple Cursor Modifier=134217728
+Persistent Selection=false
+Scroll Bar Marks=true
+Scroll Bar Mini Map All=true
+Scroll Bar Mini Map Width=60
+Scroll Bar MiniMap=true
+Scroll Bar Preview=true
+Scroll Past End=false
+Search/Replace Flags=141
+Shoe Line Ending Type in Statusbar=false
+Show Documentation With Completion=true
+Show File Encoding=true
+Show Folding Icons On Hover Only=false
+Show Line Count=true
+Show Scrollbars=1
+Show Statusbar Dictionary=true
+Show Statusbar Highlighting Mode=true
+Show Statusbar Input Mode=true
+Show Statusbar Line Column=true
+Show Statusbar Tab Settings=true
+Show Word Count=false
+Smart Copy Cut=true
+Statusbar Line Column Compact Mode=true
+Text Drag And Drop=true
+User Sets Of Chars To Enclose Selection=
+Vi Input Mode Steal Keys=false
+Vi Relative Line Numbers=false
+Word Completion=true
+Word Completion Minimal Word Length=3
+Word Completion Remove Tail=true
+
+[Konsole]
+AutoSyncronizeMode=0
+KonsoleEscKeyBehaviour=true
+KonsoleEscKeyExceptions=vi,vim,nvim,git
+RemoveExtension=false
+RunPrefix=
+SetEditor=false
+
+[MainWindow]
+1920x1080 screen: Height=1022
+1920x1080 screen: Width=1822
+2 screens: Height=1382
+2 screens: Width=1222
+2560x1440 screen: Height=1382
+2560x1440 screen: Width=1222
+MenuBar=Disabled
+
+[MainWindow][Toolbar gdbplugin]
+IconSize=16
+
+[MainWindow][Toolbar hamburgerBar]
+ToolButtonStyle=IconOnly
+
+[PluginSymbolViewer]
+ExpandTree=false
+SortSymbols=false
+TreeView=false
+ViewTypes=false
+
+[Printing][HeaderFooter]
+FooterBackground=211,211,211
+FooterBackgroundEnabled=false
+FooterEnabled=true
+FooterForeground=0,0,0
+FooterFormatCenter=
+FooterFormatLeft=
+FooterFormatRight=%U
+HeaderBackground=211,211,211
+HeaderBackgroundEnabled=false
+HeaderEnabled=true
+HeaderFooterFont=JetBrainsMono Nerd Font,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+HeaderForeground=0,0,0
+HeaderFormatCenter=%f
+HeaderFormatLeft=%y
+HeaderFormatRight=%p
+
+[Printing][Layout]
+BackgroundColorEnabled=false
+BoxColor=invalid
+BoxEnabled=false
+BoxMargin=6
+BoxWidth=1
+ColorScheme=Printing
+Font=JetBrainsMono Nerd Font,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+
+[Printing][Text]
+DontPrintFoldedCode=true
+Legend=false
+LineNumbers=false
+
+[Snippets]
+enabledRepositories=/home/andrel/.local/share/ktexteditor_snippets/data/Quickshell.xml,/home/andrel/.local/share//ktexteditor_snippets/ghns/html.xml,/home/andrel/.local/share//ktexteditor_snippets/ghns/HTML5 Tags Autocomplete.xml,/home/andrel/.local/share/ktexteditor_snippets/data/HTML5 Tags Autocomplete.xml
+
+[Snippets][repository /home/andrel/.local/share/ktexteditor_snippets/data/HTML.xml]
+shortcut !=
+shortcut description=
+shortcut header=
+shortcut meta=
+
+[Snippets][repository /home/andrel/.local/share/ktexteditor_snippets/data/HTML5 Tags Autocomplete.xml]
+shortcut <!-->=
+shortcut <!DOCTYPE>=
+shortcut <a>=
+shortcut <abbr>=
+shortcut <address>=
+shortcut <area>=
+shortcut <article>=
+shortcut <aside>=
+shortcut <audio>=
+shortcut <b>=
+shortcut <base>=
+shortcut <bdi>=
+shortcut <bdo>=
+shortcut <blockquote>=
+shortcut <body>=
+shortcut <br>=
+shortcut <button>=
+shortcut <canvas>=
+shortcut <caption>=
+shortcut <cite>=
+shortcut <code>=
+shortcut <col>=
+shortcut <colgroup>=
+shortcut <data>=
+shortcut <datalist>=
+shortcut <dd>=
+shortcut <del>=
+shortcut <details>=
+shortcut <dfn>=
+shortcut <dialog>=
+shortcut <div>=
+shortcut <dl>=
+shortcut <dt>=
+shortcut <em>=
+shortcut <embed>=
+shortcut <fieldset>=
+shortcut <figcaption>=
+shortcut <figure>=
+shortcut <footer>=
+shortcut <form>=
+shortcut <h1>=
+shortcut <h2>=
+shortcut <h3>=
+shortcut <h4>=
+shortcut <h5>=
+shortcut <h6>=
+shortcut <head>=
+shortcut <header>=
+shortcut <hr>=
+shortcut <html>=
+shortcut <i>=
+shortcut <iframe>=
+shortcut <img>=
+shortcut <input>=
+shortcut <ins>=
+shortcut <kbd>=
+shortcut <label>=
+shortcut <legend>=
+shortcut <li>=
+shortcut <link>=
+shortcut <main>=
+shortcut <map>=
+shortcut <mark>=
+shortcut <meta>=
+shortcut <meter>=
+shortcut <nav>=
+shortcut <noscript>=
+shortcut <object>=
+shortcut <ol>=
+shortcut <optgroup>=
+shortcut <option>=
+shortcut <output>=
+shortcut <p>=
+shortcut <param>=
+shortcut <picture>=
+shortcut <pre>=
+shortcut <progress>=
+shortcut <q>=
+shortcut <rp>=
+shortcut <rt>=
+shortcut <ruby>=
+shortcut <s>=
+shortcut <samp>=
+shortcut <script>=
+shortcut <section>=
+shortcut <select>=
+shortcut <small>=
+shortcut <source>=
+shortcut <span>=
+shortcut <strong>=
+shortcut <style>=
+shortcut <sub>=
+shortcut <summary>=
+shortcut <sup>=
+shortcut <table>=
+shortcut <tbody>=
+shortcut <td>=
+shortcut <template>=
+shortcut <textarea>=
+shortcut <tfoot>=
+shortcut <th>=
+shortcut <thead>=
+shortcut <time>=
+shortcut <title>=
+shortcut <tr>=
+shortcut <track>=
+shortcut <u>=
+shortcut <ul>=
+shortcut <var>=
+shortcut <video>=
+shortcut <wbr>=
+
+[Snippets][repository /home/andrel/.local/share/ktexteditor_snippets/data/Quickshell.xml]
+shortcut IconImage=
+shortcut Text=
+shortcut header=
+shortcut header.widget=
+shortcut test=
+shortcut text=
+
+[Snippets][repository /home/andrel/.local/share/ktexteditor_snippets/data/meta.xml]
+shortcut desc=
+
+[UiSettings]
+ColorScheme=Catppuccin-Machiatto
+
+[debugplugin]
+DAPConfiguration=
+
+[filetree]
+editShade=245,169,127
+listMode=false
+middleClickToClose=true
+shadingEnabled=true
+showCloseButton=true
+showFullPathOnRoots=false
+showToolbar=false
+sortRole=0
+viewShade=138,173,244
+
+[kategit]
+lastExecutedGitCmds=git pull origin main,git push origin main
+
+[lspclient]
+AllowedServerCommandLines=/usr/bin/qmlls6,/usr/bin/vscode-css-languageserver --stdio,/usr/bin/vscode-html-languageserver,/usr/bin/vscode-html-languageserver --stdio
+AutoHover=true
+AutoImport=true
+BlockedServerCommandLines=
+CompletionDocumentation=true
+CompletionParens=true
+Diagnostics=true
+FormatOnSave=false
+HighlightGoto=true
+HighlightSymbol=true
+IncrementalSync=false
+InlayHints=false
+Messages=true
+ReferencesDeclaration=true
+SemanticHighlighting=true
+ServerConfiguration=
+ShowCompletions=true
+SignatureHelp=true
+SymbolDetails=false
+SymbolExpand=true
+SymbolSort=false
+SymbolTree=true
+TypeFormatting=false
