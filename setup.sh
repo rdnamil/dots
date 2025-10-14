@@ -1,16 +1,8 @@
 # post install
 sudo systemctl enable bluetooth.service
 sudo systemctl enable cronie.service
-git clone https://github.com/rdnamil/dots
-cd dots
 mv config/* ~/.config/
 mv local/* ~/.local/
-
-# timeshift
-yay -S timeshift timeshift-autosnap grub-btrfs
-sudo mv grub-btrfsd /etc/systemd/system/grub-btrfsd.service
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-sudo systemctl enable --now grub-btrfsd
 
 # basic DE stuff
 yay -S \
@@ -64,6 +56,12 @@ usermod -aG gamemode $USER
 
 # drivers
 nvidia-inst -po --no-dkms
+
+# timeshift
+yay -S timeshift timeshift-autosnap grub-btrfs
+sudo mv grub-btrfsd /etc/systemd/system/grub-btrfsd.service
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+sudo systemctl enable --now grub-btrfsd
 
 # cleanup
 cd ../
