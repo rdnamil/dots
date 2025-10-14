@@ -6,7 +6,7 @@ mkdir -p ~/.local
 mv -bf local/* ~/.local/
 
 # basic DE stuff
-yay -S -needed --noconfirm \
+yay -S --needed --noconfirm \
 niri xdg-desktop-portal-gnome gnome-keyring xwayland-satellite \
 zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting \
 fuzzel ghostty kate brave-bin swww waypaper mission-center ristretto libreoffice-fresh obsidian qbittorrent piper obs-studio obs-vkcapture lib32-obs-vkcapture gparted gimp inkscape krita baobab bat cava ddcutil fastfetch haruna kdenlive networkmanager-dmenu-git swayidle hyprlock ttf-jetbrains-mono-nerd unrar unzip exo
@@ -51,7 +51,7 @@ wget -qO- https://raw.githubusercontent.com/Bonandry/adwaita-plus/master/install
 
 # gaming stuff
 yay -S --needed --noconfirm gamescope gamemode lib32-gamemode mangohud lib32-mangohud game-devices-udev lutris steam steamcmd
-usermod -aG gamemode $USER
+sudo usermod -aG gamemode $USER
 
 # drivers
 nvidia-inst -po --no-dkms
