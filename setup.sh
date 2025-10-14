@@ -7,9 +7,9 @@ mv -bf local/* ~/.local/
 
 # basic DE stuff
 yay -S \
-niri xdg-desktop-portal-gnome gnome-keyring xwayland-sattelite \
+niri xdg-desktop-portal-gnome gnome-keyring xwayland-satellite \
 zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting \
-fuzzel ghostty kate brave-bin swww waypaper mission-center ristretto libreoffice-fresh obsidian qbittorrent piper obs-studio obs-vkcapture lib32-obs-vkcapture gparted gimp kden-live inkscape krita baobab bat cava ddcutil fastfetch haruna kdenlive networkmanager-dmenu-git swayidle hyprlock ttf-jetbrains-mono-nerd unrar unzip exo
+fuzzel ghostty kate brave-bin swww waypaper mission-center ristretto libreoffice-fresh obsidian qbittorrent piper obs-studio obs-vkcapture lib32-obs-vkcapture gparted gimp inkscape krita baobab bat cava ddcutil fastfetch haruna kdenlive networkmanager-dmenu-git swayidle hyprlock ttf-jetbrains-mono-nerd unrar unzip exo
 mv -bf zshrc ~/.zshrc
 systemctl --user enable app-com.mitchellh.ghostty.service
 
