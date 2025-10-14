@@ -1,7 +1,8 @@
 # post install
 sudo systemctl enable bluetooth.service
-sudo systemctl enable cronie.service
+mkdir -p ~/.config
 mv -bf config/* ~/.config/
+mkdir -p ~/.local
 mv -bf local/* ~/.local/
 
 # basic DE stuff
@@ -42,13 +43,11 @@ yay -S --needed --noconfirm quickshell-git brightnessctl songrec
 git clone https://github.com/rdnamil/quickshell ~/.config/quickshell
 
 # themeing
-yay -S --needed --noconfirm nwg-look gtk-engine-murrine qt5ct-kde qt6ct-kde darkly
+yay -S --needed --noconfirm nwg-look gtk-engine-murrine qt5ct-kde qt6ct-kde frameworkintegration frameworkintegration darkly
 mkdir -p ~/.local/share/themes
 git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme.git catppuccin-theme
 catppuccin-theme/themes/install.sh -l -d ~/.local/share/themes -c dark -t blue --tweaks macchiato
-mkdir -p ~/.local/share/icons
-git clone https://github.com/Bonandry/adwaita-plus.git
-mv -bf adwaita-plus/Adwaita++-Colorful adwaita-plus/Adwaita++-Dark-Colorful adwaita-plus/Adwaita++-Dark adwaita-plus/Adwaita++-Light ~/.local/share/icons
+wget -qO- https://raw.githubusercontent.com/Bonandry/adwaita-plus/master/install.sh | sh
 
 # gaming stuff
 yay -S --needed --noconfirm gamescope gamemode lib32-gamemode mangohud lib32-mangohud game-devices-udev lutris steam steamcmd
@@ -61,7 +60,7 @@ nvidia-inst -po --no-dkms
 yay -S --needed --noconfirm timeshift timeshift-autosnap grub-btrfs
 sudo mv -bf grub-btrfsd /etc/systemd/system/grub-btrfsd.service
 sudo grub-mkconfig -o /boot/grub/grub.cfg
-sudo systemctl enable --now grub-btrfsd
+sudo systemctl enable --now grub-btrfsd cronie.service
 
 # cleanup
 cd ../
