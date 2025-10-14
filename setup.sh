@@ -51,7 +51,7 @@ git clone https://github.com/Bonandry/adwaita-plus.git
 mv -bf adwaita-plus/Adwaita++-Colorful adwaita-plus/Adwaita++-Dark-Colorful adwaita-plus/Adwaita++-Dark adwaita-plus/Adwaita++-Light ~/.local/share/icons
 
 # gaming stuff
-sudo pacman -S gamescope gamemode lib32-gamemode mangohud lib32-mangohud game-devices-udev lutris steam steamcmd
+yay -S --needed --noconfirm gamescope gamemode lib32-gamemode mangohud lib32-mangohud game-devices-udev lutris steam steamcmd
 usermod -aG gamemode $USER
 
 # drivers
