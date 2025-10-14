@@ -13,7 +13,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo systemctl enable --now grub-btrfsd
 
 # basic DE stuff
-yay -S --needed  \
+yay -S \
 niri xdg-desktop-portal-gnome gnome-keyring xwayland-sattelite \
 zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting \
 fuzzel ghostty kate brave-bin swww waypaper mission-center ristretto libreoffice-fresh obsidian qbittorrent piper obs-studio obs-vkcapture lib32-obs-vkcapture gparted gimp kden-live inkscape krita baobab bat cava ddcutil fastfetch haruna kdenlive networkmanager-dmenu-git swayidle hyprlock ttf-jetbrains-mono-nerd unrar unzip
