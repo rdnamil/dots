@@ -1,0 +1,10 @@
+    OpenRGB v0.9+ (1.0rc1)
+    Commit:  from 
+    Launched: 20250912_154424
+====================================================================================================
+
+1296  |Info:    [ResourceManager] Calling Post-detection callbacks
+1296  |Info:    ------------------------------------------------------
+1296  |Info:    |                Detection completed                 |
+1296  |Info:    ------------------------------------------------------
+1383  |Info:    [Blade Pro (late 2019)] Registering RGB controller

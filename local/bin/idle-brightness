@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# idle?
-if [ $1 ]; then
-	brightnessctl g > variables # store current brightness from brightnessctl
-	brightnessctl s 10% # dim the screen
-else
-	brightnessctl s "$(cat variables)" # set brightness to previously stored value
-fi

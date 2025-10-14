@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Lock Screen
+Comment=Lock the screen.
+Exec=lockscreen.sh
+Icon=system-lock-screen
+Terminal=false
+Type=Application
+Categories=Utilities

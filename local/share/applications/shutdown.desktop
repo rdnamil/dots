@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Power Off
+Comment=Power off this device.
+Exec=shutdown
+Icon=system-shutdown
+Terminal=false
+Type=Application
+Categories=Utilities
