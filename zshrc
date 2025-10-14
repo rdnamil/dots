@@ -32,7 +32,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 PATH=$HOME/.local/bin:$PATH
 
 # Alias
-alias ls='ls --color -g'
+alias ls='exo -lh'
 alias tree='tree -C -L 1'
 alias py=python
 alias py3=python3
