@@ -1,3 +1,10 @@
+[BuildConfig]
+AllowedCommandLines=
+AutoSwitchToOutput=true
+BlockedCommandLines=
+ShowBuildProgress=false
+UseDiagnosticsOutput=true
+
 [ColorPicker]
 HexLengths=3,6,9,12
 NamedColors=false
@@ -36,7 +43,7 @@ Restore Window Configuration=true
 SDI Mode=false
 Save Meta Infos=true
 Show Full Path in Title=false
-Show Menu Bar=true
+Show Menu Bar=false
 Show Status Bar=true
 Show Symbol In Navigation Bar=true
 Show Tab Bar=false
@@ -100,11 +107,11 @@ Word Wrap Column=80
 [KTextEditor Renderer]
 Animate Bracket Matching=false
 Auto Color Theme Selection=false
-Color Theme=Catppuccin Macchiato - new
+Color Theme=Catppuccin Macchiato
 Line Height Multiplier=1
 Show Indentation Lines=true
 Show Whole Bracket Expression=false
-Text Font=JetBrainsMono Nerd Font,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+Text Font=JetBrainsMono Nerd Font,10.5,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 Text Font Features=
 Word Wrap Marker=false
 
@@ -180,7 +187,7 @@ SetEditor=false
 
 [MainWindow]
 1920x1080 screen: Height=1022
-1920x1080 screen: Width=1822
+1920x1080 screen: Width=902
 2 screens: Height=1382
 2 screens: Width=1222
 2560x1440 screen: Height=1382
@@ -364,7 +371,7 @@ shortcut text=
 shortcut desc=
 
 [UiSettings]
-ColorScheme=Catppuccin-Machiatto
+ColorScheme=catppuccin
 
 [debugplugin]
 DAPConfiguration=

@@ -7,9 +7,9 @@ mv -bf local/* ~/.local/
 
 # basic DE stuff
 yay -S --needed --noconfirm \
-niri xdg-desktop-portal-gnome gnome-keyring xwayland-satellite \
+niri xdg-desktop-portal-gtk xdg-desktop-portal-gnome gnome-keyring polkit-gnome xwayland-satellite xorg-xhost \
 zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting \
-fuzzel ghostty kate brave-bin swww waypaper mission-center ristretto libreoffice-fresh obsidian qbittorrent piper obs-studio obs-vkcapture lib32-obs-vkcapture gparted gimp inkscape krita baobab bat cava ddcutil fastfetch haruna kdenlive networkmanager-dmenu-git swayidle hyprlock ttf-jetbrains-mono-nerd unrar unzip exo
+fuzzel ghostty kate brave-bin swww waypaper mission-center ristretto libreoffice-fresh obsidian qbittorrent piper obs-studio obs-vkcapture lib32-obs-vkcapture gparted gimp inkscape krita baobab bat cava ddcutil fastfetch haruna kdenlive networkmanager-dmenu-git swayidle hyprlock ttf-jetbrains-mono-nerd unrar unzip eza openrgb
 mv -bf zshrc ~/.zshrc
 systemctl --user enable app-com.mitchellh.ghostty.service
 
@@ -55,6 +55,11 @@ sudo usermod -aG gamemode $USER
 
 # drivers
 nvidia-inst -po --no-dkms
+
+# virt-manager
+yay -S --needed --noconfirm qemu-desktop libvirt virt-manager swtpm
+sudo usermod -aG libvirt $USER
+sudo systemctl enable libvirtd.service
 
 # timeshift
 yay -S --needed --noconfirm timeshift timeshift-autosnap grub-btrfs
