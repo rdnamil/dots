@@ -41,12 +41,12 @@ sudo mv -bf 99-input.rules /etc/udev/rules.d/99-input.rules
 
 # quickshell
 yay -S --needed --noconfirm quickshell-git brightnessctl songrec
-git clone git@github.com:rdnamil/quickshell.git
+git clone github.com/rdnamil/quickshell .config/quickshell
 
 # themeing
-yay -S --needed --noconfirm nwg-look gtk-engine-murrine qt5ct-kde qt6ct-kde frameworkintegration frameworkintegration darkly plymouth plymouth-theme-bgrt-no-watermark
+yay -S --needed --noconfirm nwg-look gtk-engine-murrine qt5ct-kde qt6ct-kde frameworkintegration frameworkintegration5 darkly plymouth plymouth-theme-bgrt-no-watermark
 sudo plymouth-set-default-theme -R bgrt-no-watermark
-sudo mv -bf grub /etc/default/grub
+# sudo mv -bf grub /etc/default/grub
 mkdir -p ~/.local/share/themes
 git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme.git catppuccin-theme
 catppuccin-theme/themes/install.sh -l -d ~/.local/share/themes -c dark -t blue --tweaks macchiato
