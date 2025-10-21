@@ -41,7 +41,7 @@ sudo mv -bf 99-input.rules /etc/udev/rules.d/99-input.rules
 
 # quickshell
 yay -S --needed --noconfirm quickshell-git brightnessctl songrec
-git clone https://github.com/rdnamil/quickshell ~/.config/quickshell
+git clone git@github.com:rdnamil/quickshell.git
 
 # themeing
 yay -S --needed --noconfirm nwg-look gtk-engine-murrine qt5ct-kde qt6ct-kde frameworkintegration frameworkintegration darkly plymouth plymouth-theme-bgrt-no-watermark
