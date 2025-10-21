@@ -40,13 +40,13 @@ sudo usermod -aG uinput $USER
 sudo mv -bf 99-input.rules /etc/udev/rules.d/99-input.rules
 
 # quickshell
-yay -S --needed --noconfirm quickshell-git brightnessctl songrec
-git clone git@github.com:rdnamil/quickshell.git
+yay -S --needed --noconfirm quickshell brightnessctl songrec
+git clone https://github.com/rdnamil/quickshell.git
 
 # themeing
 yay -S --needed --noconfirm nwg-look gtk-engine-murrine qt5ct-kde qt6ct-kde frameworkintegration frameworkintegration darkly plymouth plymouth-theme-bgrt-no-watermark
 sudo plymouth-set-default-theme -R bgrt-no-watermark
-sudo mv -bf grub /etc/default/grub
+sed -i sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="\([^"]*\)"/GRUB_CMDLINE_LINUX_DEFAULT="\1 quiet splash"/' /etc/default/grub
 mkdir -p ~/.local/share/themes
 git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme.git catppuccin-theme
 catppuccin-theme/themes/install.sh -l -d ~/.local/share/themes -c dark -t blue --tweaks macchiato
@@ -77,4 +77,4 @@ sudo systemctl enable --now grub-btrfsd cronie.service
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 cd ../
 rm -rf dots
-sudo pacman -Syu --noconfirm
+reboot
