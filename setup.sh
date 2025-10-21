@@ -9,7 +9,8 @@ mv -bf local/* ~/.local/
 yay -S --needed --noconfirm \
 niri xdg-desktop-portal-gtk xdg-desktop-portal-gnome gnome-keyring polkit-gnome xwayland-satellite xorg-xhost \
 zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting \
-fuzzel ghostty kate brave-bin swww waypaper mission-center ristretto libreoffice-fresh obsidian qbittorrent piper obs-studio obs-vkcapture lib32-obs-vkcapture gparted gimp inkscape krita baobab bat cava ddcutil fastfetch haruna kdenlive networkmanager-dmenu-git swayidle hyprlock ttf-jetbrains-mono-nerd unrar unzip eza openrgb
+ttf-jetbrains-mono-nerd libappindicator-gtk3 \
+fuzzel ghostty kate brave-bin swww waypaper mission-center ristretto libreoffice-fresh obsidian qbittorrent piper obs-studio obs-vkcapture lib32-obs-vkcapture gparted gimp inkscape krita baobab bat cava ddcutil fastfetch haruna kdenlive networkmanager-dmenu-git swayidle hyprlock eza openrgb
 mv -bf zshrc ~/.zshrc
 systemctl --user enable app-com.mitchellh.ghostty.service
 
@@ -43,7 +44,9 @@ yay -S --needed --noconfirm quickshell-git brightnessctl songrec
 git clone https://github.com/rdnamil/quickshell ~/.config/quickshell
 
 # themeing
-yay -S --needed --noconfirm nwg-look gtk-engine-murrine qt5ct-kde qt6ct-kde frameworkintegration frameworkintegration darkly
+yay -S --needed --noconfirm nwg-look gtk-engine-murrine qt5ct-kde qt6ct-kde frameworkintegration frameworkintegration darkly plymouth plymouth-theme-bgrt-no-watermark
+sudo plymouth-set-default-theme -R bgrt-no-watermark
+sudo mv -bf grub /etc/default/grub
 mkdir -p ~/.local/share/themes
 git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme.git catppuccin-theme
 catppuccin-theme/themes/install.sh -l -d ~/.local/share/themes -c dark -t blue --tweaks macchiato
@@ -64,9 +67,9 @@ sudo systemctl enable libvirtd.service
 # timeshift
 yay -S --needed --noconfirm timeshift timeshift-autosnap grub-btrfs
 sudo mv -bf grub-btrfsd /etc/systemd/system/grub-btrfsd.service
-sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo systemctl enable --now grub-btrfsd cronie.service
 
 # cleanup
+sudo grub-mkconfig -o /boot/grub/grub.cfg
 cd ../
 rm -rf dots

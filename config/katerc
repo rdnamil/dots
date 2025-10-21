@@ -191,14 +191,11 @@ SetEditor=false
 2 screens: Height=1382
 2 screens: Width=1222
 2560x1440 screen: Height=1382
-2560x1440 screen: Width=1222
+2560x1440 screen: Width=1635
 MenuBar=Disabled
 
 [MainWindow][Toolbar gdbplugin]
 IconSize=16
-
-[MainWindow][Toolbar hamburgerBar]
-ToolButtonStyle=IconOnly
 
 [PluginSymbolViewer]
 ExpandTree=false
@@ -360,10 +357,13 @@ shortcut <video>=
 shortcut <wbr>=
 
 [Snippets][repository /home/andrel/.local/share/ktexteditor_snippets/data/Quickshell.xml]
+shortcut Header=
 shortcut IconImage=
+shortcut IconPath=
 shortcut Text=
 shortcut header=
 shortcut header.widget=
+shortcut iconPath=
 shortcut test=
 shortcut text=
 
@@ -388,7 +388,7 @@ sortRole=0
 viewShade=138,173,244
 
 [kategit]
-lastExecutedGitCmds=git pull origin main,git push origin main
+lastExecutedGitCmds=git push origin main,git pull origin main
 
 [lspclient]
 AllowedServerCommandLines=/usr/bin/qmlls6,/usr/bin/vscode-css-languageserver --stdio,/usr/bin/vscode-html-languageserver,/usr/bin/vscode-html-languageserver --stdio

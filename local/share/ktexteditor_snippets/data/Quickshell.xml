@@ -1,0 +1,38 @@
+<snippets authors="Andre Lima" filetypes="QML" license="BSD" name="Quickshell" namespace="qs">
+ <script>function fileName() { return document.fileName(); }
+function fileUrl() { return document.url(); }
+function encoding() { return document.encoding(); }
+function selection() { return view.selectedText(); }
+function year() { return new Date().getFullYear(); }
+function upper(x) { return x.toUpperCase(); }
+function lower(x) { return x.toLowerCase(); }
+
+function header() { 
+	const hLength = fileName().length +6;
+	const h = `/*${"-".repeat(hLength)}\n--- ${fileName()} ---\n${"-".repeat(hLength)}*/`
+	return h;
+}</script>
+ <item>
+  <match>Header</match>
+  <fillin type="template">${header()}</fillin>
+ </item>
+ <item>
+  <match>Text</match>
+  <fillin type="template">Text {
+	text: ${cursor}
+	color: GlobalVariables.colours.${text}
+	font: GlobalVariables.font.${regular}
+}</fillin>
+ </item>
+ <item>
+  <match>IconImage</match>
+  <fillin type="template">IconImage {
+	implicitSize: ${GlobalVariable.controls.iconSize}
+	source: ${cursor}
+}</fillin>
+ </item>
+ <item>
+  <match>IconPath</match>
+  <fillin type="template">QuickShell.iconPath(${cursor})</fillin>
+ </item>
+</snippets>
