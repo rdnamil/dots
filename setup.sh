@@ -10,7 +10,7 @@ yay -S --needed --noconfirm \
 niri xdg-desktop-portal-gtk xdg-desktop-portal-gnome gnome-keyring polkit-gnome xwayland-satellite xorg-xhost \
 zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting \
 ttf-jetbrains-mono-nerd libappindicator-gtk3 \
-fuzzel ghostty kate brave-bin swww waypaper mission-center ristretto libreoffice-fresh obsidian qbittorrent piper obs-studio obs-vkcapture lib32-obs-vkcapture gparted gimp inkscape krita baobab bat cava ddcutil fastfetch haruna kdenlive networkmanager-dmenu-git swayidle hyprlock eza openrgb
+fuzzel ghostty kate brave-bin swww waypaper mission-center ristretto libreoffice-fresh obsidian qbittorrent piper obs-studio obs-vkcapture lib32-obs-vkcapture gparted gimp inkscape krita baobab bat cava ddcutil fastfetch haruna kdenlive networkmanager-dmenu-git swayidle hyprlock eza openrgb zoxide
 mv -bf zshrc ~/.zshrc
 systemctl --user enable app-com.mitchellh.ghostty.service
 
@@ -57,7 +57,11 @@ yay -S --needed --noconfirm gamescope gamemode lib32-gamemode mangohud lib32-man
 sudo usermod -aG gamemode $USER
 
 # drivers
-nvidia-inst -po --no-dkms
+if [ $1 = "--amd" ]; then
+	yay -S --needed --noconfirm mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon
+elif [ $1 = "--nvidia" ]; then
+	nvidia-inst -po --no-dkms
+fi
 
 # virt-manager
 yay -S --needed --noconfirm qemu-desktop libvirt virt-manager swtpm
@@ -73,3 +77,4 @@ sudo systemctl enable --now grub-btrfsd cronie.service
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 cd ../
 rm -rf dots
+sudo pacman -Syu --noconfirm
