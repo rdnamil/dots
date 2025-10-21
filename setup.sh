@@ -1,3 +1,6 @@
+# move to current directory if not already
+cd "$(dirname "$0")" || exit
+
 # post install
 sudo systemctl enable bluetooth.service
 mkdir -p ~/.config
