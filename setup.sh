@@ -46,7 +46,7 @@ git clone https://github.com/rdnamil/quickshell.git
 # themeing
 yay -S --needed --noconfirm nwg-look gtk-engine-murrine qt5ct-kde qt6ct-kde frameworkintegration frameworkintegration darkly plymouth plymouth-theme-bgrt-no-watermark
 sudo plymouth-set-default-theme -R bgrt-no-watermark
-sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="\([^"]*\)"/GRUB_CMDLINE_LINUX_DEFAULT="\1 quiet splash"/' /etc/default/grub
+sudo sed -i -E "s|^( *GRUB_CMDLINE_LINUX_DEFAULT=)(['\"])(.*)(['\"])|\1\2\3 quiet splash\4|" /etc/default/grub
 mkdir -p ~/.local/share/themes
 git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme.git catppuccin-theme
 catppuccin-theme/themes/install.sh -l -d ~/.local/share/themes -c dark -t blue --tweaks macchiato
