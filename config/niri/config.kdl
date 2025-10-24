@@ -3,7 +3,7 @@
 // ---
 // File:       config.kdl
 // Created:    Jun 3, 2025
-// Modified:   Oct 16, 2025
+// Modified:   Sep 30, 2025
 // ---
 
 // autostart
@@ -11,6 +11,7 @@
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "qs"
+spawn-sh-at-startup "wl-clip-persist -c regular"
 spawn-sh-at-startup "thunar --daemon"
 spawn-sh-at-startup "swayidle -w"
 spawn-sh-at-startup "kanata -c /home/andrel/.config/kanata/keeb.kbd"
@@ -63,11 +64,11 @@ output "eDP-1" {
 
 output "ASUSTek COMPUTER INC VG27AQ3A S7LMAS007908" {
 	// off
-	mode "2560x1440@180.001"
-	variable-refresh-rate on-demand=true
+	mode "2560x1440@144.000"
+	variable-refresh-rate // on-demand=true
 	scale 1
 	transform "normal"
-	position x=0 y=0
+	position x=1920 y=0
 }
 
 output "PNP(WEH) WM32DX9019 0000000000001" {
