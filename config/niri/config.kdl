@@ -3,7 +3,7 @@
 // ---
 // File:       config.kdl
 // Created:    Jun 3, 2025
-// Modified:   Sep 30, 2025
+// Modified:   Nov 12, 2025
 // ---
 
 // autostart
@@ -11,7 +11,6 @@
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "qs"
-spawn-sh-at-startup "wl-clip-persist -c regular"
 spawn-sh-at-startup "thunar --daemon"
 spawn-sh-at-startup "swayidle -w"
 spawn-sh-at-startup "kanata -c /home/andrel/.config/kanata/keeb.kbd"
@@ -27,6 +26,7 @@ environment {
    QT_AUTO_SCREEN_SCALE_FACTOR "1"
 	__GL_GPU_DISALLOW_SYNCHRONIZATION "1"
 	__GL_POWERMIZER_MODE "1"
+	SAL_USE_VCLPLUGIN "qt6"
 }
 
 // input settings
@@ -64,11 +64,11 @@ output "eDP-1" {
 
 output "ASUSTek COMPUTER INC VG27AQ3A S7LMAS007908" {
 	// off
-	mode "2560x1440@144.000"
-	variable-refresh-rate // on-demand=true
+	mode "2560x1440@180.001"
+	variable-refresh-rate on-demand=true
 	scale 1
 	transform "normal"
-	position x=1920 y=0
+	position x=0 y=0
 }
 
 output "PNP(WEH) WM32DX9019 0000000000001" {
@@ -87,6 +87,15 @@ output "PNP(HJW) MACROSILICON 0x0002E9BD" {
 	position x=800 y=0
 }
 
+// gestures
+// ---
+gestures {
+	// Disable the hot corners.
+	hot-corners {
+		off
+	}
+}
+
 // windows layout and effects
 // ---
 layout {
@@ -94,6 +103,7 @@ layout {
    center-focused-column "never"
    always-center-single-column
    //default-column-display "tabbed"
+   empty-workspace-above-first
 
    // column widths
    // ---
@@ -101,14 +111,17 @@ layout {
       proportion 0.33333
       proportion 0.5
       proportion 0.66667
+      proportion 1.0
    }
    default-column-width { proportion 0.5; }
    
    // window heights
    // ---
    preset-window-heights {
-      proportion 0.5
-      proportion 1.0
+		proportion 0.33333
+		proportion 0.5
+		proportion 0.66667
+		proportion 1.0
    }
    
    // draw a ring around focused window
@@ -282,20 +295,13 @@ layer-rule {
 		color "#00000070"
 		offset x=0 y=0
 	}
+	block-out-from "screencast"
 }
 
 // block notifications from screen recording
 // ---
 layer-rule {
 	match namespace="notifications"
-	shadow {
-		on
-		softness 30
-		spread 0
-		draw-behind-window true
-		color "#00000070"
-		offset x=0 y=0
-	}
 	block-out-from "screencast"
 }
 
@@ -323,8 +329,9 @@ binds {
    Mod+2			allow-inhibiting=false { spawn "thunar"; }
    Mod+3			allow-inhibiting=false { spawn "brave";}
    Mod+4			allow-inhibiting=false { spawn "waypaper"; }
-   Alt+Space	allow-inhibiting=false { spawn "fuzzel"; }
-   Super+L		allow-inhibiting=false { spawn "/home/andrel/.local/bin/lockscreen.sh"; }
+   // Alt+Space	allow-inhibiting=false { spawn "fuzzel"; }
+   Alt+Space	allow-inhibiting=false { spawn-sh "qs ipc call launcher open"; }
+   Super+L		allow-inhibiting=false { spawn-sh "/usr/local/bin/lockscreen.sh"; }
    
    // volume keys mappings
    // ---
@@ -361,12 +368,13 @@ binds {
 
       // switch focus
       // ---
-   Mod+Alt+Left    { focus-column-left; }
-   Mod+Alt+Down    { focus-window-down; }
-   Mod+Alt+Up      { focus-window-up; }
-   Mod+Alt+Right   { focus-column-right; }
-   Mod+Alt+Home    { focus-column-first; }
-   Mod+Alt+End     { focus-column-last; }
+   Mod+Alt+Left	{ focus-column-left; }
+   Mod+Alt+Down	{ focus-window-down; }
+   Mod+Alt+Up		{ focus-window-up; }
+   Mod+Alt+Right	{ focus-column-right; }
+   Mod+Alt+Home	{ focus-column-first; }
+   Mod+Alt+End		{ focus-column-last; }
+   Alt+Tab			{ focus-column-right-or-first; }
          // mouse binds
    Mod+WheelScrollUp    { focus-column-left; }
    Mod+WheelScrollDown  { focus-column-right; }
@@ -404,14 +412,16 @@ binds {
 
       // change window dimensions
       // ---
-   Mod+R       allow-inhibiting=false { switch-preset-column-width; }
-   Mod+Shift+R allow-inhibiting=false { switch-preset-column-width-back;}
-   Mod+Equal	allow-inhibiting=false { switch-preset-column-width; }
-   Mod+Minus	allow-inhibiting=false { switch-preset-column-width-back;}
+   Mod+R       		allow-inhibiting=false { switch-preset-column-width; }
+   Mod+Shift+R 		allow-inhibiting=false { switch-preset-column-width-back;}
+   Mod+Equal			allow-inhibiting=false { switch-preset-column-width; }
+   Mod+Minus			allow-inhibiting=false { switch-preset-column-width-back;}
+   Mod+Shift+Equal	allow-inhibiting=false { switch-preset-window-height; }
+   Mod+Shift+Minus	allow-inhibiting=false { switch-preset-window-height-back;}
    // Mod+Ctrl+R  { reset-window-height; }
-   Mod+F       allow-inhibiting=false { maximize-column; }
-   Mod+Shift+F	allow-inhibiting=false { fullscreen-window; }
-   Mod+F11		allow-inhibiting=false { toggle-windowed-fullscreen; }
+   Mod+F       		allow-inhibiting=false { maximize-column; }
+   Mod+Shift+F			allow-inhibiting=false { fullscreen-window; }
+   Mod+F11				allow-inhibiting=false { toggle-windowed-fullscreen; }
 
       // toggle float widows
       // ---
@@ -429,7 +439,7 @@ binds {
 
       // quit the application
       //---
-   Mod+Shift+E       { quit; }
-   Ctrl+Alt+Delete   { quit; }
+   Mod+Shift+E       allow-inhibiting=false	{ quit; }
+   Ctrl+Alt+Delete   allow-inhibiting=false	{ quit; }
 }
 

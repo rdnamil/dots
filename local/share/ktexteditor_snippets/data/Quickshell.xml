@@ -8,8 +8,8 @@ function upper(x) { return x.toUpperCase(); }
 function lower(x) { return x.toLowerCase(); }
 
 function header() { 
-	const hLength = fileName().length +6;
-	const h = `/*${"-".repeat(hLength)}\n--- ${fileName()} ---\n${"-".repeat(hLength)}*/`
+	const hLength = fileName().length +16;
+	const h = `/*${"-".repeat(hLength)}\n--- ${fileName()} by andrel ---\n${"-".repeat(hLength)}*/`
 	return h;
 }</script>
  <item>
@@ -27,12 +27,12 @@ function header() {
  <item>
   <match>IconImage</match>
   <fillin type="template">IconImage {
-	implicitSize: ${GlobalVariable.controls.iconSize}
+	implicitSize: ${GlobalVariables.controls.iconSize}
 	source: ${cursor}
 }</fillin>
  </item>
  <item>
   <match>IconPath</match>
-  <fillin type="template">QuickShell.iconPath(${cursor})</fillin>
+  <fillin type="template">Quickshell.iconPath(${cursor})</fillin>
  </item>
 </snippets>

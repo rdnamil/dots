@@ -13,7 +13,7 @@
 	<directories/>
 </action>
 <action>
-	<icon></icon>
+	<icon>waypaper</icon>
 	<name>Set wallpaper (swww)</name>
 	<submenu></submenu>
 	<unique-id>1760547140840499-1</unique-id>
@@ -22,5 +22,17 @@
 	<range>*</range>
 	<patterns>*</patterns>
 	<image-files/>
+</action>
+<action>
+	<icon>org.xfce.thunar</icon>
+	<name>Open here as Administrator</name>
+	<submenu></submenu>
+	<unique-id>1761916335667430-1</unique-id>
+	<command>thunar admin:%f</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
 </action>
 </actions>

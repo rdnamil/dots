@@ -1,0 +1,16 @@
+[Desktop Entry]
+FullScreen=false
+
+[General]
+LockSidebar=true
+ShowSidebar=false
+
+[MainWindow][Toolbar mainToolBar]
+ToolButtonStyle=IconOnly
+
+[Recent Files]
+File1[$e]=$HOME/Downloads/Database-Design-2nd-Edition-1660153697.pdf
+Name1[$e]=Database-Design-2nd-Edition-1660153697.pdf
+
+[Toolbar mainToolBar]
+ToolButtonStyle=IconOnly

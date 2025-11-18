@@ -1,0 +1,53 @@
+    OpenRGB v0.9+ (1.0rc2)
+    Commit:  from 
+    Launched: 20251104_141232
+====================================================================================================
+
+52    |Info:    [ResourceManager] Initializing HID interfaces: Success
+52    |Info:    ------------------------------------------------------
+52    |Info:    |               Start device detection               |
+52    |Info:    ------------------------------------------------------
+63    |Info:    ------------------------------------------------------
+63    |Info:    |             Detecting I2C interfaces               |
+63    |Info:    ------------------------------------------------------
+63    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-3 Device 1002:73DF Subsystem: 1043:05CB
+63    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-1 Device 1002:73DF Subsystem: 1043:05CB
+63    |Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+63    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-8 Device 0000:0000 Subsystem: 0000:0000
+63    |Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+63    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-6 Device 0000:0000 Subsystem: 0000:0000
+63    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-4 Device 1002:73DF Subsystem: 1043:05CB
+64    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-2 Device 1002:73DF Subsystem: 1043:05CB
+64    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-0 Device 1002:73DF Subsystem: 1043:05CB
+64    |Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+64    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-7 Device 0000:0000 Subsystem: 0000:0000
+64    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-5 Device 1002:73DF Subsystem: 1043:05CB
+64    |Info:    ------------------------------------------------------
+64    |Info:    |               Detecting I2C devices                |
+64    |Info:    ------------------------------------------------------
+84    |Info:    ------------------------------------------------------
+84    |Info:    |            Detecting I2C DIMM modules              |
+84    |Info:    ------------------------------------------------------
+84    |Info:    ------------------------------------------------------
+84    |Info:    |               Detecting I2C PCI devices            |
+84    |Info:    ------------------------------------------------------
+86    |Info:    ------------------------------------------------------
+86    |Info:    |               Detecting HID devices                |
+86    |Info:    ------------------------------------------------------
+139   |Info:    [Zalman Z Sync] Registering RGB controller
+192   |Info:    [KLM] Created new Tenkeyless ANSI QWERTY with 6 rows and 17 columns containing 87 keys
+192   |Info:    [Red Square Keyrox TKL Classic] Registering RGB controller
+192   |Info:    ------------------------------------------------------
+192   |Info:    |            Detecting libusb HID devices            |
+192   |Info:    ------------------------------------------------------
+250   |Info:    ------------------------------------------------------
+250   |Info:    |              Detecting other devices               |
+250   |Info:    ------------------------------------------------------
+267   |Info:    [ResourceManager] Calling Post-detection callbacks
+267   |Info:    ------------------------------------------------------
+267   |Info:    |                Detection completed                 |
+267   |Info:    ------------------------------------------------------
+4876575|Info:    [Blade Pro (late 2019)] Registering RGB controller
+5388103|Info:    [Blade Pro (late 2019)] Unregistering RGB controller
+5402918|Info:    [desktop] Registering RGB controller
+6407371|Info:    [desktop] Unregistering RGB controller

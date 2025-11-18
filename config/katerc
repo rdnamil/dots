@@ -26,6 +26,7 @@ Cycle To First Tab=true
 Days Meta Infos=30
 Diagnostics Limit=12000
 Diff Show Style=0
+DiffWidget Show Commit Info=false
 Elide Tab Text=false
 Enable Context ToolView=false
 Expand Tabs=false
@@ -190,8 +191,8 @@ SetEditor=false
 1920x1080 screen: Width=902
 2 screens: Height=1382
 2 screens: Width=1222
-2560x1440 screen: Height=1382
-2560x1440 screen: Width=1635
+2560x1440 screen: Height=1380
+2560x1440 screen: Width=1222
 MenuBar=Disabled
 
 [MainWindow][Toolbar gdbplugin]
@@ -370,9 +371,6 @@ shortcut text=
 [Snippets][repository /home/andrel/.local/share/ktexteditor_snippets/data/meta.xml]
 shortcut desc=
 
-[UiSettings]
-ColorScheme=catppuccin
-
 [debugplugin]
 DAPConfiguration=
 
@@ -391,10 +389,10 @@ viewShade=138,173,244
 lastExecutedGitCmds=git push origin main,git pull origin main
 
 [lspclient]
-AllowedServerCommandLines=/usr/bin/qmlls6,/usr/bin/vscode-css-languageserver --stdio,/usr/bin/vscode-html-languageserver,/usr/bin/vscode-html-languageserver --stdio
+AllowedServerCommandLines=/usr/bin/vscode-css-languageserver --stdio,/usr/bin/vscode-html-languageserver,/usr/bin/vscode-html-languageserver --stdio
 AutoHover=true
 AutoImport=true
-BlockedServerCommandLines=
+BlockedServerCommandLines=/usr/bin/qmlls6
 CompletionDocumentation=true
 CompletionParens=true
 Diagnostics=true

@@ -1,0 +1,63 @@
+    OpenRGB v0.9+ (1.0rc2)
+    Commit:  from 
+    Launched: 20251106_151505
+====================================================================================================
+
+53    |Info:    [ResourceManager] Initializing HID interfaces: Success
+53    |Info:    ------------------------------------------------------
+53    |Info:    |               Start device detection               |
+53    |Info:    ------------------------------------------------------
+64    |Info:    ------------------------------------------------------
+64    |Info:    |             Detecting I2C interfaces               |
+64    |Info:    ------------------------------------------------------
+64    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-3 Device 1002:73DF Subsystem: 1043:05CB
+64    |Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+64    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-10 Device 0000:0000 Subsystem: 0000:0000
+64    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-1 Device 1022:790B Subsystem: 1458:5001
+64    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-8 Device 1002:73DF Subsystem: 1043:05CB
+64    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-6 Device 1002:73DF Subsystem: 1043:05CB
+64    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-4 Device 1002:73DF Subsystem: 1043:05CB
+64    |Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+64    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-11 Device 0000:0000 Subsystem: 0000:0000
+65    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-2 Device 1022:790B Subsystem: 1458:5001
+65    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-0 Device 1022:790B Subsystem: 1458:5001
+65    |Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+65    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-9 Device 0000:0000 Subsystem: 0000:0000
+65    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-7 Device 1002:73DF Subsystem: 1043:05CB
+65    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-5 Device 1002:73DF Subsystem: 1043:05CB
+65    |Info:    ------------------------------------------------------
+65    |Info:    |               Detecting I2C devices                |
+65    |Info:    ------------------------------------------------------
+873   |Info:    [Corsair Dominator Platinum] Registering RGB controller
+885   |Info:    [Corsair Dominator Platinum] Registering RGB controller
+897   |Info:    [Corsair Dominator Platinum] Registering RGB controller
+909   |Info:    [Corsair Dominator Platinum] Registering RGB controller
+1046  |Info:    ------------------------------------------------------
+1046  |Info:    |            Detecting I2C DIMM modules              |
+1046  |Info:    ------------------------------------------------------
+1099  |Info:    [ResourceManager] Detected occupied slot 2, bus 7, type Reserved
+1898  |Info:    [ResourceManager] Detected occupied slot 1, bus 8, type DDR4
+3180  |Info:    [ResourceManager] Detected occupied slot 2, bus 8, type DDR4
+4978  |Info:    [ResourceManager] Detected occupied slot 3, bus 8, type DDR4
+7285  |Info:    [ResourceManager] Detected occupied slot 4, bus 8, type DDR4
+7929  |Info:    ------------------------------------------------------
+7929  |Info:    |               Detecting I2C PCI devices            |
+7929  |Info:    ------------------------------------------------------
+7930  |Info:    ------------------------------------------------------
+7930  |Info:    |               Detecting HID devices                |
+7930  |Info:    ------------------------------------------------------
+7984  |Info:    [Zalman Z Sync] Registering RGB controller
+8036  |Info:    [KLM] Created new Tenkeyless ANSI QWERTY with 6 rows and 17 columns containing 87 keys
+8036  |Info:    [Red Square Keyrox TKL Classic] Registering RGB controller
+8036  |Info:    ------------------------------------------------------
+8036  |Info:    |            Detecting libusb HID devices            |
+8037  |Info:    ------------------------------------------------------
+8093  |Info:    ------------------------------------------------------
+8093  |Info:    |              Detecting other devices               |
+8093  |Info:    ------------------------------------------------------
+8109  |Info:    [ResourceManager] Calling Post-detection callbacks
+8109  |Info:    ------------------------------------------------------
+8109  |Info:    |                Detection completed                 |
+8109  |Info:    ------------------------------------------------------
+8139  |Info:    [Blade Pro (late 2019)] Registering RGB controller
+8151  |Info:    [b450mds3h] Registering RGB controller

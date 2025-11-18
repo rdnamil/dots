@@ -6,58 +6,6 @@
             "Brightness": 100,
             "ControllerZones": [
                 {
-                    "description": "Corsair RAM RGB Device",
-                    "is_segment": false,
-                    "location": "I2C: /dev/i2c-0, address 0x58",
-                    "name": "Corsair Dominator Platinum",
-                    "reverse": false,
-                    "segment_idx": -1,
-                    "self_brightness": 100,
-                    "serial": "",
-                    "vendor": "Corsair",
-                    "version": "",
-                    "zone_idx": 0
-                },
-                {
-                    "description": "Corsair RAM RGB Device",
-                    "is_segment": false,
-                    "location": "I2C: /dev/i2c-0, address 0x59",
-                    "name": "Corsair Dominator Platinum",
-                    "reverse": false,
-                    "segment_idx": -1,
-                    "self_brightness": 100,
-                    "serial": "",
-                    "vendor": "Corsair",
-                    "version": "",
-                    "zone_idx": 0
-                },
-                {
-                    "description": "Corsair RAM RGB Device",
-                    "is_segment": false,
-                    "location": "I2C: /dev/i2c-0, address 0x5A",
-                    "name": "Corsair Dominator Platinum",
-                    "reverse": false,
-                    "segment_idx": -1,
-                    "self_brightness": 100,
-                    "serial": "",
-                    "vendor": "Corsair",
-                    "version": "",
-                    "zone_idx": 0
-                },
-                {
-                    "description": "Corsair RAM RGB Device",
-                    "is_segment": false,
-                    "location": "I2C: /dev/i2c-0, address 0x5B",
-                    "name": "Corsair Dominator Platinum",
-                    "reverse": false,
-                    "segment_idx": -1,
-                    "self_brightness": 100,
-                    "serial": "",
-                    "vendor": "Corsair",
-                    "version": "",
-                    "zone_idx": 0
-                },
-                {
                     "description": "Red Square Keyrox TKL Classic Device",
                     "is_segment": false,
                     "location": "HID: /dev/hidraw4",

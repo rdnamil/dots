@@ -2174,6 +2174,7 @@
         "theme": "auto"
     },
     "UserInterface": {
+        "RunZoneChecks": false,
         "autoload_profiles": {
             "exit_profile": {
                 "enabled": false,

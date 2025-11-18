@@ -1,0 +1,127 @@
+    OpenRGB v0.9+ (1.0rc2)
+    Commit:  from 
+    Launched: 20251104_160733
+====================================================================================================
+
+53    |Info:    [ResourceManager] Initializing HID interfaces: Success
+53    |Info:    ------------------------------------------------------
+53    |Info:    |               Start device detection               |
+53    |Info:    ------------------------------------------------------
+64    |Info:    ------------------------------------------------------
+64    |Info:    |             Detecting I2C interfaces               |
+64    |Info:    ------------------------------------------------------
+64    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-3 Device 1002:73DF Subsystem: 1043:05CB
+64    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-10 Device 1022:790B Subsystem: 1458:5001
+64    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-1 Device 1002:73DF Subsystem: 1043:05CB
+64    |Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+64    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-8 Device 0000:0000 Subsystem: 0000:0000
+64    |Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+64    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-6 Device 0000:0000 Subsystem: 0000:0000
+64    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-4 Device 1002:73DF Subsystem: 1043:05CB
+65    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-11 Device 1022:790B Subsystem: 1458:5001
+65    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-2 Device 1002:73DF Subsystem: 1043:05CB
+65    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-0 Device 1002:73DF Subsystem: 1043:05CB
+65    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-9 Device 1022:790B Subsystem: 1458:5001
+65    |Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+65    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-7 Device 0000:0000 Subsystem: 0000:0000
+65    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-5 Device 1002:73DF Subsystem: 1043:05CB
+65    |Info:    ------------------------------------------------------
+65    |Info:    |               Detecting I2C devices                |
+65    |Info:    ------------------------------------------------------
+870   |Info:    [Corsair Dominator Platinum] Registering RGB controller
+882   |Info:    [Corsair Dominator Platinum] Registering RGB controller
+894   |Info:    [Corsair Dominator Platinum] Registering RGB controller
+906   |Info:    [Corsair Dominator Platinum] Registering RGB controller
+1043  |Info:    ------------------------------------------------------
+1043  |Info:    |            Detecting I2C DIMM modules              |
+1043  |Info:    ------------------------------------------------------
+1095  |Info:    [ResourceManager] Detected occupied slot 2, bus 6, type óúH‹ÿ 8
+1862  |Info:    [ResourceManager] Detected occupied slot 1, bus 9, type DDR4
+3136  |Info:    [ResourceManager] Detected occupied slot 2, bus 9, type DDR4
+4932  |Info:    [ResourceManager] Detected occupied slot 3, bus 9, type DDR4
+7239  |Info:    [ResourceManager] Detected occupied slot 4, bus 9, type DDR4
+7847  |Info:    ------------------------------------------------------
+7848  |Info:    |               Detecting I2C PCI devices            |
+7848  |Info:    ------------------------------------------------------
+7849  |Info:    ------------------------------------------------------
+7849  |Info:    |               Detecting HID devices                |
+7849  |Info:    ------------------------------------------------------
+7903  |Info:    [Zalman Z Sync] Registering RGB controller
+7954  |Info:    [KLM] Created new Tenkeyless ANSI QWERTY with 6 rows and 17 columns containing 87 keys
+7954  |Info:    [Red Square Keyrox TKL Classic] Registering RGB controller
+7954  |Info:    ------------------------------------------------------
+7954  |Info:    |            Detecting libusb HID devices            |
+7954  |Info:    ------------------------------------------------------
+8012  |Info:    ------------------------------------------------------
+8012  |Info:    |              Detecting other devices               |
+8012  |Info:    ------------------------------------------------------
+8027  |Info:    [ResourceManager] Calling Post-detection callbacks
+8027  |Info:    ------------------------------------------------------
+8027  |Info:    |                Detection completed                 |
+8027  |Info:    ------------------------------------------------------
+12321 |Info:    [Blade Pro (late 2019)] Registering RGB controller
+12334 |Info:    [desktop] Registering RGB controller
+250663|Info:    [b450mds3h] Unregistering RGB controller
+251461|Info:    [b450mds3h] Registering RGB controller
+897771|Info:    [Blade Pro (late 2019)] Unregistering RGB controller
+897771|Info:    [b450mds3h] Unregistering RGB controller
+898442|Info:    [ResourceManager] Initializing HID interfaces: Success
+898442|Info:    ------------------------------------------------------
+898442|Info:    |               Start device detection               |
+898442|Info:    ------------------------------------------------------
+898452|Info:    ------------------------------------------------------
+898452|Info:    |             Detecting I2C interfaces               |
+898452|Info:    ------------------------------------------------------
+898452|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-3 Device 1002:73DF Subsystem: 1043:05CB
+898452|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-10 Device 1022:790B Subsystem: 1458:5001
+898452|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-1 Device 1002:73DF Subsystem: 1043:05CB
+898452|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+898452|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-8 Device 0000:0000 Subsystem: 0000:0000
+898452|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+898453|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-6 Device 0000:0000 Subsystem: 0000:0000
+898453|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-4 Device 1002:73DF Subsystem: 1043:05CB
+898453|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-11 Device 1022:790B Subsystem: 1458:5001
+898453|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-2 Device 1002:73DF Subsystem: 1043:05CB
+898453|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-0 Device 1002:73DF Subsystem: 1043:05CB
+898453|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-9 Device 1022:790B Subsystem: 1458:5001
+898453|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+898453|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-7 Device 0000:0000 Subsystem: 0000:0000
+898453|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-5 Device 1002:73DF Subsystem: 1043:05CB
+898453|Info:    ------------------------------------------------------
+898453|Info:    |               Detecting I2C devices                |
+898453|Info:    ------------------------------------------------------
+899258|Info:    [Corsair Dominator Platinum] Registering RGB controller
+899270|Info:    [Corsair Dominator Platinum] Registering RGB controller
+899282|Info:    [Corsair Dominator Platinum] Registering RGB controller
+899294|Info:    [Corsair Dominator Platinum] Registering RGB controller
+899431|Info:    ------------------------------------------------------
+899431|Info:    |            Detecting I2C DIMM modules              |
+899431|Info:    ------------------------------------------------------
+899484|Info:    [ResourceManager] Detected occupied slot 2, bus 6, type Reserved
+900284|Info:    [ResourceManager] Detected occupied slot 1, bus 9, type DDR4
+901567|Info:    [ResourceManager] Detected occupied slot 2, bus 9, type DDR4
+903364|Info:    [ResourceManager] Detected occupied slot 3, bus 9, type DDR4
+905673|Info:    [ResourceManager] Detected occupied slot 4, bus 9, type DDR4
+906281|Info:    ------------------------------------------------------
+906281|Info:    |               Detecting I2C PCI devices            |
+906281|Info:    ------------------------------------------------------
+906283|Info:    ------------------------------------------------------
+906283|Info:    |               Detecting HID devices                |
+906283|Info:    ------------------------------------------------------
+906337|Info:    [Zalman Z Sync] Registering RGB controller
+906388|Info:    [KLM] Created new Tenkeyless ANSI QWERTY with 6 rows and 17 columns containing 87 keys
+906388|Info:    [Red Square Keyrox TKL Classic] Registering RGB controller
+906388|Info:    ------------------------------------------------------
+906388|Info:    |            Detecting libusb HID devices            |
+906388|Info:    ------------------------------------------------------
+906440|Info:    ------------------------------------------------------
+906440|Info:    |              Detecting other devices               |
+906440|Info:    ------------------------------------------------------
+906450|Info:    [ResourceManager] Calling Post-detection callbacks
+906450|Info:    ------------------------------------------------------
+906450|Info:    |                Detection completed                 |
+906450|Info:    ------------------------------------------------------
+906456|Info:    [Blade Pro (late 2019)] Registering RGB controller
+906458|Info:    [b450mds3h] Registering RGB controller
+71264708|Info:    [Blade Pro (late 2019)] Unregistering RGB controller
+71264708|Info:    [b450mds3h] Unregistering RGB controller

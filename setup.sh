@@ -7,13 +7,15 @@ mkdir -p ~/.config
 mv -bf config/* ~/.config/
 mkdir -p ~/.local
 mv -bf local/* ~/.local/
+sudo mkdir -p /usr/local/bin
+sudo mv bin/* /usr/local/bin/
 
 # basic DE stuff
 yay -S --needed --noconfirm \
 niri xdg-desktop-portal-gtk xdg-desktop-portal-gnome gnome-keyring polkit-gnome xwayland-satellite xorg-xhost \
 zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting \
 ttf-jetbrains-mono-nerd libappindicator-gtk3 \
-fuzzel ghostty kate brave-bin swww waypaper mission-center ristretto libreoffice-fresh obsidian qbittorrent piper obs-studio obs-vkcapture lib32-obs-vkcapture partitionmanager gimp inkscape krita baobab bat cava ddcutil fastfetch haruna kdenlive networkmanager-dmenu-git swayidle hyprlock eza openrgb zoxide wl-clipboard wl-clip-persist inotify-tools
+ghostty kate brave-bin swww waypaper mission-center ristretto libreoffice-fresh obsidian qbittorrent piper obs-studio obs-vkcapture lib32-obs-vkcapture partitionmanager gimp inkscape krita baobab bat cava ddcutil fastfetch haruna kdenlive networkmanager-dmenu-git swayidle hyprlock eza openrgb zoxide wl-clipboard wl-clip-persist inotify-tools playerctl sunsetr-bin oversteer new-lg4ff-dkms-git okular
 mv -bf zshrc ~/.zshrc
 systemctl --user enable app-com.mitchellh.ghostty.service
 
@@ -54,17 +56,24 @@ mkdir -p ~/.local/share/themes
 git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme.git catppuccin-theme
 catppuccin-theme/themes/install.sh -l -d ~/.local/share/themes -c dark -t blue --tweaks macchiato
 wget -qO- https://raw.githubusercontent.com/Bonandry/adwaita-plus/master/install.sh | sh
+wget -qO- https://git.io/papirus-icon-theme-install | sh
 
 # gaming stuff
-yay -S --needed --noconfirm gamescope gamemode lib32-gamemode mangohud lib32-mangohud game-devices-udev lutris steam steamcmd
+yay -S --needed --noconfirm gamescope gamemode lib32-gamemode mangohud lib32-mangohud game-devices-udev lutris steam steamcmd jre-openjdk prismlauncher heroic-games-launcher-bin
 sudo usermod -aG gamemode $USER
 
 # drivers
-if [ $1 = "--amd" ]; then
-	yay -S --needed --noconfirm mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon
-elif [ $1 = "--nvidia" ]; then
-	nvidia-inst -po --no-dkms
-fi
+for arg in "$@"; do
+	case "$arg" in
+		--amd)
+			yay -S --needed --noconfirm mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon
+			;;
+		--nvidia)
+			nvidia-inst -po --no-dkms
+			;;
+		--intel)
+			yay -S --needed --noconfirm mesa lib32-mesa vulkan-intel lib32-vulkan-intel
+done
 
 # virt-manager
 yay -S --needed --noconfirm qemu-desktop libvirt virt-manager swtpm

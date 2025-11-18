@@ -1,0 +1,48 @@
+    OpenRGB v0.9+ (1.0rc2)
+    Commit:  from 
+    Launched: 20251112_140441
+====================================================================================================
+
+53    |Info:    [ResourceManager] Initializing HID interfaces: Success
+53    |Info:    ------------------------------------------------------
+53    |Info:    |               Start device detection               |
+53    |Info:    ------------------------------------------------------
+71    |Info:    ------------------------------------------------------
+71    |Info:    |             Detecting I2C interfaces               |
+71    |Info:    ------------------------------------------------------
+71    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-3 Device 1002:73DF Subsystem: 1043:05CB
+71    |Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+71    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-10 Device 0000:0000 Subsystem: 0000:0000
+71    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-1 Device 1022:790B Subsystem: 1458:5001
+71    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-8 Device 1002:73DF Subsystem: 1043:05CB
+71    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-6 Device 1002:73DF Subsystem: 1043:05CB
+71    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-4 Device 1002:73DF Subsystem: 1043:05CB
+71    |Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+71    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-11 Device 0000:0000 Subsystem: 0000:0000
+72    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-2 Device 1022:790B Subsystem: 1458:5001
+72    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-0 Device 1022:790B Subsystem: 1458:5001
+72    |Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+72    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-9 Device 0000:0000 Subsystem: 0000:0000
+72    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-7 Device 1002:73DF Subsystem: 1043:05CB
+72    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-5 Device 1002:73DF Subsystem: 1043:05CB
+72    |Info:    ------------------------------------------------------
+72    |Info:    |               Detecting I2C devices                |
+72    |Info:    ------------------------------------------------------
+908   |Info:    [Corsair Dominator Platinum] Registering RGB controller
+929   |Info:    [Corsair Dominator Platinum] Registering RGB controller
+942   |Info:    [Corsair Dominator Platinum] Registering RGB controller
+958   |Info:    [Corsair Dominator Platinum] Registering RGB controller
+1098  |Info:    ------------------------------------------------------
+1098  |Info:    |            Detecting I2C DIMM modules              |
+1098  |Info:    ------------------------------------------------------
+1151  |Info:    [ResourceManager] Detected occupied slot 2, bus 7, type Reserved
+1973  |Info:    [ResourceManager] Detected occupied slot 1, bus 8, type DDR4
+3271  |Info:    [ResourceManager] Detected occupied slot 2, bus 8, type DDR4
+5109  |Info:    [ResourceManager] Detected occupied slot 3, bus 8, type DDR4
+7438  |Info:    [ResourceManager] Detected occupied slot 4, bus 8, type DDR4
+8051  |Info:    ------------------------------------------------------
+8051  |Info:    |               Detecting I2C PCI devices            |
+8051  |Info:    ------------------------------------------------------
+8053  |Info:    ------------------------------------------------------
+8053  |Info:    |               Detecting HID devices                |
+8053  |Info:    ------------------------------------------------------
