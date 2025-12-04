@@ -7,21 +7,20 @@
 > Use at your own risk. This works for me, it may not work for your system!
 
 ## What's included
----
 #### DE
- - wm: niri [^1]
- - greeter: greetd [^1]
- - term: ghostty [^1]
- - shell: zsh [^1]
- - file manager: thunar-devel [^1]
- - idle manager: swayidle [^1]
- - lockscreen: hyprlock [^1]
- - wallpaper daemon: swww
- - wall manager: waypaper
- - bar: quickshell [^1]
- - browser: brave
- - image viewer: ristretto
- - system monitor: mission center
+ - **wm**: niri [^1]
+ - **greeter**: greetd [^1]
+ - **term**: ghostty [^1]
+ - **shell**: zsh [^1]
+ - **file manager**: thunar-devel [^1]
+ - **idle manager**: swayidle [^1]
+ - **lockscreen**: hyprlock [^1]
+ - **wallpaper** daemon: swww
+ - **wall manager**: waypaper
+ - **bar**: quickshell [^1]
+ - **browser**: brave
+ - **image viewer**: ristretto
+ - **system monitor**: mission center
 
 #### Utils
  - bat
@@ -69,7 +68,6 @@
 
 [^1]: config included
 ## Installing
----
 ### Requirements
 EndeavourOS with no DE installed on a _btrfs_ formatted partition and _grub_ bootloader.
 
