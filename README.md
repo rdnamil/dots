@@ -18,7 +18,7 @@ EndeavourOS with no DE installed on a _btrfs_ formatted partition and _grub_ boo
 	_driver options can include:
 	--amd
 	--nvidia
-	or --intel
+	or --intel_
 
 ## What's included
 #### DE
