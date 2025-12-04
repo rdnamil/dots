@@ -6,6 +6,20 @@
 > [!WARNING]
 > Use at your own risk. This works for me, it may not work for your system!
 
+## Installing
+### Requirements
+EndeavourOS with no DE installed on a _btrfs_ formatted partition and _grub_ bootloader.
+
+### Installing
+1. Clone this repository 
+	`git clone https://github.com/rdnamil/dots`
+2. Run setup.sh
+	`dots/setup.sh [driver]`
+	_driver options can include:
+	--amd
+	--nvidia
+	or --intel
+
 ## What's included
 #### DE
  - **wm**: niri [^1]
@@ -67,16 +81,3 @@
  - legcord
 
 [^1]: config included
-## Installing
-### Requirements
-EndeavourOS with no DE installed on a _btrfs_ formatted partition and _grub_ bootloader.
-
-### Installing
-1. Clone this repository 
-	`git clone https://github.com/rdnamil/dots`
-2. Run setup.sh
-	`dots/setup.sh [driver]`
-	_driver options can include:
-	--amd
-	--nvidia
-	or --intel
