@@ -4,6 +4,13 @@ Encoding=ISO-8859-1
 Time=2025,11,4,18,47,18.844,UTC
 URL=file:///home/andrel/.config/quickshell/.Shell.qml.kate-swp
 
+[file:///home/andrel/.config/swayidle/config]
+Checksum=b5855f3311c88bfcf629f17ec85fb7d039a864a6
+Mode=Bash
+Mode Set By User=true
+Time=2025,12,4,18,13,54.859,UTC
+URL=file:///home/andrel/.config/swayidle/config
+
 [file:///home/andrel/test.vb]
 Checksum=f526a78215c473e9a9c4f022b13c8eba66577051
 Mode=Normal

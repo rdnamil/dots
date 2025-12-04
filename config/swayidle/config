@@ -6,11 +6,11 @@
 # ---
 
 # dim screen after 4min55s
-# timeout 295 'idle-brightness 0' resume 'idle-brightness'
+timeout 295 'ddcutil -d 1 setvcp x10 10' resume 'ddcutil -d 1 setvcp x10 100'
 
 # turn off screen and lock after 5min
-timeout 300 'niri msg action power-off-monitors && sleep 0.2 && /home/andrel/.local/bin/lockscreen.sh' resume 'niri msg action power-on-monitors'
+timeout 300 'niri msg action power-off-monitors && sleep 0.2 && /usr/local/bin/lockscreen.sh' resume 'niri msg action power-on-monitors && sleep 0.2 && ddcutil -d 1 setvcp x10 100'
 
 # lock screen before suspend
-before-sleep '/home/andrel/.local/bin/lockscreen.sh'
+before-sleep '/usr/local/bin/lockscreen.sh'
 after-resume 'qs ipc call weather update'

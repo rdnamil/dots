@@ -191,12 +191,18 @@ SetEditor=false
 1920x1080 screen: Width=902
 2 screens: Height=1382
 2 screens: Width=1222
-2560x1440 screen: Height=1380
-2560x1440 screen: Width=1222
+2560x1440 screen: Height=1384
+2560x1440 screen: Width=1228
 MenuBar=Disabled
 
 [MainWindow][Toolbar gdbplugin]
 IconSize=16
+
+[MainWindow][Toolbar hamburgerBar]
+ToolButtonStyle=IconOnly
+
+[MainWindow][Toolbar mainToolBar]
+ToolButtonStyle=IconOnly
 
 [PluginSymbolViewer]
 ExpandTree=false
@@ -389,7 +395,7 @@ viewShade=138,173,244
 lastExecutedGitCmds=git push origin main,git pull origin main
 
 [lspclient]
-AllowedServerCommandLines=/usr/bin/vscode-css-languageserver --stdio,/usr/bin/vscode-html-languageserver,/usr/bin/vscode-html-languageserver --stdio
+AllowedServerCommandLines=/usr/bin/nc 127.0.0.1 6005,/usr/bin/vscode-css-languageserver --stdio,/usr/bin/vscode-html-languageserver,/usr/bin/vscode-html-languageserver --stdio
 AutoHover=true
 AutoImport=true
 BlockedServerCommandLines=/usr/bin/qmlls6

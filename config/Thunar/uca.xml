@@ -25,7 +25,7 @@
 </action>
 <action>
 	<icon>org.xfce.thunar</icon>
-	<name>Open here as Administrator</name>
+	<name>Open as Administrator</name>
 	<submenu></submenu>
 	<unique-id>1761916335667430-1</unique-id>
 	<command>thunar admin:%f</command>
@@ -33,6 +33,17 @@
 	<range>*</range>
 	<patterns>*</patterns>
 	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>kate</icon>
+	<name>Open as project</name>
+	<submenu></submenu>
+	<unique-id>1764265577705592-1</unique-id>
+	<command>kate %f</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
 	<directories/>
 </action>
 </actions>

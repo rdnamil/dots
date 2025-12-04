@@ -1,0 +1,50 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<channel name="thunar" version="1.0">
+  <property name="last-view" type="string" value="ThunarDetailsView"/>
+  <property name="last-icon-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_100_PERCENT"/>
+  <property name="last-window-width" type="int" value="1228"/>
+  <property name="last-window-height" type="int" value="1384"/>
+  <property name="last-window-maximized" type="bool" value="false"/>
+  <property name="last-menubar-visible" type="bool" value="false"/>
+  <property name="misc-single-click" type="bool" value="false"/>
+  <property name="misc-date-style" type="string" value="THUNAR_DATE_STYLE_SHORT"/>
+  <property name="misc-directory-specific-settings" type="bool" value="true"/>
+  <property name="shortcuts-icon-size" type="string" value="THUNAR_ICON_SIZE_16"/>
+  <property name="shortcuts-icon-emblems" type="bool" value="true"/>
+  <property name="misc-symbolic-icons-in-sidepane" type="bool" value="true"/>
+  <property name="misc-middle-click-in-tab" type="bool" value="true"/>
+  <property name="misc-show-delete-action" type="bool" value="true"/>
+  <property name="misc-parallel-copy-mode" type="string" value="THUNAR_PARALLEL_COPY_MODE_ONLY_LOCAL_IDLE_DEVICE"/>
+  <property name="misc-exec-shell-scripts-by-default" type="string" value="THUNAR_EXECUTE_SHELL_SCRIPT_ASK"/>
+  <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_38_PERCENT"/>
+  <property name="last-details-view-column-widths" type="string" value="50,50,202,50,50,256,50,50,419,50,367,87,50,114"/>
+  <property name="last-toolbar-items" type="string" value="back:1,forward:1,open-parent:1,reload:1,open-home:1,location-bar:1,search:1,menu:1,new-tab:0,new-window:0,toggle-split-view:0,undo:0,redo:0,zoom-out:0,zoom-in:0,zoom-reset:0,view-as-icons:0,view-as-detailed-list:0,view-as-compact-list:0,view-switcher:0,uca-action-1760478746921122-1:0,uca-action-1761916335667430-1:0,uca-action-1764265577705592-1:0"/>
+  <property name="last-details-view-column-order" type="string" value="THUNAR_COLUMN_NAME,THUNAR_COLUMN_TYPE,THUNAR_COLUMN_SIZE,THUNAR_COLUMN_SIZE_IN_BYTES,THUNAR_COLUMN_DATE_MODIFIED,THUNAR_COLUMN_LOCATION,THUNAR_COLUMN_GROUP,THUNAR_COLUMN_MIME_TYPE,THUNAR_COLUMN_DATE_CREATED,THUNAR_COLUMN_OWNER,THUNAR_COLUMN_PERMISSIONS,THUNAR_COLUMN_DATE_ACCESSED,THUNAR_COLUMN_RECENCY,THUNAR_COLUMN_DATE_DELETED"/>
+  <property name="last-details-view-visible-columns" type="string" value="THUNAR_COLUMN_DATE_MODIFIED,THUNAR_COLUMN_NAME,THUNAR_COLUMN_PERMISSIONS,THUNAR_COLUMN_SIZE,THUNAR_COLUMN_TYPE"/>
+  <property name="last-details-view-fixed-columns" type="bool" value="true"/>
+  <property name="misc-expandable-folders" type="bool" value="true"/>
+  <property name="last-separator-position" type="int" value="168"/>
+  <property name="hidden-bookmarks" type="array">
+    <value type="string" value="file:///home/andrel/Desktop"/>
+  </property>
+  <property name="default-view" type="string" value="ThunarDetailsView"/>
+  <property name="last-splitview-separator-position" type="int" value="529"/>
+  <property name="last-show-hidden" type="bool" value="false"/>
+  <property name="last-location-bar" type="string" value="ThunarLocationButtons"/>
+  <property name="last-side-pane" type="string" value="THUNAR_SIDEPANE_TYPE_SHORTCUTS"/>
+  <property name="misc-recursive-permissions" type="string" value="THUNAR_RECURSIVE_PERMISSIONS_ASK"/>
+  <property name="terminal-height" type="int" value="280"/>
+  <property name="terminal-visible" type="bool" value="false"/>
+  <property name="misc-highlighting-enabled" type="bool" value="true"/>
+  <property name="misc-text-beside-icons" type="bool" value="false"/>
+  <property name="misc-thumbnail-draw-frames" type="bool" value="true"/>
+  <property name="misc-use-csd" type="bool" value="false"/>
+  <property name="last-statusbar-visible" type="bool" value="true"/>
+  <property name="smart-sort" type="bool" value="true"/>
+  <property name="misc-symbolic-icons-in-toolbar" type="bool" value="true"/>
+  <property name="terminal-ssh-auto-connect" type="bool" value="false"/>
+  <property name="terminal-font-size" type="int" value="10"/>
+  <property name="terminal-color-scheme" type="string" value="system"/>
+  <property name="terminal-sync-mode" type="string" value="THUNAR_TERMINAL_SYNC_BOTH"/>
+</channel>

@@ -1,7 +1,7 @@
 [ExtractDialog]
 1920x1080 screen: Height=1026
 1920x1080 screen: Width=902
-DirHistory[$e]=$HOME/Downloads/
+DirHistory[$e]=/mnt/tforce/Games/Hollow Knight Silksong/,$HOME/Downloads/
 
 [General]
 LockSidebar=true
