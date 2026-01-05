@@ -54,7 +54,7 @@ yay -S --needed --noconfirm libxfce4ui-devel
 yay -S --needed --noconfirm thunar-devel
 
 	# install plugins
-yay -S --needed --noconfirm gvfs gvfs-mtp gvfs-smb sshfs thunar-archive-plugin ark thunar-media-tags-plugin thunar-shares-plugin thunar-volman tumbler ffmpegthumbnailer libgsf tumbler-extra-thumbnailers raw-thumbnailer webp-pixbuf-loader
+yay -S --needed --noconfirm gvfs gvfs-mtp gvfs-smb sshfs thunar-archive-plugin ark thunar-media-tags-plugin thunar-shares-plugin thunar-volman tumbler ffmpegthumbnailer libgsf tumbler-extra-thumbnailers raw-thumbnailer webp-pixbuf-loader gnome-disk-utility
 
 	# shares setup
 		# install deps
@@ -104,6 +104,9 @@ mkdir -p ~/.local/share/themes
 	# clone catppuccin gtk theme
 git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme.git catppuccin-theme
 catppuccin-theme/themes/install.sh -l -d ~/.local/share/themes -c dark -t blue --tweaks macchiato
+		# overwite with custom gtk-dark.css
+mkdir -p ~/.local/share/themes/Catppuccin-Blue-Dark-Macchiatto/gtk-4.0
+mv -bf gtk-dark.css ~/.local/share/themes/Catppuccin-Blue-Dark-Macchiatto/gtk-4.0/gtk-dark.css
 
 	# install 'adwaita++' and 'papirus' icon themes
 wget -qO- https://raw.githubusercontent.com/Bonandry/adwaita-plus/master/install.sh | sh
@@ -128,10 +131,13 @@ for arg in "$@"; do
 			;;
 		--intel)
 			yay -S --needed --noconfirm mesa lib32-mesa vulkan-intel lib32-vulkan-intel
+	esac
+
+	yay -S --needed --noconfirm vulkan-tools
 done
 
 	# install gaming utils
-yay -S --needed --noconfirm gamescope gamemode lib32-gamemode mangohud lib32-mangohud game-devices-udev  jre-openjdk
+yay -S --needed --noconfirm gamescope gamemode lib32-gamemode mangohud lib32-mangohud game-devices-udev  jre-openjdk protontricks
 
 	# add user to 'gamemode' group
 sudo usermod -aG gamemode $USER
