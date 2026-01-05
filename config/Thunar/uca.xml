@@ -7,28 +7,17 @@
 	<unique-id>1760478746921122-1</unique-id>
 	<command>ghostty --working-directory=%f</command>
 	<description></description>
-	<range></range>
+	<range>*</range>
 	<patterns>*</patterns>
 	<startup-notify/>
 	<directories/>
-</action>
-<action>
-	<icon>waypaper</icon>
-	<name>Set wallpaper (swww)</name>
-	<submenu></submenu>
-	<unique-id>1760547140840499-1</unique-id>
-	<command>swww img %f</command>
-	<description></description>
-	<range>*</range>
-	<patterns>*</patterns>
-	<image-files/>
 </action>
 <action>
 	<icon>org.xfce.thunar</icon>
 	<name>Open as Administrator</name>
 	<submenu></submenu>
 	<unique-id>1761916335667430-1</unique-id>
-	<command>thunar admin:%f</command>
+	<command>thunar admin:///%f</command>
 	<description></description>
 	<range>*</range>
 	<patterns>*</patterns>
@@ -45,5 +34,73 @@
 	<range>*</range>
 	<patterns>*</patterns>
 	<directories/>
+</action>
+<action>
+	<icon>waypaper</icon>
+	<name>Set wallpaper (swww)</name>
+	<submenu></submenu>
+	<unique-id>1760547140840499-1</unique-id>
+	<command>swww img %f</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>image-x-jpeg</icon>
+	<name>Convert to JPG</name>
+	<submenu></submenu>
+	<unique-id>1764883347810561-5</unique-id>
+	<command>magick %f -quality 75 &quot;$(basename %f .png).jpg&quot;</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*.png</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>image-x-generic</icon>
+	<name>Convert to PNG</name>
+	<submenu></submenu>
+	<unique-id>1764885349085381-9</unique-id>
+	<command>magick %f &quot;$(basename %f .jpg).png&quot;</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*.jpg</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>meld</icon>
+	<name>Compare</name>
+	<submenu></submenu>
+	<unique-id>1764884134158045-7</unique-id>
+	<command>meld %F</command>
+	<description></description>
+	<range>2-999</range>
+	<patterns>*</patterns>
+	<directories/>
+	<text-files/>
+</action>
+<action>
+	<icon>org.gnome.baobab</icon>
+	<name>Disk Usage</name>
+	<submenu></submenu>
+	<unique-id>1764882246243891-1</unique-id>
+	<command>baobab %d</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<other-files/>
+</action>
+<action>
+	<icon>system-run</icon>
+	<name>Make Executable</name>
+	<submenu></submenu>
+	<unique-id>1764886304580399-10</unique-id>
+	<command>chmod +x %f</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<other-files/>
 </action>
 </actions>
