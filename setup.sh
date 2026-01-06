@@ -22,7 +22,7 @@ yay -S --needed --noconfirm \
 niri xdg-desktop-portal-gtk xdg-desktop-portal-gnome gnome-keyring polkit-gnome xwayland-satellite xorg-xhost \
 zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting \
 ttf-jetbrains-mono-nerd libappindicator-gtk3 \
-ghostty kate brave-bin swww waypaper mission-center ristretto libreoffice-fresh obsidian qbittorrent piper obs-studio obs-vkcapture lib32-obs-vkcapture partitionmanager gimp inkscape krita baobab bat cava ddcutil fastfetch haruna kdenlive networkmanager-dmenu-git swayidle hyprlock eza openrgb zoxide wl-clipboard wl-clip-persist inotify-tools playerctl sunsetr-bin oversteer new-lg4ff-dkms-git okular legcord
+ghostty kate brave-bin swww waypaper mission-center ristretto libreoffice-fresh obsidian qbittorrent piper obs-studio obs-vkcapture lib32-obs-vkcapture partitionmanager gimp inkscape krita baobab bat ddcutil fastfetch haruna kdenlive networkmanager-dmenu-git swayidle hyprlock eza openrgb zoxide wl-clipboard wl-clip-persist inotify-tools playerctl sunsetr-bin oversteer new-lg4ff-dkms-git okular legcord
 
 	# clone niri config
 git clone https://github.com/rdnamil/niri ~/.config
@@ -42,16 +42,11 @@ sudo mv -bf greetd.pam /etc/pam.d/greetd
 sudo systemctl enable greetd.service
 
 # thunar
-	# remove conflicts
-sudo pacman -R --noconfirm libxfce4util || true
-sudo pacman -R --noconfirm libxfce4ui || true
-sudo pacman -R --noconfirm xfce4-dev-tools || true
-
 	# install deps
-yay -S --needed --noconfirm glib2-devel
-yay -S --needed --noconfirm libxfce4util-devel
-yay -S --needed --noconfirm xfce4-dev-tools-devel
-yay -S --needed --noconfirm libxfce4ui-devel
+yay -S --needed --noconfirm --overwrite "*" glib2-devel
+yay -S --needed --noconfirm --overwrite "*" libxfce4util-devel
+yay -S --needed --noconfirm --overwrite "*" xfce4-dev-tools-devel
+yay -S --needed --noconfirm --overwrite "*" libxfce4ui-devel
 
 	#install thunar-devel
 yay -S --needed --noconfirm thunar-devel
@@ -95,7 +90,7 @@ yay -S --needed --noconfirm cava-git
 yay -S --needed --noconfirm quickshell brightnessctl songrec
 
 	# clone qs config
-git clone https://github.com/rdnamil/quickshell.git .config/quickshell
+git clone https://github.com/rdnamil/quickshell.git ~/.config/quickshell
 
 # themeing
 	# install themeing tools and deps
