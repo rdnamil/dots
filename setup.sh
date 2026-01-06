@@ -9,12 +9,13 @@ sudo systemctl enable bluetooth.service
 	# create folders
 mkdir -p ~/.config
 mkdir -p ~/.local
+mkdir -p ~/Templates
 	# move user folders
-mv -bf config ~/.config
-mv -bf local ~/.local
-mv -bf templates ~/templates
+mv -bf config/* ~/.config
+mv -bf local/* ~/.local
+mv -bf templates/* ~/Templates
 mv -bf zshrc ~/.zshrc
-sudo mv -bf bin /usr/local/bin
+sudo mv -bf bin/* /usr/local/bin
 
 # basic DE stuff
 	# install 'niri' and basic pkgs
@@ -43,10 +44,10 @@ sudo systemctl enable greetd.service
 
 # thunar
 	# install deps
-yay -S --needed --noconfirm --overwrite "*" glib2-devel
-yay -S --needed --noconfirm --overwrite "*" libxfce4util-devel
-yay -S --needed --noconfirm --overwrite "*" xfce4-dev-tools-devel
-yay -S --needed --noconfirm --overwrite "*" libxfce4ui-devel
+yay -S --needed glib2-devel
+yay -S --needed libxfce4util-devel
+yay -S --needed xfce4-dev-tools-devel
+yay -S --needed libxfce4ui-devel
 
 	#install thunar-devel
 yay -S --needed --noconfirm thunar-devel
