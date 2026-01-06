@@ -104,8 +104,8 @@ mkdir -p ~/.local/share/themes
 git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme.git catppuccin-theme
 catppuccin-theme/themes/install.sh -l -d ~/.local/share/themes -c dark -t blue --tweaks macchiato
 		# overwite with custom gtk-dark.css
-mkdir -p ~/.local/share/themes/Catppuccin-Blue-Dark-Macchiatto/gtk-4.0
-mv -bf gtk-dark.css ~/.local/share/themes/Catppuccin-Blue-Dark-Macchiatto/gtk-4.0/gtk-dark.css
+mkdir -p ~/.local/share/themes/Catppuccin-Blue-Dark-Macchiato/gtk-3.0
+mv -bf gtk-dark.css ~/.local/share/themes/Catppuccin-Blue-Dark-Macchiato/gtk-3.0/gtk-dark.css
 
 	# install 'adwaita++' and 'papirus' icon themes
 wget -qO- https://raw.githubusercontent.com/Bonandry/adwaita-plus/master/install.sh | sh
