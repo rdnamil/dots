@@ -43,14 +43,8 @@ sudo mv -bf greetd.pam /etc/pam.d/greetd
 sudo systemctl enable greetd.service
 
 # thunar
-	# install deps
-yay -S --needed glib2-devel
-yay -S --needed libxfce4util-devel
-yay -S --needed xfce4-dev-tools-devel
-yay -S --needed libxfce4ui-devel
-
-	#install thunar-devel
-yay -S --needed --noconfirm thunar-devel
+	#install thunar
+yay -S --needed --noconfirm thunar
 
 	# install plugins
 yay -S --needed --noconfirm gvfs gvfs-mtp gvfs-smb sshfs thunar-archive-plugin ark thunar-media-tags-plugin thunar-shares-plugin thunar-volman tumbler ffmpegthumbnailer libgsf tumbler-extra-thumbnailers raw-thumbnailer webp-pixbuf-loader gnome-disk-utility
@@ -81,7 +75,7 @@ sudo usermod -aG uinput $USER
 
 # cava
 	# downgrade deps
-sudo downgrade --latest --prefer-cache --ignore never autoconf-archive=1:2021.02.19-4 autoconf=2.71-4
+sudo downgrade --latest --prefer-cache --ignore never autoconf-archive=1:2021.02.19-4 autoconf=2.71-4 -- --noconfirm
 
 	# install cava
 yay -S --needed --noconfirm cava-git
