@@ -6,12 +6,15 @@ cd "$(dirname "$0")" || exit
 # post EndeavourOS install
 	#enable bluetooth
 sudo systemctl enable bluetooth.service
+	# create folders
+mkdir -p ~/.config
+mkdir -p ~/.local
 	# move user folders
 mv -bf config ~/.config
 mv -bf local ~/.local
 mv -bf templates ~/templates
 mv -bf zshrc ~/.zshrc
-mv -bf bin /usr/local/bin
+sudo mv -bf bin /usr/local/bin
 
 # basic DE stuff
 	# install 'niri' and basic pkgs
