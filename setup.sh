@@ -25,6 +25,9 @@ zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting \
 ttf-jetbrains-mono-nerd libappindicator-gtk3 \
 ghostty kate brave-bin swww waypaper mission-center ristretto libreoffice-fresh obsidian qbittorrent piper obs-studio obs-vkcapture lib32-obs-vkcapture partitionmanager gimp inkscape krita baobab bat ddcutil fastfetch haruna kdenlive networkmanager-dmenu-git swayidle hyprlock eza openrgb zoxide wl-clipboard wl-clip-persist inotify-tools playerctl sunsetr-bin oversteer new-lg4ff-dkms-git okular legcord
 
+	# niri config
+git clone https://github.com/rdnamil/niri ~/.config/niri
+
 	# enable ghostty service
 systemctl --user enable app-com.mitchellh.ghostty.service
 
