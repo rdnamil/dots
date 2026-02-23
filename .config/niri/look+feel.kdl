@@ -1,0 +1,172 @@
+// windows layout and effects
+// ---
+layout {
+	gaps 12
+	center-focused-column "never"
+	always-center-single-column
+	//default-column-display "tabbed"
+	empty-workspace-above-first
+
+	// column widths
+	// ---
+	preset-column-widths {
+		proportion 0.33333
+		proportion 0.5
+		proportion 0.66667
+		proportion 0.83333
+		proportion 1.0
+	}
+	default-column-width { proportion 0.5; }
+
+	// window heights
+	// ---
+	preset-window-heights {
+		proportion 0.33333
+		proportion 0.5
+		proportion 0.66667
+		proportion 0.83333
+		proportion 1.0
+	}
+
+	// draw a border around windows
+	// ---
+	border {
+		// off
+		width 1
+		active-color "#939ab7"
+		inactive-color "#6e738d"
+	}
+
+	// draw a ring around focused window
+	// ---
+	focus-ring {
+		//off
+		width 1
+		active-gradient from="#8aadf4" to="#8bd5ca" in="oklch shorter hue"
+		active-color "#8aadf4"
+		inactive-color "#ffffff00"
+	}
+
+	// drop shadows for windows
+	// ---
+	/-shadow {
+		on
+		draw-behind-window true
+		softness 30
+		spread 5
+		offset x=0 y=0
+		color "#0007"
+	}
+
+	// add tab-indicaotor
+	// ---
+	tab-indicator {
+		// hide-when-single-tab
+		place-within-column
+		width 8
+		gap 5
+		position "left"
+		length total-proportion=0.333
+		gaps-between-tabs 8
+		corner-radius 4
+		active-color "#89b4fa"
+		inactive-color "#45475a"
+		urgent-color "#ed8796"
+	}
+
+	// edit hint when moving windows
+	// ---
+	insert-hint {
+		//off
+		color "#8aadf46f"
+	}
+
+	// add gaps to the sides and tops
+	// ---
+	struts {
+		left 32
+		right 32
+		top -4
+		bottom -4
+	}
+
+	// make background transparent
+	// ---
+	background-color "#00000000"
+}
+
+// round corners on all windows
+// ---
+window-rule {
+	draw-border-with-background false
+	geometry-corner-radius 8
+	clip-to-geometry true
+}
+
+// make windows translucent
+// ---
+window-rule {
+	exclude title="^Picture-in-Picture$"
+	exclude app-id="Spotify"
+	exclude app-id="OBS Studio"
+	exclude app-id="org.kde.haruna"
+	opacity 0.975
+}
+
+// draw shadow under floating windows
+// ---
+window-rule {
+	match is-floating=true
+	// baba-is-float true
+
+	shadow {
+		on
+		softness 30
+		spread 0
+		draw-behind-window false
+		color "#00000070"
+		offset x=0 y=0
+	}
+}
+
+// recent window switcher
+// ---
+recent-windows {
+	// off
+	highlight {
+		active-color "#89b4fa"
+		urgent-color "#ed8796"
+		corner-radius 9
+	}
+}
+
+
+// no workspace shadows in overview
+// ---
+overview {
+	workspace-shadow { off; }
+}
+
+// no window decorations
+// ---
+prefer-no-csd
+
+// set path for screenshots
+// ---
+screenshot-path "~/Pictures/Screenshots/Screenshot_%Y-%m-%d_%H-%M-%S.png"
+
+// animation settings
+// ---
+animations {
+	//off
+	slowdown 2.0
+	window-resize {
+		custom-shader r"
+		vec4 resize_color(vec3 coords_curr_geo, vec3 size_curr_geo) {
+			vec3 coords_tex_next = niri_geo_to_tex_next * coords_curr_geo;
+			vec4 color = texture2D(niri_tex_next, coords_tex_next.st);
+			return color;
+		}
+		"
+	}
+}

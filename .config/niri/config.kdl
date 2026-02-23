@@ -1,0 +1,64 @@
+// ---
+// andrel's niri config
+// ---
+
+// includes
+// ---
+include "env.kdl"
+include "outputs.kdl"
+include "look+feel.kdl"
+include "rules.kdl"
+include "binds.kdl"
+
+// autostart
+// ---
+spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+spawn-at-startup "swww-daemon"
+spawn-at-startup "qs"
+spawn-sh-at-startup "thunar --daemon"
+spawn-sh-at-startup "kanata -c /home/andrel/.config/kanata/keeb.kbd"
+spawn-sh-at-startup "sleep 3; openrgb --startminimized"
+spawn-sh-at-startup "steam -silent -system-composer %U"
+
+layout {
+	// draw a border around windows *doesn't apply border in 'include'
+	// ---
+	border {
+		// off
+		width 1
+		active-color "#939ab7"
+		inactive-color "#6e738d"
+	}
+}
+
+// input settings
+// ---
+input {
+	keyboard {
+		xkb{
+			layout "us"
+		}
+		//numlock
+	}
+	touchpad {
+		tap
+		natural-scroll
+		accel-profile "flat"
+	}
+	mouse {
+		accel-profile "flat"
+	}
+	// warp mouse to focus and set focus to follow mouse
+	warp-mouse-to-focus
+	focus-follows-mouse max-scroll-amount="35%"
+	workspace-auto-back-and-forth
+}
+
+// gestures
+// ---
+gestures {
+	// Disable the hot corners.
+	hot-corners {
+		off
+	}
+}

@@ -1,0 +1,64 @@
+// windows rules
+// ---
+// float windows upon open
+// ---
+window-rule {
+	match title="^Picture-in-picture$"
+	match app-id="waypaper"
+	match app-id=r#"^thunar$"# title=".*Rename.*"
+	match app-id=r#"^thunar$"# title=".*Operation.*"
+	match app-id="pinentry-gtk"
+	match app-id="yad"
+	match app-id="org.quickshell"
+
+	open-floating true
+}
+
+// fullscreen windows on open
+// ---
+window-rule {
+	match app-id="steam_app_*"
+
+	open-fullscreen true
+}
+
+// have steam notifications not popup bottom right
+// ---
+window-rule {
+	match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+	default-floating-position x=10 y=10 relative-to="bottom-right"
+	open-focused false
+	geometry-corner-radius 8
+	block-out-from "screencast"
+}
+
+// layer-rules
+// ---
+// render the background as the backdrop
+// ---
+layer-rule {
+	match namespace="^swww-daemon$"
+	place-within-backdrop true
+}
+
+// draw shadow under launcher
+// ---
+layer-rule {
+	match namespace="launcher"
+	shadow {
+		// on
+		softness 30
+		spread 0
+		draw-behind-window true
+		color "#00000070"
+		offset x=0 y=0
+	}
+	block-out-from "screencast"
+}
+
+// block notifications from screen recording
+// ---
+layer-rule {
+	match namespace="notifications"
+	block-out-from "screencast"
+}

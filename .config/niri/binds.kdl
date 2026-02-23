@@ -1,0 +1,143 @@
+// don't show overview on startup
+// ---
+hotkey-overlay { skip-at-startup; }
+
+// pre-select the scope when switching windows
+// ---
+recent-windows {
+	binds {
+		Alt+Tab		{ next-window scope="output"; }
+		Alt+grave	{ next-window scope="output" filter="app-id"; }
+	}
+}
+
+// key bindings
+// ---
+binds {
+	// show list of hotkeys
+	// ---
+	Mod+Shift+Slash { show-hotkey-overlay; }
+
+	// launch programs
+	// ---
+	Mod+1			allow-inhibiting=false { spawn "ghostty"; }
+	Mod+2			allow-inhibiting=false { spawn "thunar"; }
+	Mod+3			allow-inhibiting=false { spawn "brave";}
+	Mod+4			allow-inhibiting=false { spawn "waypaper"; }
+	// Alt+Space	allow-inhibiting=false { spawn "fuzzel"; }
+	Alt+Space	allow-inhibiting=false { spawn-sh "qs ipc call launcher open"; }
+	// Mod+L		allow-inhibiting=false { spawn-sh "/usr/local/bin/lockscreen.sh"; }
+	Mod+L			allow-inhibiting=false { spawn-sh "qs ipc call lockscreen lock true"; }
+
+	// volume keys mappings
+	// ---
+	XF86AudioRaiseVolume allow-when-locked=true allow-inhibiting=false { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+" "--limit" "1"; }
+	XF86AudioLowerVolume allow-when-locked=true allow-inhibiting=false { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
+	XF86AudioMute        allow-when-locked=true allow-inhibiting=false { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+	XF86AudioMicMute     allow-when-locked=true allow-inhibiting=false { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+
+	// media keys mappings
+	// ---
+	XF86AudioPlay  allow-when-locked=true  { spawn "playerctl" "play-pause"; }
+	XF86AudioPrev  allow-when-locked=true  { spawn "playerctl" "previous"; }
+	XF86AudioNext  allow-when-locked=true  { spawn "playerctl" "next"; }
+
+	// brightness keys
+	// ---
+	XF86MonBrightnessDown   allow-when-locked=true { spawn "brightnessctl" "set" "5%-"; }
+	XF86MonBrightnessUp     allow-when-locked=true { spawn "brightnessctl" "set" "+5%"; }
+
+	// navigation keybindings
+	// ---
+
+	// open/close the overview
+	// ---
+	Mod+O repeat=false { toggle-overview; }
+	// mouse binds
+	//---
+	Mod+MouseMiddle   { toggle-overview; }
+
+	// close windows
+	// ---
+	Mod+Backspace	{ close-window; }
+	Mod+Q				{ close-window; }
+
+	// switch focus
+	// ---
+	Mod+Alt+Left	{ focus-column-left; }
+	Mod+Alt+Down	{ focus-window-down; }
+	Mod+Alt+Up		{ focus-window-up; }
+	Mod+Alt+Right	{ focus-column-right; }
+	Mod+Alt+Home	{ focus-column-first; }
+	Mod+Alt+End		{ focus-column-last; }
+	// mouse binds
+	Mod+WheelScrollUp    { focus-window-up-or-column-left; }
+	Mod+WheelScrollDown  { focus-window-down-or-column-right; }
+	Mod+MouseForward     { focus-workspace-up; }
+	Mod+MouseBack        { focus-workspace-down; }
+
+	// move window
+	// ---
+	Mod+Left		{ move-column-left; }
+	Mod+Down		{ move-window-down-or-to-workspace-down; }
+	Mod+Up		{ move-window-up-or-to-workspace-up; }
+	Mod+Right	{ move-column-right; }
+	Mod+Home		{ move-column-to-first; }
+	Mod+End		{ move-column-to-last; }
+	Mod+D			{ center-column; }
+	Mod+Comma	{ consume-or-expel-window-left; }
+	Mod+Period	{ consume-or-expel-window-right; }
+
+	//move worskpace
+	// ---
+	Mod+Shift+Left		{ move-workspace-to-monitor-left; }
+	Mod+Shift+Right	{ move-workspace-to-monitor-right; }
+	Mod+Shift+Up		{ move-workspace-up; }
+	Mod+Shift+Down		{ move-workspace-down; }
+
+	// vim keybinds
+	// ---
+	//Mod+Alt+H    { focus-column-left; }
+	//Mod+Alt+J    { focus-window-down; }
+	//Mod+Alt+K    { focus-window-up; }
+	//Mod+Alt+L    { focus-column-right; }
+	//Mod+H        { move-column-left; }
+	//Mod+J        { move-column-to-workspace-down; }
+	//Mod+K        { move-column-to-workspace-up; }
+	//Mod+L        { move-column-right; }
+
+	// change window dimensions
+	// ---
+	Mod+R       		allow-inhibiting=false { switch-preset-column-width; }
+	Mod+Shift+R 		allow-inhibiting=false { switch-preset-column-width-back;}
+	Mod+Equal			allow-inhibiting=false { switch-preset-column-width; }
+	Mod+Minus			allow-inhibiting=false { switch-preset-column-width-back;}
+	Mod+Shift+Equal	allow-inhibiting=false { switch-preset-window-height; }
+	Mod+Shift+Minus	allow-inhibiting=false { switch-preset-window-height-back;}
+	Mod+F       		allow-inhibiting=false { maximize-window-to-edges; }
+	Mod+Shift+F			allow-inhibiting=false { fullscreen-window; }
+	Mod+F11				allow-inhibiting=false { toggle-windowed-fullscreen; }
+
+	// toggle float widows
+	// ---
+	Mod+V { toggle-window-floating; }
+
+	// toggle tabbed layout
+	// ---
+	Mod+W { toggle-column-tabbed-display; }
+
+	// take screenshot
+	// ---
+	Print					allow-inhibiting=false { screenshot; }
+	Mod+Print	 		allow-inhibiting=false { screenshot-window; }
+	Mod+Shift+Print	allow-inhibiting=false { screenshot-screen show-pointer=true; }
+
+	// misc
+	// ---
+	Mod+I		{ spawn-sh "wl-copy \"$(yad --color)\""; }
+
+	// quit the application
+	//---
+	Mod+Shift+E       allow-inhibiting=false	{ quit; }
+	Ctrl+Alt+Delete   allow-inhibiting=false	{ quit; }
+}
