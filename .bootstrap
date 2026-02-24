@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# enable system services
+sudo systemctl enable bluetooth.service
+sudo systemctl enable cronie.service
+sudo systemctl enable grub-btrfsd.service
+sudo systemctl enable greetd.service
+systemctl --user enable app-com.mitchellh.ghostty.service
+
+# change shell bash -> zsh
+chsh -s /bin/zsh
+
+# setup greetd
+sudo mv -bf .dotfiles/greetd.conf /etc/greetd/config.toml
+sudo mv -bf .dotfiles/greetd.pam /etc/pam.d/greetd
+
+# setup kanata
+sudo groupadd --system uinput
+sudo usermod -aG input $USER
+sudo usermod -aG uinput $USER
+sudo modprobe uinput
+sudo tee /etc/udev/rules.d/99-input.rules > /dev/null <<EOF
+KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
+EOF
+sudo udevadm control --reload-rules && sudo udevadm trigger
+
+# setup thunar shares plugin
+export USERSHARES_DIR="/var/lib/samba/usershares"
+export USERSHARES_GROUP="sambashare"
+sudo mkdir -p ${USERSHARES_DIR}
+sudo groupadd -r ${USERSHARES_GROUP}
+sudo chown root:${USERSHARES_GROUP} ${USERSHARES_DIR}
+sudo chmod 1770 ${USERSHARES_DIR}
+sudo usermod -aG ${USERSHARES_GROUP} $USER
+sudo mv -bf .dotfiles/smb.conf /etc/samba/smb.conf
+sudo systemctl enable smb.service nmb.service
+
+# install Papirus icon theme & Catppuccin Macchiato GTK theme
+wget -qO- https://git.io/papirus-icon-theme-install | sh
+git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme.git catppuccin-theme && catppuccin-theme/themes/install.sh -l -d ~/.local/share/themes -c dark -t blue --tweaks macchiato && rm -rf catppuccin-theme
