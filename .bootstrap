@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# install extra packages
+while read pkg; do
+    yay -S --needed --noconfirm "$pkg"
+done < .dotfiles/pkglist.txt
+
 # enable system services
 sudo systemctl enable bluetooth.service
 sudo systemctl enable cronie.service
