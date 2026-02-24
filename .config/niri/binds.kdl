@@ -20,7 +20,7 @@ binds {
 
 	// launch programs
 	// ---
-	Mod+1			allow-inhibiting=false { spawn "ghostty"; }
+	Mod+1			allow-inhibiting=false { spawn "ghostty" "+new-window"; }
 	Mod+2			allow-inhibiting=false { spawn "thunar"; }
 	Mod+3			allow-inhibiting=false { spawn "brave";}
 	Mod+4			allow-inhibiting=false { spawn "waypaper"; }
