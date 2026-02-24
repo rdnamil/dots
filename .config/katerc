@@ -17,6 +17,9 @@ color3=#9dba1e
 color4=#e219e2
 color5=#37d21c
 
+[Desktop Entry]
+DefaultProfile=andrel.profile
+
 [General]
 Allow Tab Scrolling=true
 Auto Hide Tabs=false
