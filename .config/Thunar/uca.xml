@@ -1,15 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
 <action>
-	<icon>utilities-terminal</icon>
+	<icon>com.mitchellh.ghostty</icon>
 	<name>Open Terminal Here</name>
 	<submenu></submenu>
 	<unique-id>1771882433518494-1</unique-id>
-	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
-	<description>Example for a custom action</description>
+	<command>ghostty --working-directory=%f</command>
+	<description></description>
 	<range></range>
 	<patterns>*</patterns>
 	<startup-notify/>
 	<directories/>
+</action>
+<action>
+	<icon>thunar</icon>
+	<name>Open Here as Administrator</name>
+	<submenu></submenu>
+	<unique-id>1771966468262325-1</unique-id>
+	<command>thunar admin:///%f</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>kate</icon>
+	<name>Open as Project</name>
+	<submenu></submenu>
+	<unique-id>1771966521206522-2</unique-id>
+	<command>kate %f</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>preferences-desktop-wallpaper</icon>
+	<name>Set as Wallpaper (swww)</name>
+	<submenu></submenu>
+	<unique-id>1771966862289527-3</unique-id>
+	<command>qs ipc call swww applyWallpaper %f</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>image-x-gif</icon>
+	<name>Convert to GIF</name>
+	<submenu></submenu>
+	<unique-id>1771967464900947-4</unique-id>
+	<command>vid2gif %f | zenity --progress --pulsate --no-cancel --auto-close --title=&apos;&apos; --text=&apos;Converting to GIF...&apos;</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<video-files/>
 </action>
 </actions>

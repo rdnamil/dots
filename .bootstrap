@@ -10,6 +10,7 @@ sudo systemctl enable bluetooth.service
 sudo systemctl enable cronie.service
 sudo systemctl enable grub-btrfsd.service
 sudo systemctl enable greetd.service
+sudo systemctl enable avahi-daemon.service
 systemctl --user enable app-com.mitchellh.ghostty.service
 
 # change shell bash -> zsh
@@ -39,6 +40,10 @@ sudo chmod 1770 ${USERSHARES_DIR}
 sudo usermod -aG ${USERSHARES_GROUP} $USER
 sudo mv -bf .dotfiles/smb.conf /etc/samba/smb.conf
 sudo systemctl enable smb.service nmb.service
+sudo firewall-cmd --permanent --add-service={samba,samba-client,samba-dc}
+sudo firewall-cmd --permanent --add-port=139/tcp
+sudo firewall-cmd --permanent --add-port=445/tcp
+sudo firewall-cmd --reload
 
 # install Papirus icon theme & Catppuccin Macchiato GTK theme
 wget -qO- https://git.io/papirus-icon-theme-install | sh

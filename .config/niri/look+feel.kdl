@@ -140,6 +140,11 @@ recent-windows {
 	}
 }
 
+// cursor
+// ---
+cursor {
+	xcursor-theme "Qogir"
+}
 
 // no workspace shadows in overview
 // ---

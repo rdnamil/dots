@@ -22,8 +22,12 @@
   <property name="last-toolbar-items" type="string" value="back:1,forward:1,open-parent:1,reload:1,open-home:1,location-bar:1,new-tab:0,new-window:0,toggle-split-view:1,undo:0,redo:0,zoom-out:0,zoom-in:0,zoom-reset:0,view-as-icons:0,view-as-detailed-list:0,view-as-compact-list:0,view-switcher:0,search:0,uca-action-1771882433518494-1:0,menu:1"/>
   <property name="last-menubar-visible" type="bool" value="false"/>
   <property name="shortcuts-icon-emblems" type="bool" value="true"/>
-  <property name="terminal-height" type="int" value="200"/>
+  <property name="terminal-height" type="int" value="243"/>
   <property name="misc-image-preview-mode" type="string" value="THUNAR_IMAGE_PREVIEW_MODE_STANDALONE"/>
   <property name="misc-expandable-folders" type="bool" value="true"/>
   <property name="last-image-preview-visible" type="bool" value="false"/>
+  <property name="terminal-visible" type="bool" value="false"/>
+  <property name="terminal-font-size" type="int" value="10"/>
+  <property name="terminal-color-scheme" type="string" value="one-half-dark"/>
+  <property name="last-splitview-separator-position" type="int" value="-1"/>
 </channel>
