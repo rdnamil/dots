@@ -3,7 +3,7 @@
 # install extra packages
 while read pkg; do
     yay -S --needed --noconfirm "$pkg"
-done < .dotfiles/pkglist.txt
+done < .pkglist
 
 # enable system services
 sudo systemctl enable bluetooth.service
@@ -11,6 +11,7 @@ sudo systemctl enable cronie.service
 sudo systemctl enable grub-btrfsd.service
 sudo systemctl enable greetd.service
 sudo systemctl enable avahi-daemon.service
+sudo systemctl enable libvirtd.service
 systemctl --user enable app-com.mitchellh.ghostty.service
 
 # change shell bash -> zsh
@@ -44,6 +45,9 @@ sudo firewall-cmd --permanent --add-service={samba,samba-client,samba-dc}
 sudo firewall-cmd --permanent --add-port=139/tcp
 sudo firewall-cmd --permanent --add-port=445/tcp
 sudo firewall-cmd --reload
+
+# setup virt-manager
+sudo usermod -aG libvirt $USER
 
 # install Papirus icon theme & Catppuccin Macchiato GTK theme
 wget -qO- https://git.io/papirus-icon-theme-install | sh
