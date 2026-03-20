@@ -80,7 +80,6 @@ gvfs-smb
 haruna
 haveged
 hdparm
-heroic-games-launcher-bin
 hwdetect
 hwinfo
 inetutils
@@ -90,10 +89,8 @@ iptables-nft
 iwd
 jfsutils
 jre-openjdk
-kanata
 kate
 konsole
-legcord
 less
 lib32-gamemode
 lib32-mangohud
@@ -105,10 +102,7 @@ libdvdcss
 libgsf
 libguestfs
 libopenraw
-libreoffice-fresh
 libvirt
-libxfce4ui-devel
-libxfce4util-devel
 linux
 linux-firmware
 linux-headers
@@ -149,7 +143,6 @@ obs-vkcapture
 openrgb
 openssh
 os-prober
-oversteer
 pacman-contrib
 partitionmanager
 pavucontrol
@@ -166,14 +159,12 @@ plymouth-theme-bgrt-no-watermark
 polkit-gnome
 poppler-glib
 power-profiles-daemon
-prismlauncher
 protontricks
 python
 python-defusedxml
 python-jinja
 python-packaging
 qbittorrent
-qemu-desktop
 qt5ct-kde
 qt6ct-kde
 quickshell-git
@@ -203,7 +194,7 @@ systemd-sysvcompat
 tailscale
 texinfo
 thunar-archive-plugin
-thunar-devel
+thunar
 thunar-media-tags-plugin
 thunar-shares-plugin
 thunar-volman

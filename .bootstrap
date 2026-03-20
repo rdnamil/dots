@@ -19,14 +19,6 @@ chsh -s /bin/zsh
 sudo mv -bf .dotfiles/greetd.conf /etc/greetd/config.toml
 sudo mv -bf .dotfiles/greetd.pam /etc/pam.d/greetd
 
-# setup kanata
-sudo groupadd --system uinput
-sudo usermod -aG input uinput $USER
-sudo tee /etc/udev/rules.d/99-input.rules > /dev/null <<EOF
-KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
-EOF
-sudo udevadm control --reload-rules && sudo udevadm trigger
-
 # setup thunar shares plugin
 export USERSHARES_DIR="/var/lib/samba/usershares"
 export USERSHARES_GROUP="sambashare"
@@ -41,9 +33,6 @@ sudo firewall-cmd --permanent --add-service={samba,samba-client,samba-dc}
 sudo firewall-cmd --permanent --add-port=139/tcp
 sudo firewall-cmd --permanent --add-port=445/tcp
 sudo firewall-cmd --reload
-
-# setup virt-manager
-sudo usermod -aG libvirt $USER
 
 # setup openRGB
 sudo modprobe i2c-dev
