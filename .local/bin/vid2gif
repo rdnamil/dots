@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+
+FPS=30
+WIDTH=320
+OUTPUT=""
+PALETTE="/tmp/vid2gif_palette_$$.png"
+
+usage() {
+cat <<EOF
+Usage:
+  $0 [options] input_video
+
+Options:
+  -f, --fps NUM        Set FPS (default: $FPS)
+  -w, --width NUM      Set width in pixels (default: $WIDTH)
+  -o, --output FILE    Output file (default: input name with .gif)
+  -h, --help           Show this help message
+
+Examples:
+  $0 video.mp4
+  $0 -f 20 video.mp4
+  $0 --width 320 video.mp4
+  $0 -f 15 -w 480 video.mp4 -o custom.gif
+EOF
+exit 0
+}
+
+PARSED=$(getopt -o f:w:o:h --long fps:,width:,output:,help -- "$@") || exit 1
+eval set -- "$PARSED"
+
+while true; do
+  case "$1" in
+    -f|--fps)
+      FPS="$2"
+      shift 2
+      ;;
+    -w|--width)
+      WIDTH="$2"
+      shift 2
+      ;;
+    -o|--output)
+      OUTPUT="$2"
+      shift 2
+      ;;
+    -h|--help)
+      usage
+      ;;
+    --)
+      shift
+      break
+      ;;
+  esac
+done
+
+INPUT="$1"
+
+[ -z "$INPUT" ] && usage
+
+# Default output: strip extension and add .gif
+if [ -z "$OUTPUT" ]; then
+  BASENAME="${INPUT%.*}"
+  OUTPUT="${BASENAME}.gif"
+fi
+
+# Generate palette
+ffmpeg -y -i "$INPUT" \
+  -vf "fps=$FPS,scale=$WIDTH:-1:flags=lanczos,palettegen" \
+  "$PALETTE"
+
+# Create GIF
+ffmpeg -y -i "$INPUT" -i "$PALETTE" \
+  -lavfi "fps=$FPS,scale=$WIDTH:-1:flags=lanczos[x];[x][1:v]paletteuse" \
+  "$OUTPUT"
+
+# Cleanup
+rm -f "$PALETTE"
+
+echo "Created: $OUTPUT"

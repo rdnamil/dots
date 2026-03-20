@@ -1,0 +1,3 @@
+#!/bin/bash
+
+convert "$1" -quality 75 "${1%.*}.jpg"

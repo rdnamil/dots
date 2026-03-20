@@ -1,0 +1,3 @@
+#!/bin/bash
+res=$(niri msg focused-output | grep "Current mode" | grep -oP '\d+x\d+')
+grim -g "0,0 $res" - | satty -f -
