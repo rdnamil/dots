@@ -1,9 +1,7 @@
 #!/bin/bash
 
 # install extra packages
-while read pkg; do
-    yay -S --needed --noconfirm "$pkg"
-done < .pkglist
+yay -S --needed --noconfirm - < .pkglist
 
 # enable system services
 sudo systemctl enable bluetooth.service
