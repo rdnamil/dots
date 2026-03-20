@@ -144,6 +144,7 @@ recent-windows {
 // ---
 cursor {
 	xcursor-theme "Qogir"
+	// xcursor-size 24
 }
 
 // no workspace shadows in overview

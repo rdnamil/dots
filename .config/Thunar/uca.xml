@@ -57,4 +57,15 @@
 	<startup-notify/>
 	<video-files/>
 </action>
+<action>
+	<icon>image-x-jpeg</icon>
+	<name>Convert to JPEG</name>
+	<submenu></submenu>
+	<unique-id>1772638553933858-1</unique-id>
+	<command>img2jpeg %f</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*.png;*.webp</patterns>
+	<image-files/>
+</action>
 </actions>

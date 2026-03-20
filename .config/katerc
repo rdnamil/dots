@@ -110,10 +110,10 @@ Word Wrap Column=80
 [KTextEditor Renderer]
 Animate Bracket Matching=false
 Auto Color Theme Selection=true
-Color Theme=Catppuccin Macchiato
+Color Theme=Breeze Light
 Line Height Multiplier=1
 Show Indentation Lines=true
-Show Whole Bracket Expression=false
+Show Whole Bracket Expression=true
 Text Font=JetBrainsMono Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 Text Font Features=
 Word Wrap Marker=false
@@ -164,7 +164,7 @@ Search/Replace Flags=140
 Shoe Line Ending Type in Statusbar=false
 Show Documentation With Completion=true
 Show File Encoding=true
-Show Folding Icons On Hover Only=true
+Show Folding Icons On Hover Only=false
 Show Line Count=false
 Show Scrollbars=1
 Show Statusbar Dictionary=true
@@ -194,29 +194,34 @@ SetEditor=false
 [MainWindow]
 2560x1440 screen: Height=1384
 2560x1440 screen: Width=1228
+MenuBar=Disabled
 
 [MainWindow][Toolbar mainToolBar]
 ToolButtonStyle=IconOnly
 
-[UiSettings]
-ColorScheme=catppuccin
+[Snippets]
+enabledRepositories=/home/andrel/.local/share/ktexteditor_snippets/data/C.xml
+
+[Snippets][repository /home/andrel/.local/share/ktexteditor_snippets/data/C.xml]
+shortcut ClearBuffer=
+shortcut Main=
 
 [filetree]
 editShade=183,220,246
 listMode=false
-middleClickToClose=false
+middleClickToClose=true
 shadingEnabled=true
-showCloseButton=false
+showCloseButton=true
 showFullPathOnRoots=false
 showToolbar=true
 sortRole=0
 viewShade=211,190,222
 
 [kategit]
-lastExecutedGitCmds=git push origin main
+lastExecutedGitCmds=git push origin main,git pull origin main,git push origin dock
 
 [lspclient]
-AllowedServerCommandLines=/usr/bin/qmlls6
+AllowedServerCommandLines=/usr/bin/clangd -log=error --background-index --limit-results=500 --completion-style=bundled,/usr/bin/qmlls6
 AutoHover=true
 AutoImport=true
 BlockedServerCommandLines=
@@ -239,3 +244,14 @@ SymbolExpand=true
 SymbolSort=false
 SymbolTree=true
 TypeFormatting=false
+
+[project]
+autoCMake=true
+autorepository=git,subversion,mercurial
+gitStatusDoubleClick=3
+gitStatusSingleClick=0
+index=false
+indexDirectory=
+multiProjectCompletion=false
+multiProjectGoto=false
+restoreProjectsForSessions=false

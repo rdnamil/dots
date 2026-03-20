@@ -12,6 +12,7 @@ sudo systemctl enable grub-btrfsd.service
 sudo systemctl enable greetd.service
 sudo systemctl enable avahi-daemon.service
 sudo systemctl enable libvirtd.service
+sudo systemctl enable tailscaled.service
 systemctl --user enable app-com.mitchellh.ghostty.service
 
 # change shell bash -> zsh
@@ -23,9 +24,7 @@ sudo mv -bf .dotfiles/greetd.pam /etc/pam.d/greetd
 
 # setup kanata
 sudo groupadd --system uinput
-sudo usermod -aG input $USER
-sudo usermod -aG uinput $USER
-sudo modprobe uinput
+sudo usermod -aG input uinput $USER
 sudo tee /etc/udev/rules.d/99-input.rules > /dev/null <<EOF
 KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
 EOF
@@ -49,6 +48,17 @@ sudo firewall-cmd --reload
 # setup virt-manager
 sudo usermod -aG libvirt $USER
 
+# setup openRGB
+sudo modprobe i2c-dev
+sudo modprobe i2c-piix4
+sudo touch /etc/modules-load.d/i2c.conf
+sudo sh -c 'echo "i2c-dev" >> /etc/modules-load.d/i2c.conf'
+sudo sh -c 'echo "i2c-piix4" >> /etc/modules-load.d/i2c.conf'
+
 # install Papirus icon theme & Catppuccin Macchiato GTK theme
 wget -qO- https://git.io/papirus-icon-theme-install | sh
 git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme.git catppuccin-theme && catppuccin-theme/themes/install.sh -l -d ~/.local/share/themes -c dark -t blue --tweaks macchiato && rm -rf catppuccin-theme
+
+# misc
+sudo tailscale set --operator=$USER
+sudo usermod +aG gamemode $USER

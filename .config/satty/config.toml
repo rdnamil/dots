@@ -1,2 +1,22 @@
 [general]
 fullscreen = false
+resize = { mode="smart" }
+floating-hack = true
+early-exit-save-as = true
+disable-notifications = true
+initial-tool = "brush"
+copy-command = "wl-copy"
+output-filename = "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H:%M:%S.png"
+actions-on-escape = ["save-to-file","save-to-clipboard","exit"]
+
+[color-palette]
+palette = [
+    "#d20f39",
+    "#fe640b",
+    "#df8e1d",
+    "#40a02b",
+    "#179299",
+    "#1e66f5",
+    "#7287fd",
+    "#8839ef"
+]

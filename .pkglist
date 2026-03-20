@@ -5,11 +5,13 @@ alsa-utils
 amd-ucode
 ark
 aspell
+audacity
 b43-fwcutter
 base
 base-devel
 bash-completion
 bat
+bazaar
 bind
 bluez
 bluez-utils
@@ -17,6 +19,7 @@ brave-bin
 btrfs-progs
 cantarell-fonts
 cava
+clang
 cryptsetup
 darkly
 ddcutil
@@ -52,6 +55,7 @@ fastfetch
 ffmpegthumbnailer
 firewall-applet
 firewalld
+flatseal
 frameworkintegration
 game-devices-udev
 gamemode
@@ -63,6 +67,7 @@ gnome-disk-utility
 gnome-keyring
 greetd
 greetd-tuigreet
+grim
 grub
 grub-btrfs
 gst-libav
@@ -176,11 +181,14 @@ raw-thumbnailer
 rebuild-detector
 reflector
 reflector-simple
+ristretto
 rsync
 rtkit
 s-nail
 sassc
+satty
 sg3_utils
+slurp
 smartmontools
 sof-firmware
 sshfs
@@ -201,6 +209,7 @@ thunar-volman
 timeshift
 timeshift-autosnap
 tldr
+tree
 ttf-bitstream-vera
 ttf-dejavu
 ttf-jetbrains-mono-nerd
