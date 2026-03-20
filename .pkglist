@@ -200,6 +200,7 @@ swtpm
 swww
 sysfsutils
 systemd-sysvcompat
+tailscale
 texinfo
 thunar-archive-plugin
 thunar-devel
