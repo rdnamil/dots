@@ -12,7 +12,6 @@ sudo systemctl enable grub-btrfsd.service
 sudo systemctl enable greetd.service
 sudo systemctl enable avahi-daemon.service
 sudo systemctl enable libvirtd.service
-sudo systemctl enable tailscaled.service
 systemctl --user enable app-com.mitchellh.ghostty.service
 
 # change shell bash -> zsh
