@@ -98,8 +98,10 @@ less
 lib32-gamemode
 lib32-mangohud
 lib32-mesa
+lib32-nvidia-utils
 lib32-obs-vkcapture
-lib32-vulkan-radeon
+lib32-vulkan-intel
+lib32-vulkan-mesa-layers
 libappindicator
 libdvdcss
 libgsf
@@ -141,6 +143,9 @@ noto-fonts-extra
 nss-mdns
 ntfs-3g
 ntp
+nvidia-open
+nvidia-prime
+nvidia-utils
 nwg-look
 obs-studio
 obs-vkcapture
@@ -223,7 +228,8 @@ usb_modeswitch
 usbutils
 virt-manager
 vulkan-headers
-vulkan-radeon
+vulkan-intel
+vulkan-mesa-layers
 webp-pixbuf-loader
 welcome
 wev

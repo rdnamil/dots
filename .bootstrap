@@ -56,10 +56,10 @@ sudo tailscale set --operator=$USER
 
 # setup openRGB
 sudo modprobe i2c-dev
-sudo modprobe i2c-piix4
+sudo modprobe i2c-i801
 sudo touch /etc/modules-load.d/i2c.conf
 sudo sh -c 'echo "i2c-dev" >> /etc/modules-load.d/i2c.conf'
-sudo sh -c 'echo "i2c-piix4" >> /etc/modules-load.d/i2c.conf'
+sudo sh -c 'echo "i2c-i801" >> /etc/modules-load.d/i2c.conf'
 
 # install Papirus icon theme & Catppuccin Macchiato GTK theme
 wget -qO- https://git.io/papirus-icon-theme-install | sh
