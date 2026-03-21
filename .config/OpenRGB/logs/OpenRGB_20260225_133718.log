@@ -1,0 +1,59 @@
+    OpenRGB v0.9+ (1.0rc2)
+    Commit:  from 
+    Launched: 20260225_133718
+====================================================================================================
+
+53    |Info:    [ResourceManager] Initializing HID interfaces: Success
+53    |Info:    ------------------------------------------------------
+53    |Info:    |               Start device detection               |
+53    |Info:    ------------------------------------------------------
+72    |Info:    ------------------------------------------------------
+72    |Info:    |             Detecting I2C interfaces               |
+72    |Info:    ------------------------------------------------------
+73    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-3 Device 1002:73DF Subsystem: 1043:05CB
+73    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-10 Device 1022:790B Subsystem: 1458:5001
+73    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-1 Device 1002:73DF Subsystem: 1043:05CB
+73    |Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+73    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-8 Device 0000:0000 Subsystem: 0000:0000
+73    |Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+73    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-6 Device 0000:0000 Subsystem: 0000:0000
+73    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-4 Device 1002:73DF Subsystem: 1043:05CB
+73    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-11 Device 1022:790B Subsystem: 1458:5001
+73    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-2 Device 1002:73DF Subsystem: 1043:05CB
+73    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-0 Device 1002:73DF Subsystem: 1043:05CB
+73    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-9 Device 1022:790B Subsystem: 1458:5001
+73    |Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+73    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-7 Device 0000:0000 Subsystem: 0000:0000
+73    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-5 Device 1002:73DF Subsystem: 1043:05CB
+73    |Info:    ------------------------------------------------------
+73    |Info:    |               Detecting I2C devices                |
+73    |Info:    ------------------------------------------------------
+878   |Info:    [Corsair Dominator Platinum] Registering RGB controller
+890   |Info:    [Corsair Dominator Platinum] Registering RGB controller
+902   |Info:    [Corsair Dominator Platinum] Registering RGB controller
+913   |Info:    [Corsair Dominator Platinum] Registering RGB controller
+1050  |Info:    ------------------------------------------------------
+1050  |Info:    |            Detecting I2C DIMM modules              |
+1050  |Info:    ------------------------------------------------------
+1104  |Info:    [ResourceManager] Detected occupied slot 2, bus 6, type Reserved
+1901  |Info:    [ResourceManager] Detected occupied slot 1, bus 9, type DDR4
+3180  |Info:    [ResourceManager] Detected occupied slot 2, bus 9, type DDR4
+4969  |Info:    [ResourceManager] Detected occupied slot 3, bus 9, type DDR4
+7272  |Info:    [ResourceManager] Detected occupied slot 4, bus 9, type DDR4
+7876  |Info:    ------------------------------------------------------
+7876  |Info:    |               Detecting I2C PCI devices            |
+7876  |Info:    ------------------------------------------------------
+7877  |Info:    ------------------------------------------------------
+7877  |Info:    |               Detecting HID devices                |
+7877  |Info:    ------------------------------------------------------
+7929  |Info:    [Zalman Z Sync] Registering RGB controller
+7930  |Info:    ------------------------------------------------------
+7930  |Info:    |            Detecting libusb HID devices            |
+7930  |Info:    ------------------------------------------------------
+7963  |Info:    ------------------------------------------------------
+7963  |Info:    |              Detecting other devices               |
+7963  |Info:    ------------------------------------------------------
+7979  |Info:    [ResourceManager] Calling Post-detection callbacks
+7979  |Info:    ------------------------------------------------------
+7979  |Info:    |                Detection completed                 |
+7979  |Info:    ------------------------------------------------------

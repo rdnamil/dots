@@ -17,8 +17,10 @@ spawn-at-startup "swww-daemon"
 spawn-at-startup "qs"
 spawn-sh-at-startup "thunar --daemon"
 spawn-sh-at-startup "kanata -c /home/andrel/.config/kanata/keeb.kbd"
-spawn-sh-at-startup "sleep 3; openrgb --startminimized"
+spawn-sh-at-startup "tailscale systray"
+spawn-sh-at-startup "sleep 3 && openrgb --startminimized"
 spawn-sh-at-startup "steam -silent -system-composer %U"
+spawn-sh-at-startup "legcord --start-minimized"
 
 layout {
 	// draw a border around windows *doesn't apply border in 'include'

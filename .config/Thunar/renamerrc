@@ -1,0 +1,16 @@
+[Configuration]
+LastActiveMode=THUNAR_RENAMER_MODE_BOTH
+LastActiveRenamer=ThunarSbrNumberRenamer
+
+[ThunarSbrInsertRenamer]
+Offset=0
+Text=3151_5002_
+Mode=THUNAR_SBR_INSERT_MODE_INSERT
+OffsetMode=THUNAR_SBR_OFFSET_MODE_LEFT
+
+[ThunarSbrNumberRenamer]
+TextMode=THUNAR_SBR_TEXT_MODE_TN
+Text=Assignment\ 
+Mode=THUNAR_SBR_NUMBER_MODE_123
+Start=1
+

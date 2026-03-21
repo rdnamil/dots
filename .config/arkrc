@@ -1,0 +1,11 @@
+[ExtractDialog]
+2560x1440 screen: Height=1384
+2560x1440 screen: Width=1228
+DirHistory[$e]=$HOME/Pictures/Camera/
+
+[General]
+LockSidebar=true
+ShowSidebar=true
+
+[MainWindow]
+StatusBar=Disabled

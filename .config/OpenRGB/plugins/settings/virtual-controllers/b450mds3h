@@ -1,0 +1,441 @@
+{
+    "ctrl_zones": [
+        {
+            "controller": {
+                "location": "HID: /dev/hidraw7",
+                "name": "Zalman Z Sync",
+                "serial": "003300195953511920313737",
+                "vendor": "Zalman"
+            },
+            "custom_zone_name": "",
+            "settings": {
+                "custom_shape": {
+                    "h": 7,
+                    "led_positions": [
+                        {
+                            "led_num": 0,
+                            "x": 0,
+                            "y": 3
+                        },
+                        {
+                            "led_num": 1,
+                            "x": 1,
+                            "y": 5
+                        },
+                        {
+                            "led_num": 2,
+                            "x": 3,
+                            "y": 6
+                        },
+                        {
+                            "led_num": 3,
+                            "x": 5,
+                            "y": 5
+                        },
+                        {
+                            "led_num": 4,
+                            "x": 6,
+                            "y": 4
+                        },
+                        {
+                            "led_num": 5,
+                            "x": 6,
+                            "y": 2
+                        },
+                        {
+                            "led_num": 6,
+                            "x": 4,
+                            "y": 0
+                        },
+                        {
+                            "led_num": 7,
+                            "x": 2,
+                            "y": 0
+                        },
+                        {
+                            "led_num": 8,
+                            "x": 1,
+                            "y": 1
+                        }
+                    ],
+                    "w": 7
+                },
+                "led_spacing": 1,
+                "reverse": false,
+                "shape": 2,
+                "x": 0,
+                "y": 9
+            },
+            "zone_idx": 3
+        },
+        {
+            "controller": {
+                "location": "HID: /dev/hidraw7",
+                "name": "Zalman Z Sync",
+                "serial": "003300195953511920313737",
+                "vendor": "Zalman"
+            },
+            "custom_zone_name": "",
+            "settings": {
+                "custom_shape": {
+                    "h": 5,
+                    "led_positions": [
+                        {
+                            "led_num": 0,
+                            "x": 1,
+                            "y": 0
+                        },
+                        {
+                            "led_num": 1,
+                            "x": 2,
+                            "y": 0
+                        },
+                        {
+                            "led_num": 2,
+                            "x": 3,
+                            "y": 0
+                        },
+                        {
+                            "led_num": 3,
+                            "x": 4,
+                            "y": 1
+                        },
+                        {
+                            "led_num": 4,
+                            "x": 4,
+                            "y": 2
+                        },
+                        {
+                            "led_num": 5,
+                            "x": 4,
+                            "y": 3
+                        },
+                        {
+                            "led_num": 6,
+                            "x": 3,
+                            "y": 4
+                        },
+                        {
+                            "led_num": 7,
+                            "x": 2,
+                            "y": 4
+                        },
+                        {
+                            "led_num": 8,
+                            "x": 1,
+                            "y": 4
+                        },
+                        {
+                            "led_num": 9,
+                            "x": 0,
+                            "y": 3
+                        },
+                        {
+                            "led_num": 10,
+                            "x": 0,
+                            "y": 2
+                        },
+                        {
+                            "led_num": 11,
+                            "x": 0,
+                            "y": 1
+                        }
+                    ],
+                    "w": 5
+                },
+                "led_spacing": 1,
+                "reverse": false,
+                "shape": 2,
+                "x": 10,
+                "y": 10
+            },
+            "zone_idx": 4
+        },
+        {
+            "controller": {
+                "location": "HID: /dev/hidraw7",
+                "name": "Zalman Z Sync",
+                "serial": "003300195953511920313737",
+                "vendor": "Zalman"
+            },
+            "custom_zone_name": "",
+            "settings": {
+                "custom_shape": {
+                    "h": 7,
+                    "led_positions": [
+                        {
+                            "led_num": 0,
+                            "x": 6,
+                            "y": 3
+                        },
+                        {
+                            "led_num": 1,
+                            "x": 5,
+                            "y": 1
+                        },
+                        {
+                            "led_num": 2,
+                            "x": 3,
+                            "y": 0
+                        },
+                        {
+                            "led_num": 3,
+                            "x": 1,
+                            "y": 1
+                        },
+                        {
+                            "led_num": 4,
+                            "x": 0,
+                            "y": 2
+                        },
+                        {
+                            "led_num": 5,
+                            "x": 0,
+                            "y": 4
+                        },
+                        {
+                            "led_num": 6,
+                            "x": 2,
+                            "y": 6
+                        },
+                        {
+                            "led_num": 7,
+                            "x": 4,
+                            "y": 6
+                        },
+                        {
+                            "led_num": 8,
+                            "x": 5,
+                            "y": 5
+                        }
+                    ],
+                    "w": 7
+                },
+                "led_spacing": 1,
+                "reverse": false,
+                "shape": 2,
+                "x": 9,
+                "y": 0
+            },
+            "zone_idx": 2
+        },
+        {
+            "controller": {
+                "location": "HID: /dev/hidraw7",
+                "name": "Zalman Z Sync",
+                "serial": "003300195953511920313737",
+                "vendor": "Zalman"
+            },
+            "custom_zone_name": "",
+            "settings": {
+                "custom_shape": {
+                    "h": 13,
+                    "led_positions": [
+                        {
+                            "led_num": 0,
+                            "x": 0,
+                            "y": 6
+                        },
+                        {
+                            "led_num": 1,
+                            "x": 2,
+                            "y": 10
+                        },
+                        {
+                            "led_num": 2,
+                            "x": 6,
+                            "y": 12
+                        },
+                        {
+                            "led_num": 3,
+                            "x": 10,
+                            "y": 10
+                        },
+                        {
+                            "led_num": 4,
+                            "x": 12,
+                            "y": 8
+                        },
+                        {
+                            "led_num": 5,
+                            "x": 12,
+                            "y": 4
+                        },
+                        {
+                            "led_num": 6,
+                            "x": 8,
+                            "y": 0
+                        },
+                        {
+                            "led_num": 7,
+                            "x": 4,
+                            "y": 0
+                        },
+                        {
+                            "led_num": 8,
+                            "x": 2,
+                            "y": 2
+                        }
+                    ],
+                    "w": 13
+                },
+                "led_spacing": 1,
+                "reverse": false,
+                "shape": 2,
+                "x": 29,
+                "y": 3
+            },
+            "zone_idx": 0
+        },
+        {
+            "controller": {
+                "location": "HID: /dev/hidraw7",
+                "name": "Zalman Z Sync",
+                "serial": "003300195953511920313737",
+                "vendor": "Zalman"
+            },
+            "custom_zone_name": "",
+            "settings": {
+                "custom_shape": {
+                    "h": 13,
+                    "led_positions": [
+                        {
+                            "led_num": 0,
+                            "x": 0,
+                            "y": 6
+                        },
+                        {
+                            "led_num": 1,
+                            "x": 2,
+                            "y": 10
+                        },
+                        {
+                            "led_num": 2,
+                            "x": 6,
+                            "y": 12
+                        },
+                        {
+                            "led_num": 3,
+                            "x": 10,
+                            "y": 10
+                        },
+                        {
+                            "led_num": 4,
+                            "x": 12,
+                            "y": 8
+                        },
+                        {
+                            "led_num": 5,
+                            "x": 12,
+                            "y": 4
+                        },
+                        {
+                            "led_num": 6,
+                            "x": 8,
+                            "y": 0
+                        },
+                        {
+                            "led_num": 7,
+                            "x": 4,
+                            "y": 0
+                        },
+                        {
+                            "led_num": 8,
+                            "x": 2,
+                            "y": 2
+                        }
+                    ],
+                    "w": 13
+                },
+                "led_spacing": 1,
+                "reverse": false,
+                "shape": 2,
+                "x": 29,
+                "y": 19
+            },
+            "zone_idx": 1
+        },
+        {
+            "controller": {
+                "location": "I2C: /dev/i2c-0, address 0x58",
+                "name": "Corsair Dominator Platinum",
+                "serial": "",
+                "vendor": "Corsair"
+            },
+            "custom_zone_name": "",
+            "settings": {
+                "custom_shape": null,
+                "led_spacing": 1,
+                "reverse": false,
+                "shape": 1,
+                "x": 18,
+                "y": 8
+            },
+            "zone_idx": 0
+        },
+        {
+            "controller": {
+                "location": "I2C: /dev/i2c-0, address 0x59",
+                "name": "Corsair Dominator Platinum",
+                "serial": "",
+                "vendor": "Corsair"
+            },
+            "custom_zone_name": "",
+            "settings": {
+                "custom_shape": null,
+                "led_spacing": 1,
+                "reverse": false,
+                "shape": 1,
+                "x": 20,
+                "y": 8
+            },
+            "zone_idx": 0
+        },
+        {
+            "controller": {
+                "location": "I2C: /dev/i2c-0, address 0x5A",
+                "name": "Corsair Dominator Platinum",
+                "serial": "",
+                "vendor": "Corsair"
+            },
+            "custom_zone_name": "",
+            "settings": {
+                "custom_shape": null,
+                "led_spacing": 1,
+                "reverse": false,
+                "shape": 1,
+                "x": 19,
+                "y": 8
+            },
+            "zone_idx": 0
+        },
+        {
+            "controller": {
+                "location": "I2C: /dev/i2c-0, address 0x5B",
+                "name": "Corsair Dominator Platinum",
+                "serial": "",
+                "vendor": "Corsair"
+            },
+            "custom_zone_name": "",
+            "settings": {
+                "custom_shape": null,
+                "led_spacing": 1,
+                "reverse": false,
+                "shape": 1,
+                "x": 21,
+                "y": 8
+            },
+            "zone_idx": 0
+        }
+    ],
+    "grid_settings": {
+        "auto_load": true,
+        "auto_register": true,
+        "grid_size": 1,
+        "h": 32,
+        "show_bounds": true,
+        "show_grid": true,
+        "unregister_members": false,
+        "w": 42
+    }
+}
