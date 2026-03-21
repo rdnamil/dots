@@ -46,6 +46,7 @@ wget -qO- https://git.io/papirus-icon-theme-install | sh
 git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme.git catppuccin-theme && catppuccin-theme/themes/install.sh -l -d ~/.local/share/themes -c dark -t blue --tweaks macchiato && rm -rf catppuccin-theme
 
 # misc
+git clone https://github.com/rdnamil/rdnashell "$HOME/.config/quickshell"
 sudo tailscale set --operator=$USER
 sudo usermod +aG gamemode $USER
 nwg-look -a
