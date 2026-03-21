@@ -132,11 +132,10 @@ binds {
 	Print				allow-inhibiting=false	{ screenshot; }
 
 	Mod+Delete			allow-inhibiting=false	{ spawn-sh "grim -g \"$(slurp -b '#00000000' -o -f '0,0 %Wx%H')\" - | satty -f -"; }
+	Mod+Print	 		allow-inhibiting=false	{ spawn-sh "grim -g \"$(slurp -b '#00000080' -c '#00000000')\" - | satty -f -"; }
+	Mod+Shift+Print		allow-inhibiting=false	{ spawn-sh "grim -g \"$(slurp -b '#00000000' -o -f '0,0 %Wx%H')\" - | satty -f -"; }
 	Mod+Alt+Delete		allow-inhibiting=false	{ spawn-sh "grim -g \"$(slurp -b '#00000080' -c '#00000000')\" - | satty -f -"; }
 	Mod+Shift+Delete	allow-inhibiting=false	{ spawn-sh "niri msg action screenshot-window -d false && sleep 0.1 && wl-paste | satty -f -"; }
-
-	Mod+Print	 		allow-inhibiting=false	{ screenshot-window; }
-	Mod+Shift+Print		allow-inhibiting=false	{ screenshot-screen show-pointer=true; }
 
 	// misc
 	// ---
