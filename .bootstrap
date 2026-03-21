@@ -50,3 +50,4 @@ git clone https://github.com/rdnamil/rdnashell "$HOME/.config/quickshell"
 sudo tailscale set --operator=$USER
 sudo usermod +aG gamemode $USER
 nwg-look -a
+dotfiles checkout -- .local/share/themes/Catppuccin-Blue-Dark-Macchiato/gtk-3.0/gtk-dark.css
