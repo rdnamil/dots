@@ -67,4 +67,4 @@ git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme.git catppucci
 
 # misc
 sudo usermod +aG gamemode $USER
-git clone https://github.com/rdnamil/quickshell ./config/quickshell
+git clone https://github.com/rdnamil/quickshell .config/quickshell
