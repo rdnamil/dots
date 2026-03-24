@@ -63,7 +63,7 @@ Tab Middle Click Close Document=true
 Tabbar Tab Limit=0
 
 [KDE]
-widgetStyle=qt6ct-style
+widgetStyle=Darkly
 
 [KTextEditor Document]
 Allow End of Line Detection=true
@@ -192,6 +192,9 @@ RunPrefix=
 SetEditor=false
 
 [MainWindow]
+1920x1080 screen: Height=1024
+1920x1080 screen: Width=1215
+1920x1080 screen: Window-Maximized=true
 2560x1440 screen: Height=1384
 2560x1440 screen: Width=1228
 MenuBar=Disabled
